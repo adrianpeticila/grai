@@ -1,0 +1,79 @@
+{
+  "brand": "grai",
+  "tagline": "Write like you. Prove it.",
+  "url": "https://grai.page/",
+  "version": "3.1.1",
+  "category": "Personal Voice Engine & Deterministic Cadence Harness",
+  "architecture": "100% offline single-file HTML5 workbench (connect-src 'none') + MIT instruction harness",
+  "author": {
+    "@id": "https://peticila.ro/#person",
+    "name": "Adrian M. Peticila",
+    "title": "Fractional CMO & B2B Brand Strategist",
+    "location": "Bucharest, Romania",
+    "email": "adrian@peticila.ro",
+    "refund_contact": "refund@grai.page",
+    "wikidata": "https://www.wikidata.org/wiki/Q140362129",
+    "orcid": "https://orcid.org/0009-0005-9601-9527",
+    "sameAs": [
+      "https://peticila.ro/",
+      "https://aah.monster/",
+      "https://hydra.peticila.ro/",
+      "https://grai.page/",
+      "https://github.com/adrianpeticila",
+      "https://github.com/adrianpeticila/grai",
+      "https://www.linkedin.com/in/adrian-peticila/",
+      "https://x.com/adrianmpeticila",
+      "https://www.wikidata.org/wiki/Q140362129",
+      "https://orcid.org/0009-0005-9601-9527",
+      "https://www.crunchbase.com/person/adrian-peticila",
+      "https://dev.to/adrian_m_peticila",
+      "https://www.producthunt.com/@adrian_m_peticila",
+      "https://gravatar.com/adrianmpeticila",
+      "https://about.me/adrian.peticila",
+      "https://www.goodreads.com/user/show/186180125-adrian-m-peticila",
+      "https://www.amazon.com/dp/B0H8Q8CFWK",
+      "https://www.amazon.com/dp/B0H8KGRPXG"
+    ],
+    "books": [
+      {
+        "title": "Fear is the Brand Killer",
+        "price_eur": 49,
+        "asin": "B0H8Q8CFWK",
+        "amazon_url": "https://www.amazon.com/dp/B0H8Q8CFWK",
+        "google_play_url": "https://play.google.com/store/books/details?id=QxLzEQAAQBAJ"
+      },
+      {
+        "title": "The Ultimate Personal Branding Manual",
+        "price_eur": 97,
+        "asin": "B0H8KGRPXG",
+        "amazon_url": "https://www.amazon.com/dp/B0H8KGRPXG",
+        "google_play_url": "https://play.google.com/store/books/details?id=KxLzEQAAQBAJ"
+      }
+    ]
+  },
+  "editions": {
+    "founder": {
+      "name": "Founder Edition",
+      "price_usd": 69,
+      "billing": "one-time payment, lifetime v3.x updates",
+      "scope": "1 person, offline workbench, Voice DNA profiler, 6-rule Cadence Gate, 1-click .grai local backup"
+    },
+    "agency": {
+      "name": "Agency Edition",
+      "price_usd": 149,
+      "billing": "one-time payment, commercial team licence",
+      "scope": "Unlimited multi-client voice switcher, A4 Client Voice DNA Dossier with SHA-256 fingerprint, offline .grai team sync"
+    }
+  },
+  "endpoints": {
+    "homepage": "https://grai.page/",
+    "agent_homepage_md": "https://grai.page/index.md",
+    "methodology": "https://grai.page/methodology",
+    "agent_methodology_md": "https://grai.page/methodology.md",
+    "llms": "https://grai.page/llms.txt",
+    "llms_full": "https://grai.page/llms-full.txt",
+    "agent_manifest": "https://grai.page/.well-known/agent.json",
+    "blueprint_pdf": "https://grai.page/assets/Grai_Voice_Architecture_Blueprint.pdf",
+    "repository": "https://github.com/adrianpeticila/grai"
+  }
+}

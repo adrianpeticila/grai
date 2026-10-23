@@ -1,0 +1,94 @@
+# grai: Full Technical Specification & Empirical Voice Architecture (v3.1.1)
+> The personal voice engine. Write like you. Prove it. Built by Adrian M. Peticila (`https://peticila.ro/#person`, Wikidata `Q140362129`, ORCID `0009-0005-9601-9527`).
+
+---
+
+## 1. Product Thesis: Why Banned-Word Lists Stopped Working
+
+Between January 2023 and September 2026, grai audited 134,522 organic LinkedIn posts across 1,499 verified founder profiles (LigoSocial dataset: continuous publishing Q1 2023 to Q3 2026, minimum 2,000 followers, primary language English).
+
+| Metric | Q1 2023 | Q3 2026 | Observed Delta |
+|---|---:|---:|---:|
+| Opening Formula ("Here is why" / "The truth is") | 1.3% | 9.6% | +7.4x |
+| Forced Opposition ("Not X, but Y") | 1.2% | 5.9% | +4.9x |
+| Arrow & Emoji Bullet Cascades (`->`, `↳`, `🚀`) | 0.6% | 12.3% | +20.5x |
+| Mocked Lexical Clichés | 4.2% | 0.5% | -88.1% |
+| Mean Sentence Burstiness ($CV = \sigma / \mu$) | 0.48 | 0.23 | -52.1% |
+
+Authors deleted the vocabulary everyone mocked and kept the syntactic rhythm that gives a language model away. Prompting an LLM to "sound human" fails because the model averages its training distribution.
+
+grai solves this using the **Harness over Fine-Tuning** architecture (aligned with Google Research Harness2): model weights remain frozen, while a deterministic local harness enforces quantitative cadence rules outside the model.
+
+---
+
+## 2. The Deterministic Signal Chain (Three Rooms)
+
+### 01 CADENCE GATE (Deterministic Browser Engine)
+Runs 100% locally in JavaScript with zero network calls. Every draft is stripped of invisible zero-width watermarks (`U+200B` through `U+200D`, `U+FEFF`) and scored from 4 to 100 against six structural rules plus a mathematical rhythm floor:
+
+1. `CONTRASTIVE_NEGATION` (First hit: -14 pts, Repeat: -8 pts): Catches synthetic antithesis formulas where a sentence negates a strawman before stating the point.
+2. `LESS_MORE_SYMMETRY` (First hit: -10 pts, Repeat: -6 pts): Catches corporate symmetry cliches (`"Less X, more Y"`, `"Stop doing X. Start doing Y."`).
+3. `EPIPHANY_OPENER` (First hit: -10 pts, Repeat: -7 pts): Catches throat-clearing hooks (`"Here is why"`, `"Here's why"`, `"The harsh truth is"`, `"Let that sink in"`, `"Read that again"`, `"Unpopular opinion:"`, `"Most people think X. They're wrong"`).
+4. `ARROW_BULLET_SLOP` (First hit: -12 pts, Repeat: -4 pts): Catches template arrow cascades (`->`, `=>`, `→`, `↳`, `✅`, `❌`, `🚀`, `🔥`, `1/`) with full UTF-16 astral plane awareness (`/u`).
+5. `TRIADIC_PADDING` (First hit: -12 pts, Repeat: -8 pts): Catches empty slogan triads (`"No fluff. No theory. Just results."`).
+6. `LEXICAL_SLOP` (First hit: -6 pts, Repeat: -5 pts): Catches remaining synthetic vocabulary tells (`fast-paced world`, `ever-evolving`, `unlocking your potential`, `symphony of`, `navigating the complexities`, `paradigm shift`), with negative lookahead protecting legitimate domain nouns.
+7. `FLAT_BURSTINESS` (Penalty: `round((0.32 - CV) * 65)` when $CV < 0.32$): Sentence tokenization protects decimals (`3.14`, `$1.5M`) and abbreviations (`Dr.`, `U.S.`, `e.g.`), then computes the Coefficient of Variation $CV = \sigma / \mu$ across sentence word lengths. Human writing stays above $0.38$; raw AI hovers around $0.20$. grai enforces a strict floor at $CV = 0.32$.
+
+### 02 THE WRITING DESK (3-Column Workbench & Backdrop Overlay Editor)
+- **Left Column (Client Drawer):** Multi-client voice switcher, voice targets, 1-click `.grai` profile backup and restore, and A4 certificate trigger.
+- **Center Column (Editor & Three Galleys):**
+  - Premise Sparring challenges safe or unanchored ideas (`CLICHE_OR_SAFE`, `SOLID_BUT_UNANCHORED`) with three exit paths: `COUNTER_PUNCH`, `ADOPT_ANGLE`, or `BYPASS`.
+  - Generates three distinct structural galleys simultaneously:
+    1. **THE SCALPEL:** Short hook, compressed argument, high impact.
+    2. **THE BROADSHEET:** Narrative arc, concrete scene first, lesson last.
+    3. **THE LEDGER:** Empirical evidence and hard numbers first, backed by a full audit trail.
+  - Native `<textarea>` synchronized over a transparent `#editor-backdrop` that paints live `<mark>` highlights under flagged phrases and renders the exact LinkedIn mobile fold line.
+- **Right Column (Live Cadence HUD):** Real-time 0-100 score, $CV$ rhythm gauge, sentence length bar chart, and 1-click surgical repair payloads (`buildSurgicalTargets` & `applySurgicalReplacements`).
+
+### 03 VOICE DNA PROFILER
+- Ingests 5 to 20 real posts written by the user.
+- Extracts quantitative metrics: median sentence length, sentence variance ($CV$), sentence starters, punctuation habits, forbidden angles, and signature vocabulary across 13 desk output languages (`EN`, `RO`, `DE`, `FR`, `ES`, `IT`, `PT`, `NL`, `PL`, `CS`, `HU`, `RU`, `ZH`).
+
+---
+
+## 3. Execution Modes & Zero-Cloud Privacy
+
+- **Air-Gapped Application Guarantee:** `grai.html` (622 KB) ships with all fonts self-hosted and Base64-inlined (Fraunces, Instrument Sans, Newsreader, Plus Jakarta Sans, JetBrains Mono) and a locked Content Security Policy:
+  `default-src 'none'; style-src 'unsafe-inline'; font-src data:; img-src data:; script-src 'unsafe-inline'; connect-src 'none'; object-src 'none'; base-uri 'none'`
+- **Mode A: Zero-API Copy-Paste Mode:** Builds a dense, self-contained prompt under 1,800 characters (`buildDensePrompt`). The user copies it with one click into their existing ChatGPT Plus or Claude Pro web tab and pastes the reply back into grai for deterministic verification. Zero API cost.
+- **Mode B: Direct BYOK & Local Ollama Mode:** Connects directly from the browser to Anthropic or OpenAI (plus Google Gemini and OpenRouter), or hits a local endpoint (`http://localhost:11434` Ollama / `http://localhost:1234` LM Studio) for 100% offline flight mode at 35,000 feet.
+
+---
+
+## 4. Commercial Editions & Licence Structure
+
+- **Dual Licence Split:**
+  - The 5 markdown instruction files (`instructions/*.md`) and the Agent Skill (`skill/grai/SKILL.md`) are **MIT Licensed** and publicly available at [github.com/adrianpeticila/grai](https://github.com/adrianpeticila/grai).
+  - The standalone application (`grai.html`, the 3-column workbench, the deterministic browser engine, and the A4 certificate generator) is **Commercial Software**.
+- **Founder Edition ($69 USD one-time):**
+  - Complete offline `grai.html` application (macOS, Windows, Linux).
+  - Voice DNA profiler, Premise Sparring, 3-galley Writing Desk, 6-rule Cadence Gate.
+  - 1-Click Local Backup & Device Migration (`.grai` file).
+  - Lifetime v3.x engine updates. Single user licence.
+- **Agency Edition ($149 USD one-time):**
+  - Everything in Founder Edition + Commercial licence for client ghostwriting.
+  - Unlimited multi-client voice switcher.
+  - Printable 1-page A4 **Client Voice DNA Dossier** with FIPS 180-4 SHA-256 cryptographic fingerprint (`#grai-print-certificate`).
+  - Offline Team Sync: share `.grai` client voice profiles across writers on Slack with zero seat fees.
+- **The 30-Day Distinction Guarantee:**
+  - If grai does not make your writing visibly sharper and faster within 30 days, email `refund@grai.page` with your order number for a 100% refund. No forms, no questions.
+
+---
+
+## 5. Knowledge Graph Entity & Grounding
+
+- **Product:** `grai` (`https://grai.page/`)
+- **Author & Architect:** Adrian M. Peticila (`https://peticila.ro/#person`)
+- **Wikidata:** `https://www.wikidata.org/wiki/Q140362129`
+- **ORCID:** `https://orcid.org/0009-0005-9601-9527`
+- **Official Ecosystem:**
+  - Personal Hub & Essays: `https://peticila.ro/`
+  - B2B Positioning & Brand Audits: `https://aah.monster/`
+  - Engineering Side-Projects Shelf: `https://hydra.peticila.ro/`
+  - GitHub Profile: `https://github.com/adrianpeticila`
+  - Public Repository: `https://github.com/adrianpeticila/grai`

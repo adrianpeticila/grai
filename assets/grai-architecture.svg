@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="100%" role="img" aria-label="grai deterministic signal chain and cockpit comparison">
+  <defs>
+    <style>
+      .bg { fill: #F5F2EB; }
+      .card { fill: #FAF8F5; stroke: #DCD6CA; stroke-width: 1.5; rx: 14px; }
+      .dark-card { fill: #1A1917; stroke: #34312C; stroke-width: 1.5; rx: 14px; }
+      .pill-amber { fill: #FCE8E0; stroke: #D9480F; stroke-width: 1; rx: 6px; }
+      .pill-green { fill: #163024; stroke: #10B981; stroke-width: 1; rx: 6px; }
+      .pill-red { fill: #3A1814; stroke: #EF4444; stroke-width: 1; rx: 6px; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+      .serif { font-family: Georgia, "Times New Roman", serif; }
+    </style>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="1200" height="560" rx="20" class="bg" stroke="#DCD6CA" stroke-width="2"/>
+
+  <!-- Top Header Strip -->
+  <g transform="translate(36, 26)">
+    <g transform="translate(0, 26) scale(0.0032 -0.0032)" fill="#141413">
+      <path d="M7146 8345 c-733 -119 -1268 -630 -1681 -1605 -80 -188 -99 -223 -133 -242 -26 -16 -59 -18 -259 -18 -338 0 -574 -19 -878 -71 -884 -149 -1632 -521 -2068 -1029 -280 -325 -426 -660 -478 -1093 -14 -122 -7 -421 14 -532 79 -420 243 -727 545 -1016 511 -491 1293 -773 2358 -850 220 -15 856 -7 1069 15 1044 107 1845 449 2332 995 246 276 406 624 453 985 12 97 16 380 5 472 -30 263 -84 460 -185 669 -279 579 -866 1025 -1665 1265 -93 28 -180 58 -193 66 -28 18 -45 59 -37 88 45 157 137 282 255 345 84 45 173 62 320 62 140 1 180 -5 425 -61 265 -60 331 -71 455 -71 236 0 418 66 567 205 94 88 161 187 198 297 25 73 29 103 33 225 4 122 1 151 -17 220 -95 348 -357 568 -791 665 -126 28 -506 36 -644 14z m-1891 -2624 c384 -79 649 -373 760 -844 92 -391 94 -1007 5 -1386 -91 -387 -285 -658 -564 -786 -237 -110 -603 -109 -844 1 -336 154 -534 474 -609 989 -23 153 -26 766 -5 910 60 411 166 675 346 863 130 137 271 214 467 257 97 21 334 19 444 -4z"/>
+    </g>
+    <text x="36" y="21" class="serif" font-size="24" font-weight="700" fill="#141413">grai</text>
+    <text x="96" y="20" class="mono" fill="#D9480F">DETERMINISTIC VOICE HARNESS // ARCHITECTURE &amp; LIVE GATE</text>
+    <text x="1128" y="20" text-anchor="end" class="mono" fill="#57534B">622 KB OFFLINE · CONNECT-SRC 'NONE'</text>
+  </g>
+  <line x1="36" y1="64" x2="1164" y2="64" stroke="#DCD6CA" stroke-width="1.5"/>
+
+  <!-- STAGE 01 -->
+  <g transform="translate(36, 84)">
+    <rect width="352" height="210" class="card"/>
+    <rect x="18" y="18" width="168" height="24" class="pill-amber"/>
+    <text x="28" y="34" class="mono" fill="#D9480F">01 VOICE DNA PROFILER</text>
+    <text x="18" y="68" class="serif" font-size="20" font-weight="600" fill="#141413">Measure your real spine.</text>
+    <text x="18" y="94" class="sans" font-size="13" fill="#4A4740">Ingests 5 to 20 of your real published posts</text>
+    <text x="18" y="112" class="sans" font-size="13" fill="#4A4740">and computes your quantitative baseline:</text>
+    <line x1="18" y1="126" x2="334" y2="126" stroke="#E6E1D6"/>
+    <text x="18" y="148" class="mono" fill="#141413">• BURSTINESS FLOOR:   CV = σ / μ ≥ 0.32</text>
+    <text x="18" y="168" class="mono" fill="#141413">• SENTENCE SPREAD:    3w punch to 34w clause</text>
+    <text x="18" y="188" class="mono" fill="#57534B">• FINGERPRINT:        FIPS 180-4 SHA-256</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M394 189 L418 189" stroke="#D9480F" stroke-width="2.5"/>
+  <polygon points="418,184 426,189 418,194" fill="#D9480F"/>
+
+  <!-- STAGE 02 -->
+  <g transform="translate(424, 84)">
+    <rect width="352" height="210" class="card"/>
+    <rect x="18" y="18" width="154" height="24" class="pill-amber"/>
+    <text x="28" y="34" class="mono" fill="#D9480F">02 THE WRITING DESK</text>
+    <text x="18" y="68" class="serif" font-size="20" font-weight="600" fill="#141413">Sparring, then 3 galleys.</text>
+    <text x="18" y="94" class="sans" font-size="13" fill="#4A4740">Pushes back on safe or unanchored premises</text>
+    <text x="18" y="112" class="sans" font-size="13" fill="#4A4740">before drafting three distinct structures:</text>
+    <line x1="18" y1="126" x2="334" y2="126" stroke="#E6E1D6"/>
+    <text x="18" y="148" class="mono" fill="#141413">01 THE SCALPEL     (Sharp hook, compressed)</text>
+    <text x="18" y="168" class="mono" fill="#141413">02 THE BROADSHEET  (Concrete story first)</text>
+    <text x="18" y="188" class="mono" fill="#141413">03 THE LEDGER      (Hard numbers &amp; proof)</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <path d="M782 189 L806 189" stroke="#D9480F" stroke-width="2.5"/>
+  <polygon points="806,184 814,189 806,194" fill="#D9480F"/>
+
+  <!-- STAGE 03 -->
+  <g transform="translate(812, 84)">
+    <rect width="352" height="210" class="card"/>
+    <rect x="18" y="18" width="146" height="24" class="pill-amber"/>
+    <text x="28" y="34" class="mono" fill="#D9480F">03 CADENCE GATE</text>
+    <text x="18" y="68" class="serif" font-size="20" font-weight="600" fill="#141413">6 syntactic rules outside AI.</text>
+    <text x="18" y="94" class="sans" font-size="13" fill="#4A4740">Vanilla JS parser flags structural tells live</text>
+    <text x="18" y="112" class="sans" font-size="13" fill="#4A4740">in the backdrop editor before you publish:</text>
+    <line x1="18" y1="126" x2="334" y2="126" stroke="#E6E1D6"/>
+    <text x="18" y="146" class="mono" fill="#141413">• CONTRASTIVE_NEGATION  • EPIPHANY_OPENER</text>
+    <text x="18" y="166" class="mono" fill="#141413">• LESS_MORE_SYMMETRY    • ARROW_BULLET_SLOP</text>
+    <text x="18" y="186" class="mono" fill="#141413">• TRIADIC_PADDING       • LEXICAL_SLOP</text>
+  </g>
+
+  <!-- BOTTOM COMPARISON: RAW LLM SLOP vs GRAI CALIBRATED -->
+  <!-- Left Dark Card: Raw LLM Slop (38/100) -->
+  <g transform="translate(36, 316)">
+    <rect width="548" height="212" class="dark-card"/>
+    <rect x="20" y="18" width="224" height="24" class="pill-red"/>
+    <text x="30" y="34" class="mono" fill="#F87171">RAW LLM OUTPUT · FLAGGED</text>
+    <text x="528" y="42" text-anchor="end" class="serif" font-size="34" font-weight="700" fill="#F87171">38<tspan class="mono" font-size="13" fill="#8F897F">/100</tspan></text>
+
+    <text x="20" y="72" class="sans" font-size="13" fill="#D6D1C7">"Most people think growth is about working harder. Here is why</text>
+    <text x="20" y="92" class="sans" font-size="13" fill="#D6D1C7">they are wrong. It's not about hustle, it's about unlocking your</text>
+    <text x="20" y="112" class="sans" font-size="13" fill="#D6D1C7">potential. No fluff. No theory. Just pure execution."</text>
+
+    <!-- Flat Metronome Bars -->
+    <g transform="translate(20, 132)">
+      <rect x="0" y="14" width="22" height="16" fill="#EF4444" opacity="0.85"/>
+      <rect x="28" y="15" width="22" height="15" fill="#EF4444" opacity="0.85"/>
+      <rect x="56" y="13" width="22" height="17" fill="#EF4444" opacity="0.85"/>
+      <rect x="84" y="14" width="22" height="16" fill="#EF4444" opacity="0.85"/>
+      <rect x="112" y="15" width="22" height="15" fill="#EF4444" opacity="0.85"/>
+      <rect x="140" y="14" width="22" height="16" fill="#EF4444" opacity="0.85"/>
+      <text x="180" y="26" class="mono" fill="#F87171">CV = 0.20 (FLAT METRONOME · 4/6 RULES FAILED)</text>
+    </g>
+    <line x1="20" y1="174" x2="528" y2="174" stroke="#34312C"/>
+    <text x="20" y="195" class="mono" fill="#A8A29A">FAILS: EPIPHANY_OPENER · CONTRASTIVE_NEGATION · TRIADIC_PADDING</text>
+  </g>
+
+  <!-- Right Dark Card: grai Calibrated (100/100) -->
+  <g transform="translate(616, 316)">
+    <rect width="548" height="212" class="dark-card"/>
+    <rect x="20" y="18" width="240" height="24" class="pill-green"/>
+    <text x="30" y="34" class="mono" fill="#34D399">GRAI CALIBRATED · VERIFIED</text>
+    <text x="528" y="42" text-anchor="end" class="serif" font-size="34" font-weight="700" fill="#F5F2EB">100<tspan class="mono" font-size="13" fill="#34D399">/100</tspan></text>
+
+    <text x="20" y="72" class="sans" font-size="13" fill="#F5F2EB">"We cut four meetings a week in Q2. Ship velocity doubled before</text>
+    <text x="20" y="92" class="sans" font-size="13" fill="#F5F2EB">Friday, and our two senior engineers finally finished the billing</text>
+    <text x="20" y="112" class="sans" font-size="13" fill="#F5F2EB">migration that had stalled since January. Protect the calendar."</text>
+
+    <!-- Asymmetric Human Burstiness Bars -->
+    <g transform="translate(20, 126)">
+      <rect x="0" y="18" width="22" height="18" fill="#10B981"/>
+      <rect x="28" y="2" width="22" height="34" fill="#D9480F"/>
+      <rect x="56" y="26" width="22" height="10" fill="#10B981"/>
+      <rect x="84" y="6" width="22" height="30" fill="#10B981"/>
+      <rect x="112" y="22" width="22" height="14" fill="#D9480F"/>
+      <rect x="140" y="10" width="22" height="26" fill="#10B981"/>
+      <text x="180" y="32" class="mono" fill="#34D399">CV = 0.46 (HUMAN BURSTINESS · 6/6 RULES CLEAN)</text>
+    </g>
+    <line x1="20" y1="174" x2="528" y2="174" stroke="#34312C"/>
+    <text x="20" y="195" class="mono" fill="#A8A29A">PASS: ALL 6 SYNTACTIC GATES CLEAN · SHA-256 VERIFIED</text>
+  </g>
+</svg>
