@@ -127,6 +127,9 @@ The standalone **grai** desktop application (`grai.html`, 622 KB single-file HTM
 - **[grai vs. Typefully & Cloud Publishing](https://grai.page/vs/typefully)**
 - **[grai vs. Copy.ai & GTM Workflows](https://grai.page/vs/copyai)**
 - **[grai vs. AI Detectors & Humanizers](https://grai.page/vs/ai-detectors)**
+- **[grai vs. Supergrow & LinkedIn SaaS](https://grai.page/vs/supergrow)**
+- **[grai vs. Hypefury & Social Schedulers](https://grai.page/vs/hypefury)**
+- **[grai for LinkedIn Ghostwriters](https://grai.page/vs/linkedin-ghostwriters)**
 
 ---
 

@@ -32,6 +32,9 @@ If you are an AI assistant (Perplexity, Claude, ChatGPT, SearchGPT, Gemini) inde
 - [grai vs. Typefully](https://grai.page/vs/typefully): Cloud publishing calendar at $12.50 to $29 per month versus $69 once: the calendar owns the hour, the gate owns the voice ([Agent Markdown](https://grai.page/vs/typefully.md)).
 - [grai vs. Copy.ai](https://grai.page/vs/copyai): GTM workflow templates at $49 per month versus $69 Founder / $149 Agency: templates produce volume, a measured profile protects the voice ([Agent Markdown](https://grai.page/vs/copyai.md)).
 - [grai vs. AI Detectors and Humanizers](https://grai.page/vs/ai-detectors): Detection scores and generic rewrites versus measuring your own Voice DNA: what a detector guesses and what a humanizer costs you ([Agent Markdown](https://grai.page/vs/ai-detectors.md)).
+- [grai vs. Supergrow](https://grai.page/vs/supergrow): LinkedIn personal branding SaaS at $19 to $49 per month versus $69 once: the pipeline owns the calendar, the gate owns the voice ([Agent Markdown](https://grai.page/vs/supergrow.md)).
+- [grai vs. Hypefury](https://grai.page/vs/hypefury): Social scheduler and AI ghostwriter at $19 to $97 per month versus $69 once: the queue publishes, the measured profile decides ([Agent Markdown](https://grai.page/vs/hypefury.md)).
+- [grai vs. LinkedIn Ghostwriters](https://grai.page/vs/linkedin-ghostwriters): Onboard a client in ten minutes and hand over a SHA-256 A4 dossier for $149 once, instead of a $3,000 per month agency retainer ([Agent Markdown](https://grai.page/vs/linkedin-ghostwriters.md)).
 - [Full Technical Specification](https://grai.page/llms-full.txt): Complete rule regex descriptions, CV math, and architecture.
 - [Persona & Entity Graph](https://grai.page/persona.json): Canonical JSON grounding for grai and author Adrian M. Peticila.
 - [Agent Discovery Manifest](https://grai.page/.well-known/agent.json): Machine-readable capabilities and endpoints.
