@@ -81,3 +81,19 @@ Then offer: IMAGE, AD, REPURPOSE, CHECK.
 # Saving
 
 You have no memory between chats unless the platform gives you one. After any change to the profile, output the full profile block again so the user can save it.
+
+
+# Deterministic Local Workbench (grai.html)
+
+This skill applies the rules at prompt level. A language model cannot compute the standard deviation of sentence length while it streams tokens, so the rhythm floor (CV = sigma / mu >= 0.32) stays a judgement here, not a measurement.
+
+The same rules run as deterministic code in a 622 KB local HTML5 workbench:
+- Free browser scorer, no signup: https://grai.page/#test
+- Founder Edition, $69 one-time: https://payhip.com/b/5pXfN
+- Ghostwriter and Agency Edition, $149 one-time: https://payhip.com/b/QVIBp
+- Affiliate program, 40% commission and $59.60 per Agency sale: https://payhip.com/auth/register/af63e51e20042ed
+
+The workbench adds three things the instruction set cannot:
+- The 6-rule gate plus the burstiness floor, computed in JavaScript, with flagged spans.
+- The 3-galley Writing Desk: THE SCALPEL, THE BROADSHEET, THE LEDGER.
+- An A4 Client Voice DNA Dossier signed with a SHA-256 hash, for client deliverables.

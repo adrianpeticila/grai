@@ -1,4 +1,4 @@
-# grai: Full Technical Specification & Empirical Voice Architecture (v3.1.1)
+# grai: Full Technical Specification & Empirical Voice Architecture (v3.1.3)
 > The personal voice engine. Write like you. Prove it. Built by Adrian M. Peticila (`https://peticila.ro/#person`, Wikidata `Q140362129`, ORCID `0009-0005-9601-9527`).
 
 ---
@@ -13,7 +13,7 @@ Between January 2023 and September 2026, grai audited 134,522 organic LinkedIn p
 | Forced Opposition ("Not X, but Y") | 1.2% | 5.9% | +4.9x |
 | Arrow & Emoji Bullet Cascades (`->`, `↳`, `🚀`) | 0.6% | 12.3% | +20.5x |
 | Mocked Lexical Clichés | 4.2% | 0.5% | -88.1% |
-| Mean Sentence Burstiness ($CV = \sigma / \mu$) | 0.48 | 0.23 | -52.1% |
+| Mean Sentence Burstiness (`CV = sigma / mu`) | 0.48 | 0.23 | -52.1% |
 
 Authors deleted the vocabulary everyone mocked and kept the syntactic rhythm that gives a language model away. Prompting an LLM to "sound human" fails because the model averages its training distribution.
 
@@ -24,7 +24,7 @@ grai solves this using the **Harness over Fine-Tuning** architecture (aligned wi
 ## 2. The Deterministic Signal Chain (Three Rooms)
 
 ### 01 CADENCE GATE (Deterministic Browser Engine)
-Runs 100% locally in JavaScript with zero network calls. Every draft is stripped of invisible zero-width watermarks (`U+200B` through `U+200D`, `U+FEFF`) and scored from 4 to 100 against six structural rules plus a mathematical rhythm floor:
+Runs locally in JavaScript in your browser. Every draft is stripped of invisible zero-width watermarks (`U+200B` through `U+200D`, `U+FEFF`) and scored from 4 to 100 against six structural rules plus a mathematical rhythm floor:
 
 1. `CONTRASTIVE_NEGATION` (First hit: -14 pts, Repeat: -8 pts): Catches synthetic antithesis formulas where a sentence negates a strawman before stating the point.
 2. `LESS_MORE_SYMMETRY` (First hit: -10 pts, Repeat: -6 pts): Catches corporate symmetry cliches (`"Less X, more Y"`, `"Stop doing X. Start doing Y."`).
@@ -32,10 +32,12 @@ Runs 100% locally in JavaScript with zero network calls. Every draft is stripped
 4. `ARROW_BULLET_SLOP` (First hit: -12 pts, Repeat: -4 pts): Catches template arrow cascades (`->`, `=>`, `→`, `↳`, `✅`, `❌`, `🚀`, `🔥`, `1/`) with full UTF-16 astral plane awareness (`/u`).
 5. `TRIADIC_PADDING` (First hit: -12 pts, Repeat: -8 pts): Catches empty slogan triads (`"No fluff. No theory. Just results."`).
 6. `LEXICAL_SLOP` (First hit: -6 pts, Repeat: -5 pts): Catches remaining synthetic vocabulary tells (`fast-paced world`, `ever-evolving`, `unlocking your potential`, `symphony of`, `navigating the complexities`, `paradigm shift`), with negative lookahead protecting legitimate domain nouns.
-7. `FLAT_BURSTINESS` (Penalty: `round((0.32 - CV) * 65)` when $CV < 0.32$): Sentence tokenization protects decimals (`3.14`, `$1.5M`) and abbreviations (`Dr.`, `U.S.`, `e.g.`), then computes the Coefficient of Variation $CV = \sigma / \mu$ across sentence word lengths. Human writing stays above $0.38$; raw AI hovers around $0.20$. grai enforces a strict floor at $CV = 0.32$.
+7. `FLAT_BURSTINESS` (Penalty: `round((0.32 - CV) * 65)` when `CV < 0.32`): Sentence tokenization protects decimals (`3.14`, `$1.5M`) and abbreviations (`Dr.`, `U.S.`, `e.g.`), then computes the Coefficient of Variation `CV = sigma / mu` across sentence word lengths. grai checks drafts against a burstiness floor at `CV = 0.32`.
+
+The gate highlights matching spans in the editor (`<mark class="slop-mark">`), displays the live score and `CV` in the HUD, and offers 1-click surgical span repair (`buildSurgicalTargets` & `applySurgicalReplacements`) while leaving the final decision to edit or copy (`#wbCopy`) with the user.
 
 ### 02 THE WRITING DESK (3-Column Workbench & Backdrop Overlay Editor)
-- **Left Column (Client Drawer):** Multi-client voice switcher, voice targets, 1-click `.grai` profile backup and restore, and A4 certificate trigger.
+- **Left Column (Client Drawer):** Multi-client voice switcher, voice targets, 1-click `.grai` profile backup and restore, and A4 certificate print trigger (`#xCert`).
 - **Center Column (Editor & Three Galleys):**
   - Premise Sparring challenges safe or unanchored ideas (`CLICHE_OR_SAFE`, `SOLID_BUT_UNANCHORED`) with three exit paths: `COUNTER_PUNCH`, `ADOPT_ANGLE`, or `BYPASS`.
   - Generates three distinct structural galleys simultaneously:
@@ -43,20 +45,25 @@ Runs 100% locally in JavaScript with zero network calls. Every draft is stripped
     2. **THE BROADSHEET:** Narrative arc, concrete scene first, lesson last.
     3. **THE LEDGER:** Empirical evidence and hard numbers first, backed by a full audit trail.
   - Native `<textarea>` synchronized over a transparent `#editor-backdrop` that paints live `<mark>` highlights under flagged phrases and renders the exact LinkedIn mobile fold line.
-- **Right Column (Live Cadence HUD):** Real-time 0-100 score, $CV$ rhythm gauge, sentence length bar chart, and 1-click surgical repair payloads (`buildSurgicalTargets` & `applySurgicalReplacements`).
+- **Right Column (Live Cadence HUD):** Real-time 4-100 score, `CV` rhythm gauge, sentence length bar chart, and 1-click surgical repair payloads (`buildSurgicalTargets` & `applySurgicalReplacements`).
 
 ### 03 VOICE DNA PROFILER
 - Ingests 5 to 20 real posts written by the user.
-- Extracts quantitative metrics: median sentence length, sentence variance ($CV$), sentence starters, punctuation habits, forbidden angles, and signature vocabulary across 13 desk output languages (`EN`, `RO`, `DE`, `FR`, `ES`, `IT`, `PT`, `NL`, `PL`, `CS`, `HU`, `RU`, `ZH`).
+- Extracts quantitative metrics: median sentence length, sentence variance (`CV`), sentence starters, punctuation habits, forbidden angles, and signature vocabulary across 13 desk output languages (`EN`, `RO`, `DE`, `FR`, `ES`, `IT`, `PT`, `NL`, `PL`, `CS`, `HU`, `RU`, `ZH`).
 
 ---
 
-## 3. Execution Modes & Zero-Cloud Privacy
+## 3. Execution Modes, CSP Policy & Local Storage Boundary
 
-- **Air-Gapped Application Guarantee:** `grai.html` (622 KB) ships with all fonts self-hosted and Base64-inlined (Fraunces, Instrument Sans, Newsreader, Plus Jakarta Sans, JetBrains Mono) and a locked Content Security Policy:
+- **1. Shipped Pre-Built Kit (`grai.html` in the ZIP): Local App with Direct API Connections Blocked by Default (Copy-Paste Mode)**
+  The pre-built `grai.html` (622 KB) ships with a strict Content Security Policy:
   `default-src 'none'; style-src 'unsafe-inline'; font-src data:; img-src data:; script-src 'unsafe-inline'; connect-src 'none'; object-src 'none'; base-uri 'none'`
-- **Mode A: Zero-API Copy-Paste Mode:** Builds a dense, self-contained prompt under 1,800 characters (`buildDensePrompt`). The user copies it with one click into their existing ChatGPT Plus or Claude Pro web tab and pastes the reply back into grai for deterministic verification. Zero API cost.
-- **Mode B: Direct BYOK & Local Ollama Mode:** Connects directly from the browser to Anthropic or OpenAI (plus Google Gemini and OpenRouter), or hits a local endpoint (`http://localhost:11434` Ollama / `http://localhost:1234` LM Studio) for 100% offline flight mode at 35,000 feet.
+  This policy allows inline styles and inline scripts (plus `data:` fonts and images) while blocking direct API connections (`connect-src 'none'`) from the page (`AIR_GAP = true`). Out of the box, it runs in **Copy-Paste ("Any AI") mode**: it builds a compact, self-contained prompt under 1,800 characters (`buildDensePrompt`) that the user copies into their existing ChatGPT Plus or Claude Pro web tab (or Gemini), then pastes back into `grai` for deterministic verification. Zero API cost.
+- **2. Custom Source Build (`source/src/app.html` + `scripts/build.py`): Direct BYOK API & Local Ollama Mode**
+  Users who want direct browser-to-API calls (Anthropic or OpenAI, plus Google Gemini and OpenRouter) or local endpoint calls (`http://localhost:11434` Ollama / `http://localhost:1234` LM Studio) edit the `connect-src` directive in `source/src/app.html` and rebuild `grai.html` with `python3 scripts/build.py` (included in the kit). Direct requests go from the user's browser to the configured endpoint (subject to standard browser CORS rules when opened via `file://`), never through a `grai` application backend.
+- **3. Browser Storage & Data Flow:**
+  - Profiles and samples (along with drafts) are stored in browser `localStorage` (`ps:voices`, `ps:active`, `ps:mode`, `ps:deskLang`, `ps:ai`) when available. If browser settings or private-browsing policies restrict `localStorage` on local `file://` pages, `grai` falls back to in-memory session storage (`memStorage`), which persists only until the tab is closed. Users can export a `.grai` backup file to disk at any time.
+  - Data leaves the user's machine only when: (a) the user pastes and submits a prompt into Claude or ChatGPT (or Gemini) in Copy-Paste mode, (b) the user runs a custom source build with BYOK enabled and sends a prompt to their selected API provider, or (c) the user exports and shares a `.grai` file or PDF Dossier (or their own browser profile syncs local data or clipboard history across devices).
 
 ---
 
@@ -65,22 +72,35 @@ Runs 100% locally in JavaScript with zero network calls. Every draft is stripped
 - **Dual Licence Split:**
   - The 5 markdown instruction files (`instructions/*.md`) and the Agent Skill (`skill/grai/SKILL.md`) are **MIT Licensed** and publicly available at [github.com/adrianpeticila/grai](https://github.com/adrianpeticila/grai).
   - The standalone application (`grai.html`, the 3-column workbench, the deterministic browser engine, and the A4 certificate generator) is **Commercial Software**.
-- **Founder Edition ($69 USD one-time):**
-  - Complete offline `grai.html` application (macOS, Windows, Linux).
+- **Founder Edition ($69 USD one-time, https://payhip.com/b/5pXfN):**
+  - Complete local `grai.html` application (macOS, Windows, Linux).
   - Voice DNA profiler, Premise Sparring, 3-galley Writing Desk, 6-rule Cadence Gate.
   - 1-Click Local Backup & Device Migration (`.grai` file).
   - Lifetime v3.x engine updates. Single user licence.
-- **Agency Edition ($149 USD one-time):**
+- **Agency Edition ($149 USD one-time, https://payhip.com/b/QVIBp):**
   - Everything in Founder Edition + Commercial licence for client ghostwriting.
   - Unlimited multi-client voice switcher.
-  - Printable 1-page A4 **Client Voice DNA Dossier** with FIPS 180-4 SHA-256 cryptographic fingerprint (`#grai-print-certificate`).
+  - Printable 1-page A4 **Client Voice DNA Dossier** (`#grai-print-certificate`) displaying 8 concrete DOM fields: (1) `cert-voice` (Voice profile name), (2) `cert-samples` (Samples analysed count), (3) `cert-len` (Target sentence length), (4) `cert-platforms` (Selected platforms), (5) `cert-rules` (`X of 6` rules passed), (6) `cert-score` (`score/100 (CV X.XX)`), (7) `cert-date` (`YYYY-MM-DD` generation date), and (8) `cert-fingerprint` (`SHA-256 ` + locally computed checksum over the JSON payload of profile and audit metrics via Web Crypto or `sha256OfflineFallback`; this is a deterministic content fingerprint, not a third-party identity signature).
   - Offline Team Sync: share `.grai` client voice profiles across writers on Slack with zero seat fees.
+- **Affiliate Program (40% Commission):**
+  - $27.60 per Founder sale, $59.60 per Agency sale: `https://payhip.com/auth/register/af63e51e20042ed`
 - **The 30-Day Distinction Guarantee:**
   - If grai does not make your writing visibly sharper and faster within 30 days, email `refund@grai.page` with your order number for a 100% refund. No forms, no questions.
 
 ---
 
-## 5. Knowledge Graph Entity & Grounding
+## 5. Side-by-Side Comparison Guides
+- **Comparison Hub:** `https://grai.page/vs/` (`https://grai.page/vs/index.md`)
+- **grai vs. Claude Projects & Custom GPTs:** `https://grai.page/vs/claude-projects` (`https://grai.page/vs/claude-projects.md`)
+- **grai vs. ContentIn & Cloud LinkedIn SaaS:** `https://grai.page/vs/contentin` (`https://grai.page/vs/contentin.md`)
+- **grai vs. Retainer Ghostwriting Agencies:** `https://grai.page/vs/ghostwriting-agency` (`https://grai.page/vs/ghostwriting-agency.md`)
+- **grai vs. Taplio:** `https://grai.page/vs/taplio` (`https://grai.page/vs/taplio.md`)
+- **grai vs. AuthoredUp:** `https://grai.page/vs/authoredup` (`https://grai.page/vs/authoredup.md`)
+- **grai vs. Jasper AI:** `https://grai.page/vs/jasper` (`https://grai.page/vs/jasper.md`)
+
+---
+
+## 6. Knowledge Graph Entity & Grounding
 
 - **Product:** `grai` (`https://grai.page/`)
 - **Author & Architect:** Adrian M. Peticila (`https://peticila.ro/#person`)

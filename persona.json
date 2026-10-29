@@ -2,9 +2,9 @@
   "brand": "grai",
   "tagline": "Write like you. Prove it.",
   "url": "https://grai.page/",
-  "version": "3.1.1",
+  "version": "3.1.3",
   "category": "Personal Voice Engine & Deterministic Cadence Harness",
-  "architecture": "100% offline single-file HTML5 workbench (connect-src 'none') + MIT instruction harness",
+  "architecture": "Local-first single-file HTML5 workbench (connect-src 'none' by default in shipped build; custom source build for BYOK/Ollama) + MIT instruction harness",
   "author": {
     "@id": "https://peticila.ro/#person",
     "name": "Adrian M. Peticila",
@@ -55,21 +55,41 @@
     "founder": {
       "name": "Founder Edition",
       "price_usd": 69,
+      "checkout_url": "https://payhip.com/b/5pXfN",
       "billing": "one-time payment, lifetime v3.x updates",
-      "scope": "1 person, offline workbench, Voice DNA profiler, 6-rule Cadence Gate, 1-click .grai local backup"
+      "scope": "1 person, local workbench, Voice DNA profiler, 6-rule Cadence Gate, 1-click .grai local backup"
     },
     "agency": {
       "name": "Agency Edition",
       "price_usd": 149,
+      "checkout_url": "https://payhip.com/b/QVIBp",
       "billing": "one-time payment, commercial team licence",
-      "scope": "Unlimited multi-client voice switcher, A4 Client Voice DNA Dossier with SHA-256 fingerprint, offline .grai team sync"
+      "scope": "Unlimited multi-client voice switcher, A4 Client Voice DNA Dossier (8 audit fields + local SHA-256 checksum), offline .grai team sync"
     }
+  },
+  "affiliate_program": {
+    "commission_percent": 40,
+    "signup_url": "https://payhip.com/auth/register/af63e51e20042ed"
   },
   "endpoints": {
     "homepage": "https://grai.page/",
     "agent_homepage_md": "https://grai.page/index.md",
     "methodology": "https://grai.page/methodology",
     "agent_methodology_md": "https://grai.page/methodology.md",
+    "comparisons_hub": "https://grai.page/vs/",
+    "comparisons_hub_md": "https://grai.page/vs/index.md",
+    "vs_claude_projects": "https://grai.page/vs/claude-projects",
+    "vs_claude_projects_md": "https://grai.page/vs/claude-projects.md",
+    "vs_contentin": "https://grai.page/vs/contentin",
+    "vs_contentin_md": "https://grai.page/vs/contentin.md",
+    "vs_ghostwriting_agency": "https://grai.page/vs/ghostwriting-agency",
+    "vs_ghostwriting_agency_md": "https://grai.page/vs/ghostwriting-agency.md",
+    "vs_taplio": "https://grai.page/vs/taplio",
+    "vs_taplio_md": "https://grai.page/vs/taplio.md",
+    "vs_authoredup": "https://grai.page/vs/authoredup",
+    "vs_authoredup_md": "https://grai.page/vs/authoredup.md",
+    "vs_jasper": "https://grai.page/vs/jasper",
+    "vs_jasper_md": "https://grai.page/vs/jasper.md",
     "llms": "https://grai.page/llms.txt",
     "llms_full": "https://grai.page/llms-full.txt",
     "agent_manifest": "https://grai.page/.well-known/agent.json",

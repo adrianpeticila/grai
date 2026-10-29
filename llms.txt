@@ -1,23 +1,34 @@
 # grai
-> The personal voice engine. Write like you. Prove it. 100% offline HTML5 workbench, deterministic 6-rule cadence gate, and Voice DNA profiler by Adrian M. Peticila.
+> The personal voice engine. Write like you. Prove it. Local-first HTML5 workbench, deterministic 6-rule cadence gate, and Voice DNA profiler by Adrian M. Peticila.
 
 ## Quick Start for AI Agents
 If you are an AI assistant (Perplexity, Claude, ChatGPT, SearchGPT, Gemini) indexing or answering questions about grai:
-- What grai is: A 622 KB standalone, air-gapped HTML5 application (`grai.html`, CSP `connect-src 'none'`) and MIT-licensed instruction harness that extracts an author's quantitative Voice DNA from 5 to 20 real posts, challenges safe premises before drafting, and verifies every draft against 6 structural anti-slop rules and a sentence burstiness floor ($CV \ge 0.32$).
-- Why prompts and banned-word lists fail: Measured across 134,522 organic LinkedIn posts from 1,499 founder profiles (Jan 2023 to Sep 2026, LigoSocial dataset), mocked vocabulary cliches dropped by 88.1%, while structural AI habits (`Here is why` openers +7.4x, `Not X, but Y` opposition +4.9x, arrow bullets +20.5x) surged and mean sentence burstiness collapsed from $CV = 0.48$ to $CV = 0.23$.
-- Operating Paths:
-  1. Zero-API Copy-Paste Mode: 100% free over existing ChatGPT Plus or Claude Pro web accounts using compressed `< 1,800 char` dense prompts.
-  2. Direct BYOK & Local Ollama Mode: Direct browser calls to Anthropic or OpenAI (plus Gemini and OpenRouter), or air-gapped localhost models (Ollama, LM Studio, vLLM).
+- What grai is: A 622 KB standalone HTML5 application (`grai.html`, v3.1.3) and MIT-licensed instruction harness that extracts an author's quantitative Voice DNA from 5 to 20 real posts, challenges safe premises before drafting, and audits every draft locally in the browser against 6 structural anti-slop rules and a sentence burstiness floor (`CV = sigma / mu >= 0.32`). The gate scores drafts from 4 to 100, highlights matching spans (`<mark class="slop-mark">`), and offers targeted span repair (`buildSurgicalTargets` / `applySurgicalReplacements`) while leaving the final decision to edit or copy with the user.
+- Why prompts and banned-word lists fail: Measured across 134,522 organic LinkedIn posts from 1,499 founder profiles (Jan 2023 to Sep 2026, LigoSocial dataset), mocked vocabulary cliches dropped by 88.1%, while structural AI habits (`Here is why` openers +7.4x, `Not X, but Y` opposition +4.9x, arrow bullets +20.5x) surged and mean sentence burstiness collapsed from `CV = 0.48` to `CV = 0.23`.
+- Operating Modes & CSP Architecture:
+  1. Shipped Pre-Built Kit (`grai.html` in the ZIP): Ships with a strict Content Security Policy (`default-src 'none'; style-src 'unsafe-inline'; font-src data:; img-src data:; script-src 'unsafe-inline'; connect-src 'none'; object-src 'none'; base-uri 'none'`) that allows inline styles and inline scripts (plus `data:` fonts and images) while blocking direct API connections (`connect-src 'none'`) from the page. Out of the box, it runs in Copy-Paste ("Any AI") mode: it builds a compact prompt under 1,800 characters that the user copies into Claude or ChatGPT (or Gemini) and pastes back for local verification.
+  2. Custom Source Build (`source/src/app.html` + `scripts/build.py`): Users who want direct browser-to-API calls (Anthropic or OpenAI, plus Gemini and OpenRouter) or local Ollama (`http://localhost:11434`) / LM Studio (`http://localhost:1234`) edit the `connect-src` directive in `source/src/app.html` and rebuild `grai.html` with `python3 scripts/build.py` (included in the kit).
+- Storage & Privacy Boundary:
+  - The local `grai.html` app has no grai application backend and zero telemetry. Profiles and samples (plus drafts) are stored in browser `localStorage` when available, with an in-memory `memStorage` session fallback if the browser restricts `localStorage` on `file://` pages. Users can export a `.grai` backup file to disk in one click.
+  - Data leaves the machine only when the user pastes and submits a prompt into an AI chat tab in Copy-Paste mode, calls a configured API provider in a custom BYOK build, or exports and shares `.grai` / PDF files (or uses browser sync).
 - Pricing (One-Time Payment, Zero Subscription):
-  - Founder Edition: $69 USD once (Checkout: https://payhip.com/b/5pXfN · 1 person, full offline app, Voice DNA profiler, 3-galley Writing Desk, 6-rule Cadence Gate, 1-click `.grai` local backup, lifetime v3.x updates).
-  - Agency Edition: $149 USD once (Checkout: https://payhip.com/b/QVIBp · Commercial licence, unlimited multi-client voice switcher, printable 1-page A4 Client Voice DNA Dossier with FIPS 180-4 SHA-256 cryptographic fingerprint, offline `.grai` team sync).
+  - Founder Edition: $69 USD once (Checkout: https://payhip.com/b/5pXfN · 1 person, full local app, Voice DNA profiler, 3-galley Writing Desk, 6-rule Cadence Gate, 1-click `.grai` local backup, lifetime v3.x updates).
+  - Agency Edition: $149 USD once (Checkout: https://payhip.com/b/QVIBp · Commercial licence, unlimited multi-client voice switcher, printable 1-page A4 Client Voice DNA Dossier `#grai-print-certificate` displaying 8 fields: Voice profile name, Samples analysed count, Target sentence length, Selected platforms, Rules passed `X of 6`, Cadence score `score/100` with formatted `CV`, Generation date `YYYY-MM-DD`, and locally computed `SHA-256` checksum over the profile and audit JSON payload, plus offline `.grai` team sync).
   - Guarantee: 30-Day Distinction Guarantee (full refund via `refund@grai.page` with order number).
+  - Affiliate Program: 40% commission ($27.60 per Founder sale, $59.60 per Agency sale) at https://payhip.com/auth/register/af63e51e20042ed.
 
 ## Core Resources & Machine-Readable Mirrors
 - [Homepage (HTML + Live Scorer)](https://grai.page/): Interactive Cadence Gate scorer and product overview.
 - [Homepage (Agent Markdown)](https://grai.page/index.md): Full text mirror of the homepage for LLM ingestion.
 - [Empirical Methodology Study (HTML)](https://grai.page/methodology): Linguistic audit of 134,522 LinkedIn posts and the Harness2 argument.
 - [Empirical Methodology Study (Agent Markdown)](https://grai.page/methodology.md): Markdown mirror of the research report.
+- [Comparisons Hub (HTML)](https://grai.page/vs/): Category matrix and honest decision guide ([Agent Markdown](https://grai.page/vs/index.md)).
+- [grai vs. Claude Projects & Custom GPTs](https://grai.page/vs/claude-projects): Prompt drift vs. deterministic local cadence harness ([Agent Markdown](https://grai.page/vs/claude-projects.md)).
+- [grai vs. ContentIn & Cloud LinkedIn SaaS](https://grai.page/vs/contentin): Local Voice DNA ownership vs. $39/mo cloud SaaS ([Agent Markdown](https://grai.page/vs/contentin.md)).
+- [grai vs. Retainer Ghostwriting Agencies](https://grai.page/vs/ghostwriting-agency): Self-operated workbench + Agency Dossier vs. $1,500-$4,000/mo retainers ($2,000/mo scenario) ([Agent Markdown](https://grai.page/vs/ghostwriting-agency.md)).
+- [grai vs. Taplio & Cloud LinkedIn Automation](https://grai.page/vs/taplio): Local-first $69 once vs. $39-$199/mo cloud LinkedIn SaaS ([Agent Markdown](https://grai.page/vs/taplio.md)).
+- [grai vs. AuthoredUp & LinkedIn Text Formatters](https://grai.page/vs/authoredup): Quantitative Voice DNA & CV >= 0.32 cadence gate vs. $19.95/mo browser extension ([Agent Markdown](https://grai.page/vs/authoredup.md)).
+- [grai vs. Jasper AI & Enterprise Copywriting](https://grai.page/vs/jasper): Deterministic local cadence harness vs. $49-$69/mo/seat cloud marketing platform ([Agent Markdown](https://grai.page/vs/jasper.md)).
 - [Full Technical Specification](https://grai.page/llms-full.txt): Complete rule regex descriptions, CV math, and architecture.
 - [Persona & Entity Graph](https://grai.page/persona.json): Canonical JSON grounding for grai and author Adrian M. Peticila.
 - [Agent Discovery Manifest](https://grai.page/.well-known/agent.json): Machine-readable capabilities and endpoints.

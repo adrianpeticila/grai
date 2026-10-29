@@ -8,11 +8,12 @@
 
 **The personal voice engine. Write like you. Prove it.**
 
-*Deterministic cadence harness, Voice DNA profiler, and 100% offline writing workbench.*
+*Deterministic cadence harness, Voice DNA profiler, and local-first HTML5 writing workbench.*
 
 <p align="center">
   <a href="https://grai.page"><img src="https://img.shields.io/badge/Live%20Workbench%20%26%20Free%20Scorer-grai.page-D9480F?style=for-the-badge" alt="grai.page" /></a>
   <a href="https://grai.page/methodology"><img src="https://img.shields.io/badge/Empirical%20Study-134%2C522%20Posts-141413?style=for-the-badge" alt="Methodology Study" /></a>
+  <a href="https://grai.page/vs/"><img src="https://img.shields.io/badge/Comparisons-grai.page%2Fvs-8B6B4F?style=for-the-badge" alt="Comparisons" /></a>
   <a href="https://grai.page/llms.txt"><img src="https://img.shields.io/badge/Agent%20Spec-llms.txt-57534B?style=for-the-badge" alt="llms.txt" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/Instructions%20%26%20Skill-MIT-10B981?style=for-the-badge" alt="MIT License" /></a>
 </p>
@@ -31,7 +32,7 @@
 
 The **grai mark** fuses two symbols into a single broadsheet proofreader's glyph:
 1. The calligraphic loop and ear of a lowercase typographic **`g`** (drawn from classic European press type).
-2. The mathematical symbol **$\sigma$ (sigma, standard deviation)**. It anchors the core metric of our cadence engine: sentence-length burstiness ($CV = \sigma / \mu$).
+2. The mathematical symbol **`sigma` (standard deviation)**. It anchors the core metric of our cadence engine: sentence-length burstiness (`CV = sigma / mu`).
 
 ---
 
@@ -47,7 +48,7 @@ As awareness of synthetic copy spread, founders scrubbed mocked vocabulary words
 | Forced Opposition (`"Not X, but Y"`) | `1.2%` | `5.9%` | **+4.9x** |
 | Arrow & Emoji Bullet Cascades (`->`, `↳`, `🚀`) | `0.6%` | `12.3%` | **+20.5x** |
 | Mocked Cliché Vocabulary | `4.2%` | `0.5%` | **-88.1%** |
-| Mean Sentence Burstiness ($CV = \sigma / \mu$) | `0.48` | `0.23` | **-52.1%** |
+| Mean Sentence Burstiness (`CV = sigma / mu`) | `0.48` | `0.23` | **-52.1%** |
 
 Writers deleted the words everyone mocked. They kept the sentence rhythm that gives a language model away.
 
@@ -63,19 +64,19 @@ Read the full research paper at **[grai.page/methodology](https://grai.page/meth
 
 Aligned with Google Research's **Harness2** findings, **grai** keeps model weights frozen and wraps any frontier or local LLM inside a deterministic voice harness:
 
-1. **Voice DNA Extraction (`03 VOICE DNA PROFILER`):** Ingests 5 to 20 of your real posts and computes quantitative baselines: median sentence length, burstiness coefficient ($CV = \sigma / \mu$), sentence starters, punctuation density, and forbidden angles.
+1. **Voice DNA Extraction (`03 VOICE DNA PROFILER`):** Ingests 5 to 20 of your real posts and computes quantitative baselines: median sentence length, burstiness coefficient (`CV = sigma / mu`), sentence starters, punctuation density, and forbidden angles.
 2. **Premise Sparring (`02 THE WRITING DESK`):** Before drafting a single line, grai challenges safe or unanchored ideas (`Counter-Punch`, `Adopt Angle`, or `Bypass`) and drafts three structural galleys simultaneously:
    - **THE SCALPEL:** Compressed hook, high-contrast cadence.
    - **THE BROADSHEET:** Concrete scene first, takeaway last.
    - **THE LEDGER:** Empirical evidence and numbers first.
-3. **Deterministic Cadence Gate (`01 CADENCE GATE`):** Scans every draft outside the LLM against six syntactic rules plus a mathematical burstiness floor:
+3. **Deterministic Cadence Gate (`01 CADENCE GATE`):** Audits every draft in your browser outside the LLM against six syntactic rules plus a mathematical burstiness floor (`CV >= 0.32`). It scores drafts from 4 to 100, highlights matching spans (`<mark class="slop-mark">`), and offers targeted span repair (`buildSurgicalTargets` / `applySurgicalReplacements`) while leaving the final decision to edit or copy with you:
    - `CONTRASTIVE_NEGATION`: Flags synthetic strawman antithesis (`"It's not X, it's Y"`).
    - `LESS_MORE_SYMMETRY`: Flags corporate symmetry cliches (`"Less X, more Y"`, `"Stop X, start Y"`).
    - `EPIPHANY_OPENER`: Flags throat-clearing hooks (`"Here is why"`, `"The harsh truth is"`, `"Let that sink in"`).
    - `ARROW_BULLET_SLOP`: Flags template arrow and emoji cascades (`->`, `↳`, `✅`, `🚀`, `1/`).
    - `TRIADIC_PADDING`: Flags empty slogan triads (`"No X. No Y. Just Z."`).
    - `LEXICAL_SLOP`: Flags remaining synthetic vocabulary tells while protecting domain nouns.
-   - `FLAT_BURSTINESS`: Enforces $CV = \sigma / \mu \ge 0.32$ across sentence word counts and strips zero-width Unicode watermarks (`U+200B` to `U+200D`, `U+FEFF`).
+   - `FLAT_BURSTINESS`: Enforces `CV = sigma / mu >= 0.32` across sentence word counts and strips zero-width Unicode watermarks (`U+200B` to `U+200D`, `U+FEFF`).
 
 Test your last published post for free in the live browser scorer at **[grai.page/#test](https://grai.page/#test)**.
 
@@ -105,12 +106,24 @@ grai/
 └── LICENSE                   # MIT License (scoped to instructions/ and skill/)
 ```
 
-### Want the Full Offline Workbench?
+### Want the Full Local Workbench?
 
-The standalone **grai** desktop application (`grai.html`, 622 KB single-file air-gapped HTML5 workbench) is commercial software available at **[grai.page](https://grai.page)**. It ships the 3-column Writing Desk, live `<mark>` backdrop overlay editor, 1-click surgical repair, Zero-API `< 1,800 char` dense prompt builder, Direct BYOK / local Ollama connector, `.grai` profile backup, and printable A4 SHA-256 Client Voice DNA Dossier:
+The standalone **grai** desktop application (`grai.html`, 622 KB single-file HTML5 workbench, v3.1.3) is commercial software available at **[grai.page](https://grai.page)**.
+- **Free browser scorer, no signup:** test the 6-rule gate and the burstiness floor on your own text at **[grai.page/#test](https://grai.page/#test)**. The page runs the same engine locally, with no account and no upload.
+- **Shipped Pre-Built Kit (`grai.html` in the ZIP):** Ships with `default-src 'none'; connect-src 'none'` (allowing inline styles/scripts and `data:` fonts/images while blocking direct API connections) and runs out of the box in **Copy-Paste ("Any AI") mode** (`< 1,800 char` dense prompt builder).
+- **Custom Source Build (`source/src/app.html` + `scripts/build.py`):** Edit `connect-src` and rebuild with `python3 scripts/build.py` to enable direct browser-to-API calls (BYOK) or local Ollama (`http://localhost:11434`).
+- **[Founder Edition ($69 once)](https://payhip.com/b/5pXfN):** Complete local app, Voice DNA profiler, 3-galley Writing Desk, 6-rule Cadence Gate, 1-click `.grai` local backup, lifetime v3.x updates. Zero subscription.
+- **[Agency Edition ($149 once)](https://payhip.com/b/QVIBp):** Commercial licence for client ghostwriting, up to 25 client voice profiles, printable 1-page A4 **Client Voice DNA Dossier** (`#grai-print-certificate` with 8 audit fields and a locally computed SHA-256 payload checksum), and offline `.grai` team sync.
+- **[Affiliate program (40% commission, $59.60 per Agency sale)](https://payhip.com/auth/register/af63e51e20042ed):** For newsletters, communities and consultants who recommend tools to writers.
 
-- **[Founder Edition ($69 once)](https://payhip.com/b/5pXfN):** Complete offline app, Voice DNA profiler, 3-galley Writing Desk, 6-rule Cadence Gate, 1-click `.grai` local backup, lifetime v3.x updates. Zero subscription.
-- **[Agency Edition ($149 once)](https://payhip.com/b/QVIBp):** Commercial licence for client ghostwriting, unlimited multi-client voice switcher, printable 1-page A4 **Client Voice DNA Dossier** with FIPS 180-4 SHA-256 cryptographic fingerprint, and offline `.grai` team sync.
+### Side-by-Side Comparisons
+- **[All Comparisons Hub (`grai.page/vs/`)](https://grai.page/vs/)**
+- **[grai vs. Claude Projects & Custom GPTs](https://grai.page/vs/claude-projects)**
+- **[grai vs. ContentIn & Cloud LinkedIn SaaS](https://grai.page/vs/contentin)**
+- **[grai vs. Retainer Ghostwriting Agencies](https://grai.page/vs/ghostwriting-agency)**
+- **[grai vs. Taplio & Cloud LinkedIn Automation](https://grai.page/vs/taplio)**
+- **[grai vs. AuthoredUp & LinkedIn Text Formatters](https://grai.page/vs/authoredup)**
+- **[grai vs. Jasper AI & Enterprise Copywriting](https://grai.page/vs/jasper)**
 
 ---
 
