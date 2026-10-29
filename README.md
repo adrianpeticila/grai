@@ -116,6 +116,10 @@ The standalone **grai** desktop application (`grai.html`, 622 KB single-file HTM
 - **[Agency Edition ($149 once)](https://payhip.com/b/QVIBp):** Commercial licence for client ghostwriting, up to 25 client voice profiles, printable 1-page A4 **Client Voice DNA Dossier** (`#grai-print-certificate` with 8 audit fields and a locally computed SHA-256 payload checksum), and offline `.grai` team sync.
 - **[Affiliate program (40% commission, $59.60 per Agency sale)](https://payhip.com/auth/register/af63e51e20042ed):** For newsletters, communities and consultants who recommend tools to writers.
 
+### Agency Upgrade and 40% Partner Program
+- **Managing client voices?** The [Ghostwriter and Agency Edition](https://payhip.com/b/QVIBp) ($149 one-time) unlocks up to 25 isolated client Voice Profiles and printable SHA-256 A4 Voice DNA Dossiers.
+- **Earn 40% per sale** ($27.60 on Founder, $59.60 on Agency). Two referrals cover your entire licence. [Open the partner program](https://payhip.com/auth/register/af63e51e20042ed).
+
 ### Side-by-Side Comparisons
 - **[All Comparisons Hub (`grai.page/vs/`)](https://grai.page/vs/)**
 - **[grai vs. Claude Projects & Custom GPTs](https://grai.page/vs/claude-projects)**
@@ -130,6 +134,9 @@ The standalone **grai** desktop application (`grai.html`, 622 KB single-file HTM
 - **[grai vs. Supergrow & LinkedIn SaaS](https://grai.page/vs/supergrow)**
 - **[grai vs. Hypefury & Social Schedulers](https://grai.page/vs/hypefury)**
 - **[grai for LinkedIn Ghostwriters](https://grai.page/vs/linkedin-ghostwriters)**
+- **[grai vs. Grammarly & Tone Flatteners](https://grai.page/vs/grammarly)**
+- **[grai vs. Writesonic & SEO Generators](https://grai.page/vs/writesonic)**
+- **[grai vs. Manual Client Voice Onboarding Docs](https://grai.page/vs/agency-onboarding)**
 
 ---
 

@@ -103,6 +103,9 @@ The gate highlights matching spans in the editor (`<mark class="slop-mark">`), d
 - **grai vs. Supergrow:** `https://grai.page/vs/supergrow` (`https://grai.page/vs/supergrow.md`)
 - **grai vs. Hypefury:** `https://grai.page/vs/hypefury` (`https://grai.page/vs/hypefury.md`)
 - **grai vs. LinkedIn Ghostwriters:** `https://grai.page/vs/linkedin-ghostwriters` (`https://grai.page/vs/linkedin-ghostwriters.md`)
+- **grai vs. Grammarly Business and Pro:** `https://grai.page/vs/grammarly` (`https://grai.page/vs/grammarly.md`)
+- **grai vs. Writesonic:** `https://grai.page/vs/writesonic` (`https://grai.page/vs/writesonic.md`)
+- **grai vs. Manual Onboarding Docs:** `https://grai.page/vs/agency-onboarding` (`https://grai.page/vs/agency-onboarding.md`)
 
 ---
 
