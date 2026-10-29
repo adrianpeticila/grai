@@ -124,6 +124,9 @@ The standalone **grai** desktop application (`grai.html`, 622 KB single-file HTM
 - **[grai vs. Taplio & Cloud LinkedIn Automation](https://grai.page/vs/taplio)**
 - **[grai vs. AuthoredUp & LinkedIn Text Formatters](https://grai.page/vs/authoredup)**
 - **[grai vs. Jasper AI & Enterprise Copywriting](https://grai.page/vs/jasper)**
+- **[grai vs. Typefully & Cloud Publishing](https://grai.page/vs/typefully)**
+- **[grai vs. Copy.ai & GTM Workflows](https://grai.page/vs/copyai)**
+- **[grai vs. AI Detectors & Humanizers](https://grai.page/vs/ai-detectors)**
 
 ---
 

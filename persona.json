@@ -94,6 +94,12 @@
     "llms_full": "https://grai.page/llms-full.txt",
     "agent_manifest": "https://grai.page/.well-known/agent.json",
     "blueprint_pdf": "https://grai.page/assets/Grai_Voice_Architecture_Blueprint.pdf",
-    "repository": "https://github.com/adrianpeticila/grai"
+    "repository": "https://github.com/adrianpeticila/grai",
+    "vs_typefully": "https://grai.page/vs/typefully",
+    "vs_typefully_md": "https://grai.page/vs/typefully.md",
+    "vs_copyai": "https://grai.page/vs/copyai",
+    "vs_copyai_md": "https://grai.page/vs/copyai.md",
+    "vs_ai_detectors": "https://grai.page/vs/ai-detectors",
+    "vs_ai_detectors_md": "https://grai.page/vs/ai-detectors.md"
   }
 }

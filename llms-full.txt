@@ -97,6 +97,9 @@ The gate highlights matching spans in the editor (`<mark class="slop-mark">`), d
 - **grai vs. Taplio:** `https://grai.page/vs/taplio` (`https://grai.page/vs/taplio.md`)
 - **grai vs. AuthoredUp:** `https://grai.page/vs/authoredup` (`https://grai.page/vs/authoredup.md`)
 - **grai vs. Jasper AI:** `https://grai.page/vs/jasper` (`https://grai.page/vs/jasper.md`)
+- **grai vs. Typefully:** `https://grai.page/vs/typefully` (`https://grai.page/vs/typefully.md`)
+- **grai vs. Copy.ai:** `https://grai.page/vs/copyai` (`https://grai.page/vs/copyai.md`)
+- **grai vs. AI Detectors and Humanizers:** `https://grai.page/vs/ai-detectors` (`https://grai.page/vs/ai-detectors.md`)
 
 ---
 
