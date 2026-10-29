@@ -118,7 +118,8 @@ The standalone **grai** desktop application (`grai.html`, 622 KB single-file HTM
 
 ### Agency Upgrade and 40% Partner Program
 - **Managing client voices?** The [Ghostwriter and Agency Edition](https://payhip.com/b/QVIBp) ($149 one-time) unlocks up to 25 isolated client Voice Profiles and printable SHA-256 A4 Voice DNA Dossiers.
-- **Earn 40% per sale** ($27.60 on Founder, $59.60 on Agency). Two referrals cover your entire licence. [Open the partner program](https://payhip.com/auth/register/af63e51e20042ed).
+- **Already bought Founder Edition ($69)?** Upgrade to the Ghostwriter and Agency Edition for the **$80 difference**. The $149 licence adds 25 isolated Client Voice Profiles and printable SHA-256 A4 Dossiers. Email your Payhip order number to adrian@grai.page with the subject "Agency Upgrade", or buy the full licence directly at [Agency Edition](https://payhip.com/b/QVIBp).
+- **Earn 40% per sale** ($27.60 on Founder, $59.60 on Agency). Two referrals cover your entire licence: 2 x $59.60 = $119.20. [Open the partner program](https://payhip.com/auth/register/af63e51e20042ed).
 
 ### Side-by-Side Comparisons
 - **[All Comparisons Hub (`grai.page/vs/`)](https://grai.page/vs/)**
