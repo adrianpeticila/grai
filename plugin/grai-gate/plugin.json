@@ -1,0 +1,28 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "grai-gate",
+  "displayName": "grai-gate",
+  "version": "0.1.0",
+  "description": "Advisory anti-slop linter for markdown written by coding agents. Scores burstiness, flags AI tells, and prints a repair card without blocking the edit.",
+  "suggestedPrompts": [
+    "Score my README for AI slop and show the report card.",
+    "Audit every markdown file in this repo and rank the worst three.",
+    "Rewrite the worst file to pass grai-gate, then score it again."
+  ],
+  "author": {
+    "name": "grai",
+    "url": "https://grai.page?utm_source=antigravity&utm_medium=plugin&utm_campaign=gate_v0.1"
+  },
+  "homepage": "https://grai.page?utm_source=antigravity&utm_medium=plugin&utm_campaign=gate_v0.1",
+  "repository": "https://github.com/adrianpeticila/grai",
+  "license": "MIT",
+  "keywords": [
+    "markdown",
+    "linter",
+    "ai-slop",
+    "writing",
+    "documentation",
+    "hooks"
+  ],
+  "logo": "assets/logo.svg"
+}

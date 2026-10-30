@@ -1,0 +1,17 @@
+{
+  "grai-gate": {
+    "enabled": true,
+    "PostToolUse": [
+      {
+        "matcher": "write_to_file|replace_file_content|multi_replace_file_content|write_file|edit_file",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ./scripts/gate.py",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

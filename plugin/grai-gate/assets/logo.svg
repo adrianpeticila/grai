@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="grai-gate">
+  <rect width="256" height="256" fill="#141210"/>
+  <text x="118" y="168" font-family="Georgia, 'Times New Roman', serif" font-size="120" fill="#F4EDE3" text-anchor="middle">g</text>
+  <circle cx="178" cy="160" r="11" fill="#C6482F"/>
+</svg>
