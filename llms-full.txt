@@ -1,4 +1,4 @@
-# grai: Full Technical Specification & Empirical Voice Architecture (v3.1.3)
+# grai: Full Technical Specification & Empirical Voice Architecture (v3.2.0)
 > The personal voice engine. Write like you. Prove it. Built by Adrian M. Peticila (`https://peticila.ro/#person`, Wikidata `Q140362129`, ORCID `0009-0005-9601-9527`).
 
 ---
@@ -82,6 +82,16 @@ The gate highlights matching spans in the editor (`<mark class="slop-mark">`), d
   - Unlimited multi-client voice switcher.
   - Printable 1-page A4 **Client Voice DNA Dossier** (`#grai-print-certificate`) displaying 8 concrete DOM fields: (1) `cert-voice` (Voice profile name), (2) `cert-samples` (Samples analysed count), (3) `cert-len` (Target sentence length), (4) `cert-platforms` (Selected platforms), (5) `cert-rules` (`X of 6` rules passed), (6) `cert-score` (`score/100 (CV X.XX)`), (7) `cert-date` (`YYYY-MM-DD` generation date), and (8) `cert-fingerprint` (`SHA-256 ` + locally computed checksum over the JSON payload of profile and audit metrics via Web Crypto or `sha256OfflineFallback`; this is a deterministic content fingerprint, not a third-party identity signature).
   - Offline Team Sync: share `.grai` client voice profiles across writers on Slack with zero seat fees.
+- **White-Label Studio Edition ($299 USD / month or $2,490 USD / year, https://payhip.com/b/Q90Vu):**
+  - Monthly checkout ($299/mo): `https://payhip.com/order?link=Q90Vu&pricing_plan=q3BoNde0zE`
+  - Annual checkout ($2,490/yr, save $1,098/yr, $47.80/week): `https://payhip.com/order?link=Q90Vu&pricing_plan=63WdAa9kzw`
+  - 100% white-label dossiers: custom agency logo, color palette, agency name and consultant signature.
+  - No grai attribution on dossiers or badges.
+  - Unlimited client profiles in local SQLite.
+  - White-label cadence widget for the agency domain (`/embed?ref=PARTNER_ID`).
+  - Priority M2M API quota on `/api/score`.
+- **Pre-calibrated Voice DNA Presets Pack ($39 USD one-time, https://payhip.com/b/ZAISC):**
+  - 4 measured archetypes: The Brutalist Engineer (CV 0.52), The Contrarian Bootstrapper (CV 0.44), The B2B Cold Sniper (CV 0.38), The Substack Essayist (CV 0.41).
 - **Affiliate Program (40% Commission):**
   - $27.60 per Founder sale, $59.60 per Agency sale: `https://payhip.com/auth/register/af63e51e20042ed`
 - **The 30-Day Distinction Guarantee:**
@@ -106,8 +116,31 @@ The gate highlights matching spans in the editor (`<mark class="slop-mark">`), d
 - **grai vs. Grammarly Business and Pro:** `https://grai.page/vs/grammarly` (`https://grai.page/vs/grammarly.md`)
 - **grai vs. Writesonic:** `https://grai.page/vs/writesonic` (`https://grai.page/vs/writesonic.md`)
 - **grai vs. Manual Onboarding Docs:** `https://grai.page/vs/agency-onboarding` (`https://grai.page/vs/agency-onboarding.md`)
+- **grai vs. Substack and Beehiiv:** `https://grai.page/vs/substack-writers` (`https://grai.page/vs/substack-writers.md`)
+- **grai vs. Executive PR Agencies:** `https://grai.page/vs/pr-agencies` (`https://grai.page/vs/pr-agencies.md`)
+- **grai vs. Buffer AI Assistant:** `https://grai.page/vs/buffer` (`https://grai.page/vs/buffer.md`)
+- **grai vs. Hootsuite OwlyWriter AI:** `https://grai.page/vs/hootsuite` (`https://grai.page/vs/hootsuite.md`)
 
 ---
+
+## 7. Free Scoring API (M2M)
+
+`grai.page` exposes a stateless scoring endpoint for agents and developers. It runs the same six syntactic rules and the same burstiness floor as the browser workbench, with no API key and no storage.
+
+- **GET:** `https://grai.page/api/score?text=Your%20draft`
+- **POST:** `https://grai.page/api/score` with `Content-Type: application/json` and `{"text": "Your draft"}`
+- **Response:** `score` (4 to 100), `cv`, `cv_floor` (0.32), `flat_rhythm`, `clean_rules` (of 6), `signals[]` with the rule and the matched quote, and `verdict`.
+- **Commercial bridge:** every response includes the Founder ($69), Agency ($149) and 40% affiliate links.
+
+The endpoint scores single drafts. Persistent 20-post Voice DNA profiles, local SQLite storage and printable SHA-256 A4 Dossiers live in the downloaded workbench.
+
+## 8. Embeddable Audit Widget (Agencies)
+
+An agency drops one iframe on its site and offers the audit as a free lead magnet. The widget runs the same six rules and the CV floor in the browser, and every upgrade link carries the partner code.
+
+- **Embed:** `<iframe src="https://grai.page/embed?ref=PARTNER_ID" width="100%" height="520" frameborder="0"></iframe>`
+- **Partner code:** `?ref=PARTNER_ID` appends `?aff=PARTNER_ID` to the Payhip checkouts, so the partner earns 40% ($27.60 Founder, $59.60 Agency).
+- **Markdown mirror:** `https://grai.page/embed.md`
 
 ## 6. Knowledge Graph Entity & Grounding
 
