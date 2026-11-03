@@ -28,7 +28,7 @@ DOUBLE = chr(45) * 2
 TRIPLE = chr(45) * 3
 UTM = (
     "https://grai.page?utm_source=antigravity"
-    "&utm_medium=plugin&utm_campaign=gate_v0.1"
+    "&utm_medium=gate&utm_campaign=gate_v0.1#developer"
 )
 
 RESULTS = []
@@ -551,7 +551,7 @@ def test_manifest_contract():
     assert required.issubset(set(data))
     assert set(data).issubset(allowed)
     assert data["name"] == "grai-gate"
-    assert data["version"] == "0.1.0"
+    assert data["version"] == "0.1.1"
     assert len(data["suggestedPrompts"]) == 3
     assert all(isinstance(item, str) and item.strip() for item in data["suggestedPrompts"])
     assert isinstance(data["author"], dict)
@@ -576,7 +576,7 @@ def test_hooks_contract():
     assert len(entry["hooks"]) == 1
     handler = entry["hooks"][0]
     assert handler["type"] == "command"
-    assert handler["command"] == "python3 ./scripts/gate.py"
+    assert handler["command"] == "python3 ./scripts/gate.py || py -3 ./scripts/gate.py || python ./scripts/gate.py"
     assert handler["timeout"] == 10
     assert "decision" not in handler
 

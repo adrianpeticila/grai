@@ -1,8 +1,8 @@
 # grai-gate submission pack
 
-Antigravity Marketplace answers for version 0.1.0. Copy each block without changes.
+Antigravity Marketplace answers for version 0.1.1. Copy each block without changes.
 
-Publisher: grai, https://grai.page?utm_source=antigravity&utm_medium=plugin&utm_campaign=gate_v0.1
+Publisher: grai, https://grai.page?utm_source=antigravity&utm_medium=gate&utm_campaign=gate_v0.1#developer
 
 Repository: https://github.com/adrianpeticila/grai
 
@@ -45,7 +45,7 @@ Install from the Antigravity Marketplace, or run `agy plugin install ./grai-gate
 
 The free plugin is the gate. The paid cockpit at grai.page is the repair bench, with a Voice DNA profile and rewrite passes for client-ready reports. Founder Edition is $69. Agency Edition is $149. Checkout runs on Payhip and Stripe processes every card.
 
-[Open grai.page](https://grai.page?utm_source=antigravity&utm_medium=plugin&utm_campaign=gate_v0.1)
+[Open grai.page](https://grai.page?utm_source=antigravity&utm_medium=gate&utm_campaign=gate_v0.1#developer)
 ```
 
 ## Primary Category and Tags
@@ -77,7 +77,7 @@ The plugin is free and MIT licensed. The paid cockpit is a separate product on g
 All grai.page links in the bundle use:
 
 ```
-https://grai.page?utm_source=antigravity&utm_medium=plugin&utm_campaign=gate_v0.1
+https://grai.page?utm_source=antigravity&utm_medium=gate&utm_campaign=gate_v0.1#developer
 ```
 
 ## Pre-submit checklist

@@ -65,7 +65,7 @@ That is the whole contract. Advisory, never blocking, no rewrite.
 - Worst offender: flat cadence ("CV 0.27 across 12 sentences")
 - Tells detected: flat cadence, zombie words (x2)
 - Fix prompt: "Rewrite to increase sentence burstiness (target CV > 0.45) and eliminate flat cadence, zombie words."
-- Pro Cockpit: Full Voice DNA & repair workbench at https://grai.page?utm_source=antigravity&utm_medium=plugin&utm_campaign=gate_v0.1
+- Pro Cockpit: Full Voice DNA & repair workbench at https://grai.page?utm_source=antigravity&utm_medium=gate&utm_campaign=gate_v0.1#developer
 ```
 
 The card is fixed. The wording is stable so an agent can quote it without inventing a summary.
@@ -107,7 +107,7 @@ Human drafts held a sentence-length CV at or above 0.40. Flat AI drafts landed u
 
 The study is a baseline, not a verdict on one writer. A single low score is a prompt to read the draft again, not a ban.
 
-[Read the study and the repair workbench](https://grai.page?utm_source=antigravity&utm_medium=plugin&utm_campaign=gate_v0.1)
+[Read the study and the repair workbench](https://grai.page?utm_source=antigravity&utm_medium=gate&utm_campaign=gate_v0.1#developer)
 
 ## Privacy
 
@@ -128,7 +128,7 @@ The plugin is the free gate. The paid cockpit is the repair bench. It builds a V
 
 Founder Edition is $69. Agency Edition is $149. Both are one-time purchases on grai.page, with checkout on Payhip and card processing by Stripe.
 
-[Open the cockpit](https://grai.page?utm_source=antigravity&utm_medium=plugin&utm_campaign=gate_v0.1)
+[Open the cockpit](https://grai.page?utm_source=antigravity&utm_medium=gate&utm_campaign=gate_v0.1#developer)
 
 The plugin prints that link. It does not call the cockpit or load a script. It does not check a license.
 

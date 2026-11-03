@@ -7,7 +7,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 ./scripts/gate.py",
+            "command": "python3 ./scripts/gate.py || py -3 ./scripts/gate.py || python ./scripts/gate.py",
             "timeout": 10
           }
         ]

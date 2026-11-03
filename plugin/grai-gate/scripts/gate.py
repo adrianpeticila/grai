@@ -24,13 +24,14 @@ A warning band starts at 0.35. The repair target is 0.45.
 
 import json
 import math
+import os
 import re
 import sys
 
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 UTM_URL = (
     "https://grai.page?utm_source=antigravity"
-    "&utm_medium=plugin&utm_campaign=gate_v0.1"
+    "&utm_medium=gate&utm_campaign=gate_v0.1#developer"
 )
 
 PASS_SCORE = 85
@@ -672,7 +673,7 @@ def _read_path(path, workspaces):
     if not _is_absolute(path) and isinstance(workspaces, list):
         for workspace in workspaces:
             if isinstance(workspace, str) and workspace:
-                candidates.append(workspace.rstrip("/\\") + "/" + path)
+                candidates.append(os.path.join(workspace, path))
     for candidate in candidates:
         try:
             with open(candidate, "r", encoding="utf-8", errors="replace") as handle:
@@ -686,6 +687,8 @@ def _read_path(path, workspaces):
 
 
 def _is_absolute(path):
+    if os.path.isabs(path):
+        return True
     if path.startswith("/") or path.startswith("\\\\"):
         return True
     if len(path) >= 3 and path[1] == ":" and path[2] in ("/", "\\"):
@@ -698,7 +701,7 @@ def _normalize_path(path):
         path = path[7:]
         if len(path) >= 3 and path[0] == "/" and path[1].isalpha() and path[2] == ":":
             path = path[1:]
-    return path
+    return os.path.normpath(path)
 
 
 def _flatten_args(args):
