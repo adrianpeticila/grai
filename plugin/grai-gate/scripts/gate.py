@@ -28,7 +28,7 @@ import os
 import re
 import sys
 
-VERSION = "0.1.1"
+VERSION = "0.1.2"
 UTM_URL = (
     "https://grai.page?utm_source=antigravity"
     "&utm_medium=gate&utm_campaign=gate_v0.1#developer"

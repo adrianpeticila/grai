@@ -1,0 +1,54 @@
+name: grai-gate
+description: Advisory anti-slop score for markdown in a pull request.
+author: grai
+branding:
+  icon: type
+  color: orange
+
+inputs:
+  path:
+    description: Directory to scan.
+    required: false
+    default: "."
+  fail-on-slop:
+    description: Fail the check when a markdown file scores below the pass mark.
+    required: false
+    default: "false"
+  verbose:
+    description: Print a line for every clean file too.
+    required: false
+    default: "false"
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        GRAI_PATH: ${{ inputs.path }}
+        GRAI_FAIL: ${{ inputs.fail-on-slop }}
+        GRAI_VERBOSE: ${{ inputs.verbose }}
+      run: |
+        set -u
+        cd "$GRAI_PATH"
+        files=()
+        while IFS= read -r -d '' f; do
+          files+=("$f")
+        done < <(find . -type f \( -name '*.md' -o -name '*.txt' \) -not -path './.git/*' -print0)
+        if [ "${#files[@]}" -eq 0 ]; then
+          echo "grai-gate: no markdown files found under $GRAI_PATH."
+          exit 0
+        fi
+        args=()
+        if [ "$GRAI_VERBOSE" = "true" ]; then args+=("-v"); fi
+        status=0
+        python3 "${GITHUB_ACTION_PATH}/scripts/gate.py" "${args[@]}" "${files[@]}" || status=$?
+        if [ "$status" -eq 2 ]; then
+          echo "grai-gate: input error."
+          exit 2
+        fi
+        if [ "$GRAI_FAIL" = "true" ] && [ "$status" -eq 1 ]; then
+          echo "grai-gate: slop found. fail-on-slop is on."
+          exit 1
+        fi
+        echo "grai-gate: advisory run finished. The job stays green."
+        exit 0

@@ -1,0 +1,7 @@
+- id: grai-gate
+  name: grai-gate (fails on slop)
+  description: Scores sentence burstiness and flags structural AI tells. Exits 1 on slop.
+  entry: plugin/grai-gate/scripts/gate.py
+  language: script
+  types: [markdown]
+  require_serial: true

@@ -1,0 +1,7 @@
+{
+  "name": "grai-gate",
+  "version": "0.1.2",
+  "type": "module",
+  "bin": { "grai-gate": "bin/grai-gate.mjs" },
+  "license": "MIT"
+}

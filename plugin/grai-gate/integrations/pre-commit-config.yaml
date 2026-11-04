@@ -1,0 +1,7 @@
+# .pre-commit-config.yaml
+# Replace the rev with the tag you want to pin.
+repos:
+  - repo: https://github.com/adrianpeticila/grai
+    rev: v3.2.0
+    hooks:
+      - id: grai-gate

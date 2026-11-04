@@ -1,0 +1,20 @@
+# .github/workflows/grai-gate.yml
+name: grai-gate
+
+on:
+  pull_request:
+    paths:
+      - "**/*.md"
+      - "**/*.txt"
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Score markdown
+        uses: adrianpeticila/grai/plugin/grai-gate@main
+        with:
+          path: .
+          fail-on-slop: "false"
+          verbose: "false"
