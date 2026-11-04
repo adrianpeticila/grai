@@ -38,7 +38,7 @@ The **grai mark** fuses two symbols into a single broadsheet proofreader's glyph
 
 ## 1. The Blocklist Paradox (Empirical Audit of 134,522 LinkedIn Posts)
 
-Between January 2023 and September 2026, we audited **134,522 organic LinkedIn posts** across **1,499 verified founder profiles** (LigoSocial dataset: continuous publishing Q1 2023 through Q3 2026, minimum 2,000 followers, primary language English).
+Across 3.5 years of continuous empirical tracking, we audited **134,522 organic LinkedIn posts** across **1,499 verified founder profiles** (LigoSocial dataset: continuous publishing over 3.5 years, minimum 2,000 followers, primary language English).
 
 As awareness of synthetic copy spread, founders scrubbed mocked vocabulary words from their drafts. Yet structural and rhythmic predictability surged by **400%**:
 
