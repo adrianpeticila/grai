@@ -54,8 +54,8 @@ Add this to `.pre-commit-config.yaml` and pin a real tag:
 
 ```yaml
 repos:
-  - repo: https://github.com/adrianpeticila/grai
-    rev: v0.1.3
+  - repo: https://github.com/adrianpeticila/grai-gate-action
+    rev: v0.1.4
     hooks:
       - id: grai-gate
 ```
@@ -74,7 +74,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: adrianpeticila/grai/plugin/grai-gate@v0.1.3
+      - uses: adrianpeticila/grai-gate-action@v0.1.4
         with:
           path: .
           fail-on-slop: "false"

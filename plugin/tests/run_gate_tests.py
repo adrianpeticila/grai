@@ -459,10 +459,11 @@ def test_cli_stdin_slop():
 
 
 def test_cli_help():
-    proc = run(["-h"])
-    assert proc.returncode == 0
-    assert "Usage:" in proc.stdout
-    assert DOUBLE not in proc.stdout
+    for flag in ("-h", "--help"):
+        proc = run([flag])
+        assert proc.returncode == 0
+        assert "Usage:" in proc.stdout
+        assert DOUBLE not in proc.stdout.replace("--help", "")
 
 
 def test_hook_clean_silent():
@@ -658,7 +659,7 @@ def test_dash_policy():
         text = path.read_text(encoding="utf-8")
         assert EM not in text, "em dash in %s" % path.name
         if path.name != "SKILL.md":
-            assert DOUBLE not in text, "double hyphen in %s" % path.name
+            assert DOUBLE not in text.replace("--help", ""), "double hyphen in %s" % path.name
     skill = (PLUGIN / "skills" / "grai" / "SKILL.md").read_text(encoding="utf-8")
     body_lines = skill.splitlines()
     assert body_lines[0] == TRIPLE

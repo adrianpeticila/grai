@@ -34,7 +34,7 @@ Inputs:
 
 ## Pin the version
 
-Tag the repo first. Then pin `rev` in pre-commit and `@v0.1.3` in the workflow. A moving `main` means the gate changes under you mid-sprint.
+Tag the repo first. Then pin `rev` in pre-commit and `@v0.1.4` in the workflow. A moving `main` means the gate changes under you mid-sprint.
 
 ## What the gate will not do
 

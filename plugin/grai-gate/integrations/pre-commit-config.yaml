@@ -1,8 +1,8 @@
 # .pre-commit-config.yaml
 # Copy this block into the target repo. Pin the tag, not a branch.
-# Published tags: https://github.com/adrianpeticila/grai/tags
+# Published tags: https://github.com/adrianpeticila/grai-gate-action/tags
 repos:
-  - repo: https://github.com/adrianpeticila/grai
-    rev: v0.1.3
+  - repo: https://github.com/adrianpeticila/grai-gate-action
+    rev: v0.1.4
     hooks:
       - id: grai-gate

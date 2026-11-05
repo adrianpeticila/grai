@@ -28,7 +28,7 @@ import os
 import re
 import sys
 
-VERSION = "0.1.3"
+VERSION = "0.1.4"
 UTM_SOURCE = "antigravity"
 UTM_MEDIUM = "gate"
 UTM_CAMPAIGN = "gate_v0.1"
@@ -879,15 +879,15 @@ def _run_text(text, label, json_mode, verbose):
 USAGE = """grai-gate %s: advisory anti-slop linter for markdown and text.
 
 Usage:
-  python3 gate.py FILE [FILE ...]
-  python3 gate.py -j FILE [FILE ...]
-  python3 gate.py -v FILE
-  cat draft.md | python3 gate.py
+  grai-gate FILE [FILE ...]
+  grai-gate -j FILE [FILE ...]
+  grai-gate -v FILE
+  cat draft.md | grai-gate
 
 Options:
   -j  JSON output. One object for one file, an array for several.
   -v  Verbose. Print a clean line when a file passes.
-  -h  Show this help.
+  -h, --help  Show this help.
 
 Clean files are silent by default. The hook always exits 0 and prints {}.
 Exit codes for the command line: 0 clean, 1 slop found, 2 input error.
@@ -900,7 +900,7 @@ def run_cli(argv):
     verbose = False
 
     for argument in argv:
-        if argument == "-h":
+        if argument in ("-h", "--help"):
             sys.stdout.write(USAGE)
             return 0
         if argument == "-j":
