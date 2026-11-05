@@ -110,8 +110,8 @@ grai/
 
 ### Want the Full Local Workbench?
 
-The standalone **grai** desktop application (`grai.html`, 618 KB single-file HTML5 workbench, v3.2.1) is commercial software available at **[grai.page](https://grai.page)**.
-- **Signed seal and Style Lock (v3.2.1):** export a hash-only seal payload and sign it at [grai.page/seal](https://grai.page/seal), so a client can verify a report without ever seeing the draft; share a style rule file across a team without moving any draft text.
+The standalone **grai** desktop application (`grai.html`, 618 KB single-file HTML5 workbench, v3.2.2) is commercial software available at **[grai.page](https://grai.page)**.
+- **Signed seal and Style Lock (v3.2.2):** export a hash-only seal payload and sign it at [grai.page/seal](https://grai.page/seal), so a client can verify a report without ever seeing the draft; share a style rule file across a team without moving any draft text.
 - **Free browser scorer, no signup:** test the 6-rule gate and the burstiness floor on your own text at **[grai.page/#test](https://grai.page/#test)**. The page runs the same engine locally, with no account and no upload.
 - **Shipped Pre-Built Kit (`grai.html` in the ZIP):** Ships with `default-src 'none'; connect-src 'none'` (allowing inline styles/scripts and `data:` fonts/images while blocking direct API connections) and runs out of the box in **Copy-Paste ("Any AI") mode** (`< 1,800 char` dense prompt builder).
 - **Custom Source Build (`source/src/app.html` + `scripts/build.py`):** Edit `connect-src` and rebuild with `python3 scripts/build.py` to enable direct browser-to-API calls (BYOK) or local Ollama (`http://localhost:11434`).
