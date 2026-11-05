@@ -28,7 +28,7 @@ import os
 import re
 import sys
 
-VERSION = "0.1.4"
+VERSION = "0.1.6"
 UTM_SOURCE = "antigravity"
 UTM_MEDIUM = "gate"
 UTM_CAMPAIGN = "gate_v0.1"
@@ -930,7 +930,7 @@ def run_cli(argv):
         return 0
 
     stripped = raw.lstrip()
-    if stripped.startswith("{") or stripped.startswith("["):
+    if stripped.startswith("{"):
         try:
             payload = json.loads(raw)
         except ValueError:

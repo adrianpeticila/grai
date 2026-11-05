@@ -458,6 +458,17 @@ def test_cli_stdin_slop():
     assert proc.stdout.startswith("[grai-gate] Slop Score:")
 
 
+def test_cli_stdin_link():
+    text = (
+        "[docs](https://example.com) Here is why we ship fast. "
+        "It is not marketing, it is positioning. "
+        "One two three four. Five six seven eight.\n"
+    )
+    proc = run([], stdin_text=text)
+    assert proc.returncode == 1
+    assert proc.stdout.startswith("[grai-gate] Slop Score:")
+
+
 def test_cli_help():
     for flag in ("-h", "--help"):
         proc = run([flag])
@@ -751,6 +762,7 @@ def main():
             ("cli missing file", test_cli_missing),
             ("cli stdin clean", test_cli_stdin_clean),
             ("cli stdin slop", test_cli_stdin_slop),
+            ("cli stdin link", test_cli_stdin_link),
             ("cli help", test_cli_help),
             ("hook clean silent", test_hook_clean_silent),
             ("hook slop card", test_hook_slop),
