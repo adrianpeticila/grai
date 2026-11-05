@@ -2,10 +2,10 @@
   "$schema": "https://antigravity.google/schemas/v1/plugin.json",
   "name": "grai-gate",
   "displayName": "grai-gate",
-  "version": "0.1.6",
-  "description": "Advisory anti-slop linter for markdown written by coding agents. Scores burstiness, flags AI tells, and prints a repair card without blocking the edit.",
+  "version": "0.1.7",
+  "description": "Advisory style linter for markdown written by coding agents. Scores burstiness, flags structural patterns, and prints a repair card without blocking the edit.",
   "suggestedPrompts": [
-    "Score my README for AI slop and show the report card.",
+    "Score my README for template prose and show the report card.",
     "Audit every markdown file in this repo and rank the worst three.",
     "Rewrite the worst file to pass grai-gate, then score it again."
   ],

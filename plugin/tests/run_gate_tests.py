@@ -309,6 +309,36 @@ def test_borderline():
     assert result["pass"] is True
 
 
+def test_long_single_hard_flag_passes():
+    lines = []
+    for index in range(30):
+        if index % 3 == 0:
+            lines.append("Short line %d." % index)
+        elif index % 3 == 1:
+            lines.append(
+                "This is a longer sentence number %d with enough words to move the rhythm around."
+                % index
+            )
+        else:
+            lines.append("Medium sentence %d sits here." % index)
+    lines.append("It is not a marketing problem, it is a positioning problem.")
+    result = gate.analyze("\n".join(lines) + "\n")
+    assert result["sentences"] >= 20
+    assert result["hard_occurrences"] == 1
+    assert result["pass"] is True
+
+
+def test_long_dense_hard_flags_fail():
+    lines = []
+    for index in range(20):
+        lines.append("Short line %d." % index)
+        lines.append("It is not problem %d, it is opportunity %d." % (index, index))
+    result = gate.analyze("\n".join(lines) + "\n")
+    assert result["sentences"] >= 20
+    assert result["hard_occurrences"] >= 2
+    assert result["pass"] is False
+
+
 def test_fenced_ignored():
     result = result_for("fenced")
     assert result["pass"] is True
@@ -702,7 +732,7 @@ def test_bundle_files():
 
 def test_submission_short():
     text = (PLUGIN / "SUBMISSION_PACK.md").read_text(encoding="utf-8")
-    short = "Advisory anti-slop gate for agent-written markdown and docs."
+    short = "Advisory style gate for agent-written markdown and docs."
     assert short in text
     assert len(short) < 80
     assert "Lemon" not in text
@@ -744,6 +774,8 @@ def main():
             ("flat cadence", test_flat),
             ("low burstiness band", test_low_burst),
             ("borderline band", test_borderline),
+            ("long single hard flag", test_long_single_hard_flag_passes),
+            ("long dense hard flags", test_long_dense_hard_flags_fail),
             ("fenced code ignored", test_fenced_ignored),
             ("frontmatter ignored", test_frontmatter_ignored),
             ("report shape", test_report_shape),

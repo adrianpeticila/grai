@@ -3,6 +3,6 @@
 # Published tags: https://github.com/adrianpeticila/grai-gate-action/tags
 repos:
   - repo: https://github.com/adrianpeticila/grai-gate-action
-    rev: v0.1.6
+    rev: v0.1.7
     hooks:
       - id: grai-gate

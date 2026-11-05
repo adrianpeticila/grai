@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Score markdown
-        uses: adrianpeticila/grai-gate-action@v0.1.6
+        uses: adrianpeticila/grai-gate-action@v0.1.7
         with:
           path: .
           fail-on-slop: "false"

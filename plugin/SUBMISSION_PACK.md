@@ -1,6 +1,6 @@
 # grai-gate submission pack
 
-Antigravity Marketplace answers for version 0.1.6. Copy each block without changes.
+Antigravity Marketplace answers for version 0.1.7. Copy each block without changes.
 
 Publisher: grai, https://grai.page?utm_source=antigravity&utm_medium=gate&utm_campaign=gate_v0.1#developer
 
@@ -17,15 +17,15 @@ grai-gate
 ## Short Description (under 80 characters)
 
 ```
-Advisory anti-slop gate for agent-written markdown and docs.
+Advisory style gate for agent-written markdown and docs.
 ```
 
 ## Long Description (Markdown)
 
 ```
-grai-gate is an advisory anti-slop linter for the markdown your coding agent writes. READMEs, changelogs, docs pages, PR notes: every file that reaches disk through an agent carries the same fingerprints. Flat sentence rhythm. Hype vocabulary. Bullet lists that grow arrows.
+grai-gate is an advisory style linter for the markdown your coding agent writes. READMEs, changelogs, docs pages, PR notes: every file that reaches disk through an agent carries the same structural patterns. Flat sentence rhythm. Hype vocabulary. Bullet lists that grow arrows.
 
-The plugin adds a PostToolUse hook for .md and .txt writes. After each write, the local Python engine computes sentence-length burstiness, then checks the six structural tells that survive spellcheck. A clean file stays completely silent. A sloppy file prints a fixed report card to stderr with a score, the worst offender, the full flag list, and a repair prompt the agent can reuse.
+The plugin adds a PostToolUse hook for .md and .txt writes. After each write, the local Python engine computes sentence-length burstiness, then checks the six structural patterns that survive spellcheck. A clean file stays completely silent. A flagged file prints a fixed report card to stderr with a score, the worst offender, the full flag list, and a repair prompt the agent can reuse.
 
 What it catches:
 - Flat cadence. The coefficient of variation of words per sentence falls under 0.32. The warning band starts at 0.35 and the human baseline is 0.40.
@@ -35,7 +35,9 @@ What it catches:
 - Arrow bullet cascades.
 - Blocks of three bullets with near-identical sentence lengths.
 - Weak closing questions.
-- A curated list of dead AI cliches.
+- A curated list of dead template cliches.
+
+It is a style gate, not an authorship detector. It flags visible patterns, not provenance.
 
 Advisory by design. The hook always prints {} on stdout and exits 0. It never denies a tool call, never rewrites a file, and never blocks an edit. Clean files stay silent. The engine is pure Python 3 standard library with no network calls, no telemetry, and no account.
 
@@ -65,7 +67,7 @@ markdown, linter, documentation, code-quality, ai-slop, writing
 ## Suggested Prompts (exactly 3)
 
 ```
-Score my README for AI slop and show the report card.
+Score my README for template prose and show the report card.
 Audit every markdown file in this repo and rank the worst three.
 Rewrite the worst file to pass grai-gate, then score it again.
 ```

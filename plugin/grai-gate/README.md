@@ -1,10 +1,10 @@
 # grai-gate
 
-An advisory anti-slop gate for markdown written by coding agents.
+An advisory style gate for markdown written by coding agents.
 
 Your agent writes a README in four seconds. It is fluent. Confident. Weirdly identical to the last one. Readers feel the machine before they can name it.
 
-grai-gate reads the file after the write. It scores sentence-length burstiness and flags the structural tells that survive spellcheck. A clean file stays silent. A sloppy file gets one compact card. The gate never blocks the edit.
+grai-gate reads the file after the write. It scores sentence-length burstiness and flags structural patterns that survive spellcheck. It is a style gate, not an authorship detector. A clean file stays silent. A flagged file gets one compact card. The gate never blocks the edit.
 
 Built for Antigravity. No account, no key, no network, no telemetry.
 
@@ -17,7 +17,11 @@ Built for Antigravity. No account, no key, no network, no telemetry.
 - Arrow bullet cascades using `->`, `↳`, or `➔`.
 - Blocks of exactly three bullets with near-identical sentence lengths.
 - Weak closing questions such as "Thoughts?" or "What do you think?".
-- A curated list of dead AI cliches. The full pattern set lives in `scripts/gate.py`.
+- A curated list of dead template cliches. The full pattern set lives in `scripts/gate.py`.
+
+## Pass rule
+
+A long document does not fail on one hard flag. Under 20 sentences, any hard flag or a score under 85 fails. At 20 or more sentences, the gate fails on 2 or more hard occurrences at a density of 4 per 100 sentences. This is a style gate, not an authorship detector.
 
 ## The dead lexicon
 
@@ -55,7 +59,7 @@ Add this to `.pre-commit-config.yaml` and pin a real tag:
 ```yaml
 repos:
   - repo: https://github.com/adrianpeticila/grai-gate-action
-    rev: v0.1.6
+    rev: v0.1.7
     hooks:
       - id: grai-gate
 ```
@@ -74,7 +78,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: adrianpeticila/grai-gate-action@v0.1.6
+      - uses: adrianpeticila/grai-gate-action@v0.1.7
         with:
           path: .
           fail-on-slop: "false"
@@ -153,7 +157,8 @@ The Pro link in the card is a static string. The hook never requests it.
 
 - The hook only sees `.md` and `.txt`. A PR description drafted in a browser tab never hits disk, so the gate cannot see it.
 - The CV needs at least four sentences. Short files pass on the structural checks alone.
-- A score is a heuristic. It is not a fact checker or a plagiarism detector. It cannot replace an editor.
+- A score is a heuristic. It is not a fact checker, a plagiarism detector, or an authorship detector. It cannot replace an editor.
+- On the v2 validation corpus (58 human-edited docs, 63 model-generated docs), the gate flagged 7 of 63 model docs and 3 of 58 human docs. It catches visible patterns, not provenance.
 - Files over 2,000,000 characters are skipped by the hook and rejected by the command line.
 
 ## Pro Cockpit

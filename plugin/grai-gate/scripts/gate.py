@@ -28,7 +28,7 @@ import os
 import re
 import sys
 
-VERSION = "0.1.6"
+VERSION = "0.1.7"
 UTM_SOURCE = "antigravity"
 UTM_MEDIUM = "gate"
 UTM_CAMPAIGN = "gate_v0.1"
@@ -562,13 +562,29 @@ def analyze(text):
     penalty = sum(item["penalty"] for item in flags)
     score = max(0, min(100, 100 - penalty))
     hard_flags = sum(1 for item in flags if item["hard"])
+    hard_occurrences = sum(item["count"] for item in flags if item["hard"])
+    hard_density = (
+        hard_occurrences * 100.0 / sentence_count if sentence_count else 0.0
+    )
+    fail_reason = None
+    if sentence_count < 20:
+        if score < PASS_SCORE:
+            fail_reason = "score"
+        elif hard_occurrences >= 1:
+            fail_reason = "hard_flag"
+    else:
+        if hard_occurrences >= 2 and hard_density >= 4.0:
+            fail_reason = "hard_density"
     return {
         "score": score,
         "cv": cv,
         "sentences": sentence_count,
         "flags": flags,
         "hard_flags": hard_flags,
-        "pass": bool(score >= PASS_SCORE and hard_flags == 0),
+        "hard_occurrences": hard_occurrences,
+        "hard_density": round(hard_density, 2),
+        "fail_reason": fail_reason,
+        "pass": fail_reason is None,
         "worst": flags[0] if flags else None,
     }
 
@@ -675,6 +691,9 @@ def _json_result(label, result, source=None):
         "sentences": result["sentences"],
         "flags": flags,
         "hard_flags": result["hard_flags"],
+        "hard_occurrences": result["hard_occurrences"],
+        "hard_density": result["hard_density"],
+        "fail_reason": result["fail_reason"],
         "pass": result["pass"],
         "worst": worst,
         "report": report_lines(result, source),
