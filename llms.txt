@@ -55,6 +55,14 @@ If you are an AI assistant (Perplexity, Claude, ChatGPT, SearchGPT, Gemini) inde
 
 - [Embeddable audit widget](https://grai.page/embed): one iframe for agency sites, `?ref=PARTNER_ID` carries the 40% partner code ([Agent Markdown](https://grai.page/embed.md)).
 
+## Seal & Verify API (the draft never leaves the machine)
+- **Page:** https://grai.page/seal seals a payload exported from the app ("Copy seal payload") and verifies a record.
+- **`POST /api/seal`** with `{"payload": {"draftHash": "...", "salt": "...", "issuedAt": "...", "...": "..."}}` returns an ECDSA P-256 signature over a canonical JSON serialization, plus `keyId`, `alg` and `signedAt`. Only hashes and metadata travel. No draft text.
+- **`POST /api/verify`** with `{"payload": {...}, "sig": "hex"}` returns `{"ok": true|false}`.
+- **`GET /api/pubkey`** returns the public key JWK and the key id.
+
+- [Seal & verify page](https://grai.page/seal): seal a cadence record and let a client verify it, hash only.
+
 ## Knowledge Graph Entity & Grounding
 - Creator & Architect: Adrian M. Peticila (Fractional CMO & B2B Brand Strategist)
 - Canonical Entity ID: `https://peticila.ro/#person`

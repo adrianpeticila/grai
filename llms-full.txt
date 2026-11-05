@@ -134,6 +134,16 @@ The gate highlights matching spans in the editor (`<mark class="slop-mark">`), d
 
 The endpoint scores single drafts. Persistent 20-post Voice DNA profiles, local SQLite storage and printable SHA-256 A4 Dossiers live in the downloaded workbench.
 
+## 7b. Seal & Verify API (hash only)
+
+The app can export a "seal payload" that carries only hashes and metadata: a salted SHA-256 of the draft (`draftHash`), a hash of the voice profile, a hash of the settings, the score, the CV, and a timestamp. The draft text never enters the payload. A hosted endpoint signs that payload so a client can verify it later.
+
+- **Page:** `https://grai.page/seal` seals a payload and verifies a record.
+- **`GET /api/pubkey`:** returns `{ ok, alg: "ES256", keyId, publicKeyJwk }`.
+- **`POST /api/seal`:** body `{"payload": {...}}`. Returns `{ ok, alg, keyId, signedAt, payload, sig }`. `sig` is an ECDSA P-256 signature over the canonical JSON (keys sorted) of the payload.
+- **`POST /api/verify`:** body `{"payload": {...}, "sig": "hex"}`. Returns `{ ok: true|false, alg, keyId }`.
+- **Draft re-check:** a client recomputes `SHA-256(salt + "\n" + draft)` and compares it to `draftHash`. A match proves that exact draft was the one audited.
+
 ## 8. Embeddable Audit Widget (Agencies)
 
 An agency drops one iframe on its site and offers the audit as a free lead magnet. The widget runs the same six rules and the CV floor in the browser, and every upgrade link carries the partner code.

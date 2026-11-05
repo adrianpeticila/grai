@@ -2,7 +2,7 @@
   "brand": "grai",
   "tagline": "Write like you. Prove it.",
   "url": "https://grai.page/",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "category": "Personal Voice Engine & Deterministic Cadence Harness",
   "architecture": "Local-first single-file HTML5 workbench (connect-src 'none' by default in shipped build; custom source build for BYOK/Ollama) + MIT instruction harness",
   "author": {
@@ -145,6 +145,10 @@
     "vs_hootsuite": "https://grai.page/vs/hootsuite",
     "vs_hootsuite_md": "https://grai.page/vs/hootsuite.md",
     "embed_widget": "https://grai.page/embed",
-    "embed_widget_md": "https://grai.page/embed.md"
+    "embed_widget_md": "https://grai.page/embed.md",
+    "seal_page": "https://grai.page/seal",
+    "seal_api": "https://grai.page/api/seal",
+    "verify_api": "https://grai.page/api/verify",
+    "pubkey_api": "https://grai.page/api/pubkey"
   }
 }
