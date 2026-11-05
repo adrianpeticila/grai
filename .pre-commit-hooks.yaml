@@ -3,5 +3,5 @@
   description: Scores sentence burstiness and flags structural AI tells. Exits 1 on slop.
   entry: plugin/grai-gate/scripts/gate.py
   language: script
-  types: [markdown]
+  types_or: [markdown, plain-text, mdx]
   require_serial: true

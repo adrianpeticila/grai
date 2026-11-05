@@ -28,11 +28,10 @@ import os
 import re
 import sys
 
-VERSION = "0.1.2"
-UTM_URL = (
-    "https://grai.page?utm_source=antigravity"
-    "&utm_medium=gate&utm_campaign=gate_v0.1#developer"
-)
+VERSION = "0.1.3"
+UTM_SOURCE = "antigravity"
+UTM_MEDIUM = "gate"
+UTM_CAMPAIGN = "gate_v0.1"
 
 PASS_SCORE = 85
 CV_FLAT = 0.32
@@ -574,7 +573,35 @@ def analyze(text):
     }
 
 
-def report_lines(result):
+def _clean_source(value):
+    if not value:
+        return ""
+    cleaned = re.sub(r"[^A-Za-z0-9_-]", "", value.strip().lower())
+    return cleaned[:32]
+
+
+def _resolve_source(fallback):
+    override = _clean_source(os.environ.get("GRAI_UTM_SOURCE", ""))
+    if override:
+        return override
+    if os.environ.get("GITHUB_ACTIONS"):
+        return "github-action"
+    if os.environ.get("PRE_COMMIT"):
+        return "precommit"
+    return fallback
+
+
+def utm_url(source=None):
+    if source is None:
+        source = _resolve_source("cli")
+    source = _clean_source(source) or "cli"
+    return (
+        "https://grai.page?utm_source=%s&utm_medium=%s&utm_campaign=%s#developer"
+        % (source, UTM_MEDIUM, UTM_CAMPAIGN)
+    )
+
+
+def report_lines(result, source=None):
     """Return the fixed report card for a failing result. A pass returns []."""
     if result["pass"]:
         return []
@@ -614,12 +641,12 @@ def report_lines(result):
         '(target CV > %.2f) and eliminate %s."' % (CV_TARGET, fix_text)
     )
     lines.append(
-        "- Pro Cockpit: Full Voice DNA & repair workbench at %s" % UTM_URL
+        "- Pro Cockpit: Full Voice DNA & repair workbench at %s" % utm_url(source)
     )
     return lines
 
 
-def _json_result(label, result):
+def _json_result(label, result, source=None):
     flags = []
     for item in result["flags"]:
         entry = {
@@ -650,7 +677,7 @@ def _json_result(label, result):
         "hard_flags": result["hard_flags"],
         "pass": result["pass"],
         "worst": worst,
-        "report": report_lines(result),
+        "report": report_lines(result, source),
     }
 
 
@@ -753,7 +780,8 @@ def _run_hook(payload):
 
         result = analyze(text)
         if not result["pass"]:
-            for line in report_lines(result):
+            source = _resolve_source(UTM_SOURCE)
+            for line in report_lines(result, source):
                 sys.stderr.write(line + "\n")
             sys.stderr.flush()
     except Exception:
@@ -767,6 +795,7 @@ def _run_files(paths, json_mode, verbose):
     records = []
     errors = 0
     any_fail = False
+    source = _resolve_source("cli")
 
     for path in paths:
         try:
@@ -795,7 +824,7 @@ def _run_files(paths, json_mode, verbose):
             any_fail = True
 
     if json_mode:
-        values = [_json_result(path, result) for path, result in records]
+        values = [_json_result(path, result, source) for path, result in records]
         if len(paths) == 1 and len(values) == 1:
             output = values[0]
         else:
@@ -812,7 +841,7 @@ def _run_files(paths, json_mode, verbose):
                 sys.stdout.write("\n")
             if len(paths) > 1:
                 sys.stdout.write("File: %s\n" % path)
-            for line in report_lines(result):
+            for line in report_lines(result, source):
                 sys.stdout.write(line + "\n")
             printed = True
 
@@ -834,12 +863,13 @@ def _run_text(text, label, json_mode, verbose):
         sys.stderr.write("[grai-gate] error: %s looks binary\n" % label)
         return 2
     result = analyze(text)
+    source = _resolve_source("cli")
     if json_mode:
         sys.stdout.write(
-            json.dumps(_json_result(label, result), ensure_ascii=True) + "\n"
+            json.dumps(_json_result(label, result, source), ensure_ascii=True) + "\n"
         )
     elif not result["pass"]:
-        for line in report_lines(result):
+        for line in report_lines(result, source):
             sys.stdout.write(line + "\n")
     elif verbose:
         sys.stdout.write(_clean_summary(label, result) + "\n")

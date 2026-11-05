@@ -28,13 +28,13 @@ Inputs:
 
 ## What gets scored
 
-- `.md` and `.txt` under `path`, minus `.git`.
+- `.md`, `.mdx`, and `.txt` under `path`, minus `.git`.
 - One card per failing file. Clean files stay silent.
 - Exit 0 clean, 1 slop, 2 input error.
 
 ## Pin the version
 
-Tag the repo first. Then pin `rev` in pre-commit and `@v3.2.0` in the workflow. A moving `main` means the gate changes under you mid-sprint.
+Tag the repo first. Then pin `rev` in pre-commit and `@v0.1.3` in the workflow. A moving `main` means the gate changes under you mid-sprint.
 
 ## What the gate will not do
 

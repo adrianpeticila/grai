@@ -48,6 +48,40 @@ Or search for grai-gate in Antigravity Customizations > Plugins. A standard inst
 
 The bundle passes the Antigravity plugin validator. The hook group is `grai-gate`, the event is PostToolUse, and the timeout is 10 seconds.
 
+### Pre-commit
+
+Add this to `.pre-commit-config.yaml` and pin a real tag:
+
+```yaml
+repos:
+  - repo: https://github.com/adrianpeticila/grai
+    rev: v0.1.3
+    hooks:
+      - id: grai-gate
+```
+
+Then run `pre-commit install`. The hook reads filenames from pre-commit, so only staged markdown gets scored. No npm, no Node, no network. Python 3 is the only dependency.
+
+### GitHub Actions
+
+```yaml
+name: cadence
+on:
+  pull_request:
+    paths: ['**.md', '**.mdx']
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: adrianpeticila/grai/plugin/grai-gate@v0.1.3
+        with:
+          path: .
+          fail-on-slop: "false"
+```
+
+The action is advisory by default. The job stays green and the card lands in the log. Set `fail-on-slop: "true"` when you want the merge blocked.
+
 ## How the hook runs
 
 Antigravity fires the hook after `write_to_file`, `replace_file_content`, or `multi_replace_file_content`. The matcher also accepts the `write_file` and `edit_file` aliases used by other agent harnesses.

@@ -50,13 +50,19 @@ def check(name, function):
     record(name, True)
 
 
-def run(args, stdin_text=None):
+def run(args, stdin_text=None, env=None):
+    child_env = os.environ.copy()
+    for key in ("GRAI_UTM_SOURCE", "GITHUB_ACTIONS", "PRE_COMMIT"):
+        child_env.pop(key, None)
+    if env:
+        child_env.update(env)
     return subprocess.run(
         [sys.executable, str(GATE)] + list(args),
         input=stdin_text,
         capture_output=True,
         text=True,
         cwd=str(PLUGIN),
+        env=child_env,
     )
 
 
@@ -317,7 +323,7 @@ def test_frontmatter_ignored():
 
 def test_report_shape():
     result = result_for("em_dash")
-    lines = gate.report_lines(result)
+    lines = gate.report_lines(result, source="antigravity")
     assert len(lines) == 5
     assert lines[0].startswith("[grai-gate] Slop Score:")
     assert lines[1].startswith("- Worst offender:")
@@ -339,6 +345,45 @@ def test_report_names_match():
     for item in result["flags"]:
         assert item["name"] in lines[2]
         assert item["name"] in lines[3]
+
+
+def test_utm_default_cli():
+    proc = run([str(SAMPLES["em_dash"])])
+    assert proc.returncode == 1
+    assert "utm_source=cli" in proc.stdout
+    assert "utm_medium=gate" in proc.stdout
+    assert "#developer" in proc.stdout
+
+
+def test_utm_env_override_wins():
+    proc = run(
+        [str(SAMPLES["em_dash"])],
+        env={"GRAI_UTM_SOURCE": "precommit", "GITHUB_ACTIONS": "true"},
+    )
+    assert proc.returncode == 1
+    assert "utm_source=precommit" in proc.stdout
+    assert "utm_source=github-action" not in proc.stdout
+
+
+def test_utm_detect_pre_commit():
+    proc = run([str(SAMPLES["em_dash"])], env={"PRE_COMMIT": "1"})
+    assert proc.returncode == 1
+    assert "utm_source=precommit" in proc.stdout
+
+
+def test_utm_detect_github_actions():
+    proc = run([str(SAMPLES["em_dash"])], env={"GITHUB_ACTIONS": "true"})
+    assert proc.returncode == 1
+    assert "utm_source=github-action" in proc.stdout
+
+
+def test_utm_override_sanitized():
+    proc = run(
+        [str(SAMPLES["em_dash"])],
+        env={"GRAI_UTM_SOURCE": "Bad Source!<x>"},
+    )
+    assert proc.returncode == 1
+    assert "utm_source=badsourcex" in proc.stdout
 
 
 def test_cli_clean_silent():
@@ -551,7 +596,9 @@ def test_manifest_contract():
     assert required.issubset(set(data))
     assert set(data).issubset(allowed)
     assert data["name"] == "grai-gate"
-    assert data["version"] == "0.1.1"
+    package = json.loads((PLUGIN / "package.json").read_text(encoding="utf-8"))
+    assert data["version"] == package["version"]
+    assert data["version"].count(".") == 2
     assert len(data["suggestedPrompts"]) == 3
     assert all(isinstance(item, str) and item.strip() for item in data["suggestedPrompts"])
     assert isinstance(data["author"], dict)
@@ -689,6 +736,11 @@ def main():
             ("frontmatter ignored", test_frontmatter_ignored),
             ("report shape", test_report_shape),
             ("report names match", test_report_names_match),
+            ("utm default cli", test_utm_default_cli),
+            ("utm env override wins", test_utm_env_override_wins),
+            ("utm detect pre commit", test_utm_detect_pre_commit),
+            ("utm detect github actions", test_utm_detect_github_actions),
+            ("utm override sanitized", test_utm_override_sanitized),
             ("cli clean silent", test_cli_clean_silent),
             ("cli slop", test_cli_slop),
             ("cli json clean", test_cli_json_clean),
