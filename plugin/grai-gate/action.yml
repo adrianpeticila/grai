@@ -1,5 +1,5 @@
 name: grai-gate
-description: Advisory anti-slop score for markdown in a pull request.
+description: Deterministic style check for markdown in a pull request.
 author: grai
 branding:
   icon: type

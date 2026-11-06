@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""grai-gate: an advisory anti-slop linter for markdown and text.
+"""grai-gate: an advisory style linter for markdown and text.
 
 The engine is deliberately small and deterministic. It uses only the Python
 standard library modules re, sys, json, and math. It never calls the network,
@@ -28,7 +28,7 @@ import os
 import re
 import sys
 
-VERSION = "0.1.7"
+VERSION = "0.2.0"
 UTM_SOURCE = "antigravity"
 UTM_MEDIUM = "gate"
 UTM_CAMPAIGN = "gate_v0.1"
@@ -169,6 +169,42 @@ RE_ZOMBIE = re.compile(
     re.IGNORECASE,
 )
 
+RE_VERDICT_COLON = re.compile(
+    r"(?i)\b(?:"
+    r"the\s+(?:harsh\s+|cold\s+|brutal\s+|simple\s+|uncomfortable\s+|sad\s+|plain\s+)?"
+    r"(?:reality|truth|point|lesson|problem|takeaway|bottom\s+line|catch|secret|core(?:\s+issue|\s+problem)?)(?:\s+is)?"
+    r"|here['\u2019]?s\s+the\s+thing"
+    r"|make\s+no\s+mistake"
+    r"|let['\u2019]?s\s+be\s+clear"
+    r"|one\s+thing\s+is\s+clear"
+    r"|(?:it|this)\s+(?:all\s+)?(?:comes\s+down\s+to\s+this|boils\s+down\s+to\s+this)"
+    r"|(?:reveals?|shows?|tells?)\s+(?:a|the)\s+(?:harsh|cold|brutal|simple|sobering)\s+(?:reality|truth|story)"
+    r")\s*:"
+)
+
+RE_PROSE_TRIAD = re.compile(
+    r"(?i)(?:"
+    r"(?:^|[\n.!?][ \t]*)(?:[^.!?\n]{3,70}\?[ \t]+){2}[^.!?\n]{3,70}\?"
+    r"|\b[a-z]{3,15}(?:\s+[a-z]{2,15}){1,4},\s+"
+    r"[a-z]{3,15}(?:\s+[a-z]{2,15}){1,4},\s+"
+    r"(?:and\s+)?[a-z]{3,15}(?:\s+[a-z]{2,15}){1,4}\b"
+    r")"
+)
+
+RE_BRIDGE = re.compile(
+    r"(?i)^\s*(?:"
+    r"that['\u2019]?s\s+why"
+    r"|this\s+is\s+why"
+    r"|which\s+is\s+why"
+    r"|in\s+other\s+words"
+    r"|that['\u2019]?s\s+what"
+    r"|this\s+means(?:\s+that)?"
+    r"|which\s+means(?:\s+that)?"
+    r"|that['\u2019]?s\s+exactly(?:\s+why|\s+what)?"
+    r"|so\s+what\s+does\s+this\s+mean"
+    r")\b"
+)
+
 FLAG_ORDER = {
     "flat": 0,
     "low_burst": 1,
@@ -180,7 +216,64 @@ FLAG_ORDER = {
     "triplet": 7,
     "closing": 8,
     "zombie": 9,
+    "verdict_colon": 10,
+    "prose_triad": 11,
+    "smooth_bridge": 12,
 }
+
+
+def _compute_mtld(tokens, threshold=0.72):
+    if len(tokens) < 15:
+        return 0.0
+    factors = 0
+    start = 0
+    types = set()
+    for i, tok in enumerate(tokens):
+        types.add(tok.lower())
+        ttr = len(types) / float(i - start + 1)
+        if ttr <= threshold:
+            factors += 1
+            start = i + 1
+            types = set()
+    remainder = len(tokens) - start
+    if remainder > 0 and len(types) > 0:
+        ttr = len(types) / float(remainder)
+        if ttr < 1.0:
+            factors += (1.0 - ttr) / (1.0 - threshold)
+    return round(len(tokens) / factors, 1) if factors > 0 else round(float(len(tokens)), 1)
+
+
+def _compute_structure_density(blocks, total_words):
+    headings = [b for b in blocks if b["kind"] == "heading"]
+    if not headings or total_words < 100:
+        return {
+            "headings_per_1000_words": 0.0,
+            "section_length_cv": 0.0,
+            "ref_band": "external reference, Chinese corpus, not calibrated on English",
+        }
+    density = round((len(headings) * 1000.0) / float(total_words), 2)
+    sec_lengths = []
+    current_sec = 0
+    for b in blocks:
+        if b["kind"] == "heading":
+            if current_sec > 0:
+                sec_lengths.append(current_sec)
+            current_sec = 0
+        elif b["kind"] in ("prose", "bullet", "quote"):
+            current_sec += _token_count(b["text"])
+    if current_sec > 0:
+        sec_lengths.append(current_sec)
+    sec_cv = 0.0
+    if len(sec_lengths) >= 2:
+        mean = sum(sec_lengths) / float(len(sec_lengths))
+        if mean > 0:
+            var = sum((x - mean) ** 2 for x in sec_lengths) / float(len(sec_lengths))
+            sec_cv = round(math.sqrt(var) / mean, 2)
+    return {
+        "headings_per_1000_words": density,
+        "section_length_cv": sec_cv,
+        "ref_band": "external reference, Chinese corpus, not calibrated on English",
+    }
 
 
 def _configure_streams():
@@ -512,6 +605,54 @@ def analyze(text):
         zombie_flag["examples"] = examples[:4]
         flags.append(zombie_flag)
 
+    verdict_hits = [m.group(0) for m in RE_VERDICT_COLON.finditer(scan_text)]
+    if verdict_hits:
+        flags.append(_flag(
+            "verdict_colon",
+            "verdict colon",
+            len(verdict_hits),
+            8 + 4 * (len(verdict_hits) - 1),
+            False,
+            _context(scan_text, scan_text.find(verdict_hits[0])),
+        ))
+
+    triad_hits = [m.group(0).strip() for m in RE_PROSE_TRIAD.finditer(scan_text)]
+    if triad_hits:
+        flags.append(_flag(
+            "prose_triad",
+            "prose triad",
+            len(triad_hits),
+            10 + 5 * (len(triad_hits) - 1),
+            False,
+            _context(scan_text, scan_text.find(triad_hits[0])),
+        ))
+
+    prose_blocks = [b for b in blocks if b["kind"] == "prose"]
+    bridge_hits = 0
+    max_consec_bridge = 0
+    cur_consec_bridge = 0
+    first_bridge = None
+    for b in prose_blocks:
+        if RE_BRIDGE.match(b["text"]):
+            bridge_hits += 1
+            cur_consec_bridge += 1
+            if cur_consec_bridge > max_consec_bridge:
+                max_consec_bridge = cur_consec_bridge
+            if first_bridge is None:
+                first_bridge = b["text"].strip()[:60]
+        else:
+            cur_consec_bridge = 0
+    if max_consec_bridge >= 3 or bridge_hits >= 4:
+        count = max_consec_bridge if max_consec_bridge >= 3 else bridge_hits
+        flags.append(_flag(
+            "smooth_bridge",
+            "mechanical paragraph bridge",
+            count,
+            12 + 6 * (count - 1),
+            False,
+            first_bridge or "chained transitions",
+        ))
+
     sentence_lengths = []
     for block in blocks:
         if block["kind"] in ("prose", "bullet", "quote"):
@@ -575,6 +716,18 @@ def analyze(text):
     else:
         if hard_occurrences >= 2 and hard_density >= 4.0:
             fail_reason = "hard_density"
+
+    all_tokens = [tok for b in blocks if b["kind"] in ("prose", "bullet", "quote")
+                  for tok in RE_TOKEN.findall(b["text"])]
+    total_words = len(all_tokens)
+    mtld = _compute_mtld(all_tokens)
+    structure_density = _compute_structure_density(blocks, total_words)
+    advisory = {
+        "lexical_mtld": mtld,
+        "structure_density": structure_density,
+        "ref_band": "external reference, Chinese corpus, not calibrated on English",
+    }
+
     return {
         "score": score,
         "cv": cv,
@@ -586,6 +739,7 @@ def analyze(text):
         "fail_reason": fail_reason,
         "pass": fail_reason is None,
         "worst": flags[0] if flags else None,
+        "advisory": advisory,
     }
 
 
@@ -653,8 +807,9 @@ def report_lines(result, source=None):
             fix_names.append(item["name"])
     fix_text = ", ".join(fix_names) if fix_names else "the flagged patterns"
     lines.append(
-        '- Fix prompt: "Rewrite to increase sentence burstiness '
-        '(target CV > %.2f) and eliminate %s."' % (CV_TARGET, fix_text)
+        '- Fix prompt: "Fix the flagged tells only. Do not pad, split or '
+        'merge sentences to move the rhythm. The CV is measured after the '
+        'edit, never targeted. Eliminate: %s."' % fix_text
     )
     lines.append(
         "- Pro Cockpit: Full Voice DNA & repair workbench at %s" % utm_url(source)
@@ -696,6 +851,7 @@ def _json_result(label, result, source=None):
         "fail_reason": result["fail_reason"],
         "pass": result["pass"],
         "worst": worst,
+        "advisory": result.get("advisory", {}),
         "report": report_lines(result, source),
     }
 
@@ -703,14 +859,16 @@ def _json_result(label, result, source=None):
 def _clean_summary(label, result):
     cv_text = "n/a" if result["cv"] is None else "%.2f" % result["cv"]
     names = ", ".join(item["name"] for item in result["flags"])
+    mtld = result.get("advisory", {}).get("lexical_mtld")
+    adv_note = (", MTLD %.1f" % mtld) if mtld else ""
     if names:
         return (
-            "[grai-gate] clean: %s (score %d/100, CV %s, soft flags: %s)"
-            % (label, result["score"], cv_text, names)
+            "[grai-gate] clean: %s (score %d/100, CV %s%s, soft flags: %s)"
+            % (label, result["score"], cv_text, adv_note, names)
         )
     return (
-        "[grai-gate] clean: %s (score %d/100, CV %s, 0 flags)"
-        % (label, result["score"], cv_text)
+        "[grai-gate] clean: %s (score %d/100, CV %s%s, 0 flags)"
+        % (label, result["score"], cv_text, adv_note)
     )
 
 
@@ -895,7 +1053,7 @@ def _run_text(text, label, json_mode, verbose):
     return 0 if result["pass"] else 1
 
 
-USAGE = """grai-gate %s: advisory anti-slop linter for markdown and text.
+USAGE = """grai-gate %s: advisory style linter for markdown and text.
 
 Usage:
   grai-gate FILE [FILE ...]

@@ -12,6 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: adrianpeticila/grai-gate-action@v0.1.5
+      - uses: adrianpeticila/grai-gate-action@v0.2.0
         with:
           fail-on-slop: "false"

@@ -120,6 +120,9 @@ So the words are cheap to check and nearly useless. The structure is what to che
 In CHECK, and in every draft you write, count and name these:
 - "Here's why" or "Here's how" in the first line
 - "It's not X, it's Y" anywhere
+- a verdict colon before a conclusion or lesson ("The reality is:", "The takeaway:", "The point is:")
+- three consecutive rhetorical questions or heavy symmetrical triads in prose
+- explanatory bridge words chaining three or more paragraphs ("That's why", "In other words", "This means that")
 - arrow bullets, or any bullet that is not a noun phrase
 - every sentence near the same length, and no short one
 - a paragraph of exactly three items

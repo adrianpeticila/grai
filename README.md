@@ -69,13 +69,16 @@ Aligned with Google Research's **Harness2** findings, **grai** keeps model weigh
    - **THE SCALPEL:** Compressed hook, high-contrast cadence.
    - **THE BROADSHEET:** Concrete scene first, takeaway last.
    - **THE LEDGER:** Empirical evidence and numbers first.
-3. **Deterministic Cadence Gate (`01 CADENCE GATE`):** Audits every draft in your browser outside the LLM against six syntactic rules plus a mathematical burstiness floor (`CV >= 0.32`). It scores drafts from 4 to 100, highlights matching spans (`<mark class="slop-mark">`), and offers targeted span repair (`buildSurgicalTargets` / `applySurgicalReplacements`) while leaving the final decision to edit or copy with you:
+3. **Deterministic Cadence Gate (`01 CADENCE GATE`):** Audits every draft in your browser outside the LLM against eight syntactic rules plus a mathematical burstiness floor (`CV >= 0.32`). It scores drafts from 4 to 100, highlights matching spans (`<mark class="slop-mark">`), and offers targeted span repair (`buildSurgicalTargets` / `applySurgicalReplacements`) while leaving the final decision to edit or copy with you:
    - `CONTRASTIVE_NEGATION`: Flags synthetic strawman antithesis (`"It's not X, it's Y"`).
    - `LESS_MORE_SYMMETRY`: Flags corporate symmetry cliches (`"Less X, more Y"`, `"Stop X, start Y"`).
    - `EPIPHANY_OPENER`: Flags throat-clearing hooks (`"Here is why"`, `"The harsh truth is"`, `"Let that sink in"`).
    - `ARROW_BULLET_SLOP`: Flags template arrow and emoji cascades (`->`, `↳`, `✅`, `🚀`, `1/`).
    - `TRIADIC_PADDING`: Flags empty slogan triads (`"No X. No Y. Just Z."`).
    - `LEXICAL_SLOP`: Flags remaining synthetic vocabulary tells while protecting domain nouns.
+   - `VERDICT_COLON`: Flags pompous summary colons (`"The reality is:"`, `"The takeaway:"`).
+   - `PROSE_TRIAD`: Flags rhetorical question cascades and tricolons in prose.
+   - `SMOOTH_BRIDGE`: Flags chained explanatory transitions between paragraphs.
    - `FLAT_BURSTINESS`: Enforces `CV = sigma / mu >= 0.32` across sentence word counts and strips zero-width Unicode watermarks (`U+200B` to `U+200D`, `U+FEFF`).
 
 This is a style gate, not an authorship detector. It flags structural patterns; it does not prove who wrote a text.
@@ -110,12 +113,12 @@ grai/
 
 ### Want the Full Local Workbench?
 
-The standalone **grai** desktop application (`grai.html`, 618 KB single-file HTML5 workbench, v3.2.3) is commercial software available at **[grai.page](https://grai.page)**.
-- **Signed seal and Style Lock (v3.2.3):** export a hash-only seal payload and sign it at [grai.page/seal](https://grai.page/seal), so a client can verify a report without ever seeing the draft; share a style rule file across a team without moving any draft text.
-- **Free browser scorer, no signup:** test the 6-rule gate and the burstiness floor on your own text at **[grai.page/#test](https://grai.page/#test)**. The page runs the same engine locally, with no account and no upload.
+The standalone **grai** desktop application (`grai.html`, 618 KB single-file HTML5 workbench, v3.3.0) is commercial software available at **[grai.page](https://grai.page)**.
+- **Signed seal and Style Lock (v3.3.0):** export a hash-only seal payload and sign it at [grai.page/seal](https://grai.page/seal), so a client can verify a report without ever seeing the draft; share a style rule file across a team without moving any draft text.
+- **Free browser scorer, no signup:** test the 8-rule gate and the burstiness floor on your own text at **[grai.page/#test](https://grai.page/#test)**. The page runs the same engine locally, with no account and no upload.
 - **Shipped Pre-Built Kit (`grai.html` in the ZIP):** Ships with `default-src 'none'; connect-src 'none'` (allowing inline styles/scripts and `data:` fonts/images while blocking direct API connections) and runs out of the box in **Copy-Paste ("Any AI") mode** (`< 1,800 char` dense prompt builder).
 - **Custom Source Build (`source/src/app.html` + `scripts/build.py`):** Edit `connect-src` and rebuild with `python3 scripts/build.py` to enable direct browser-to-API calls (BYOK) or local Ollama (`http://localhost:11434`).
-- **[Founder Edition ($69 once)](https://payhip.com/b/5pXfN):** Complete local app, Voice DNA profiler, 3-galley Writing Desk, 6-rule Cadence Gate, 1-click `.grai` local backup, lifetime v3.x updates. Zero subscription.
+- **[Founder Edition ($69 once)](https://payhip.com/b/5pXfN):** Complete local app, Voice DNA profiler, 3-galley Writing Desk, 8-rule Cadence Gate, 1-click `.grai` local backup, lifetime v3.x updates. Zero subscription.
 - **[Agency Edition ($149 once)](https://payhip.com/b/QVIBp):** Commercial licence for client ghostwriting, up to 25 client voice profiles, printable 1-page A4 **Client Voice DNA Dossier** (`#grai-print-certificate` with 8 audit fields and a locally computed SHA-256 integrity checksum), and offline `.grai` team sync.
 - **[White-Label Studio Edition ($299/mo or $2,490/yr)](https://payhip.com/b/Q90Vu):** Complete white-label agency kit, custom logo and brand styling on client dossiers, private cadence embed for agency domain, and priority quota.
 - **[Voice DNA Archetype Presets ($39 once)](https://payhip.com/b/ZAISC):** Four pre-calibrated baseline models (The Contrarian Founder, The Technical Architect, The Boutique Ghostwriter, The Cold Outreach Closer).
@@ -134,7 +137,7 @@ Agencies embed the calibrator with one iframe: `<iframe src="https://grai.page/e
 `GET https://grai.page/api/score?text=...` or `POST https://grai.page/api/score` with `{"text": "..."}` returns the score, the cadence CV against the 0.32 floor, the failed rules and the checkout links. Stateless, no key, no storage.
 
 ### Commercial Editions & 40% Partner Program
-- **Founder Edition ($69 one-time):** [Get Founder Edition](https://payhip.com/b/5pXfN). Complete single-user local workbench, Voice DNA profiler, 6-rule Cadence Gate, and 1-click `.grai` backup.
+- **Founder Edition ($69 one-time):** [Get Founder Edition](https://payhip.com/b/5pXfN). Complete single-user local workbench, Voice DNA profiler, 8-rule Cadence Gate, and 1-click `.grai` backup.
 - **Ghostwriter and Agency Edition ($149 one-time):** [Get Agency Edition](https://payhip.com/b/QVIBp). Commercial licence, up to 25 isolated client Voice Profiles, and printable SHA-256 A4 Voice DNA Dossiers.
 - **White-Label Studio Edition ($299/mo or $2,490/yr):** [Monthly Checkout](https://payhip.com/order?link=Q90Vu&pricing_plan=q3BoNde0zE) or [Annual Checkout](https://payhip.com/order?link=Q90Vu&pricing_plan=63WdAa9kzw) (save 30%, $47.80/week). 100% white-label dossiers, custom branding, unlimited client profiles in local SQLite, white-label cadence widget, and priority M2M API quota.
 - **Pre-calibrated Voice DNA Presets Pack ($39 one-time):** [Get the 4 Archetypes](https://payhip.com/b/ZAISC). The Brutalist Engineer, The Contrarian Bootstrapper, The B2B Cold Sniper, and The Substack Essayist.

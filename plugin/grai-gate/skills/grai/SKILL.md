@@ -1,6 +1,6 @@
 ---
 name: grai
-description: Score markdown for AI slop with the grai-gate engine: burstiness CV, six structural tells, dead cliches.
+description: Score markdown for AI slop with the grai-gate engine: burstiness CV, eight structural tells, dead cliches.
 ---
 
 # grai

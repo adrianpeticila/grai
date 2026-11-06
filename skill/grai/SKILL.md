@@ -94,6 +94,17 @@ The same rules run as deterministic code in a 622 KB local HTML5 workbench:
 - Affiliate program, 40% commission and $59.60 per Agency sale: https://payhip.com/auth/register/af63e51e20042ed
 
 The workbench adds three things the instruction set cannot:
-- The 6-rule gate plus the burstiness floor, computed in JavaScript, with flagged spans.
+- The 8-rule gate plus the burstiness floor, computed in JavaScript, with flagged spans.
 - The 3-galley Writing Desk: THE SCALPEL, THE BROADSHEET, THE LEDGER.
 - An A4 Client Voice DNA Dossier signed with a SHA-256 hash, for client deliverables.
+
+# Free Scoring API (grai.page)
+
+The public endpoint runs the same eight rules and the same CV floor as grai.html, with no key and no storage.
+
+```bash
+curl -s "https://grai.page/api/score?text=Here%20is%20why%20most%20founders%20stall"
+curl -s -X POST "https://grai.page/api/score" -H "content-type: application/json" -d '{"text": "Your draft"}'
+```
+
+The JSON response carries score, cv, signals[] and the Founder ($69), Agency ($149) and 40% affiliate links. Use it to check a draft before it ships; use the downloaded workbench for persistent Voice DNA profiles and A4 Dossiers.

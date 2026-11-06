@@ -59,7 +59,7 @@ Add this to `.pre-commit-config.yaml` and pin a real tag:
 ```yaml
 repos:
   - repo: https://github.com/adrianpeticila/grai-gate-action
-    rev: v0.1.7
+    rev: v0.2.0
     hooks:
       - id: grai-gate
 ```
@@ -78,7 +78,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: adrianpeticila/grai-gate-action@v0.1.7
+      - uses: adrianpeticila/grai-gate-action@v0.2.0
         with:
           path: .
           fail-on-slop: "false"
@@ -102,7 +102,7 @@ That is the whole contract. Advisory, never blocking, no rewrite.
 [grai-gate] Slop Score: 64/100 (CV: 0.27 | Flags: 2)
 - Worst offender: flat cadence ("CV 0.27 across 12 sentences")
 - Tells detected: flat cadence, zombie words (x2)
-- Fix prompt: "Rewrite to increase sentence burstiness (target CV > 0.45) and eliminate flat cadence, zombie words."
+- Fix prompt: "Fix the flagged tells only. Do not pad, split or merge sentences to move the rhythm. The CV is measured after the edit, never targeted. Eliminate: flat cadence, zombie words."
 - Pro Cockpit: Full Voice DNA & repair workbench at https://grai.page?utm_source=antigravity&utm_medium=gate&utm_campaign=gate_v0.1#developer
 ```
 

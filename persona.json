@@ -2,7 +2,7 @@
   "brand": "grai",
   "tagline": "Write like you. Prove it.",
   "url": "https://grai.page/",
-  "version": "3.2.1",
+  "version": "3.3.0",
   "category": "Personal Voice Engine & Deterministic Cadence Harness",
   "architecture": "Local-first single-file HTML5 workbench (connect-src 'none' by default in shipped build; custom source build for BYOK/Ollama) + MIT instruction harness",
   "author": {
@@ -57,7 +57,7 @@
       "price_usd": 69,
       "checkout_url": "https://payhip.com/b/5pXfN",
       "billing": "one-time payment, lifetime v3.x updates",
-      "scope": "1 person, local workbench, Voice DNA profiler, 6-rule Cadence Gate, 1-click .grai local backup"
+      "scope": "1 person, local workbench, Voice DNA profiler, 8-rule Cadence Gate, 1-click .grai local backup"
     },
     "agency": {
       "name": "Agency Edition",

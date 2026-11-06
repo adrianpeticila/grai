@@ -192,6 +192,26 @@ That is the whole idea.
         + "The fourth sentence keeps going for a while, because flat cadence is the thing this engine is built to catch.\n"
         + "Done.\n"
     )
+    verdict = (
+        "The harsh reality is: pricing low will burn your capital fast.\n"
+        "We learned this the hard way.\n"
+        "Never compromise margin.\n"
+    )
+    quote_colon = (
+        "The founder said: we doubled our prices yesterday.\n"
+        "Revenue grew that week.\n"
+        "Nobody complained.\n"
+    )
+    prose_triad = (
+        "Why did they leave? Was it the pricing? Could they not afford support?\n"
+        "We called each one.\n"
+        "The feedback was sobering.\n"
+    )
+    smooth_bridge = (
+        "That's why we restructured the entire billing tier last Monday.\n\n"
+        "In other words, monthly subscribers were transitioned to annual.\n\n"
+        "This means that support volume dropped ninety percent.\n"
+    )
 
     SAMPLES["clean"] = write_sample(directory, "clean.md", clean)
     SAMPLES["em_dash"] = write_sample(directory, "em_dash.md", em_dash)
@@ -208,6 +228,10 @@ That is the whole idea.
     SAMPLES["borderline"] = write_sample(directory, "borderline.md", borderline)
     SAMPLES["fenced"] = write_sample(directory, "fenced.md", fenced)
     SAMPLES["frontmatter"] = write_sample(directory, "frontmatter.md", frontmatter)
+    SAMPLES["verdict"] = write_sample(directory, "verdict.md", verdict)
+    SAMPLES["quote_colon"] = write_sample(directory, "quote_colon.md", quote_colon)
+    SAMPLES["prose_triad"] = write_sample(directory, "prose_triad.md", prose_triad)
+    SAMPLES["smooth_bridge"] = write_sample(directory, "smooth_bridge.md", smooth_bridge)
 
 
 def result_for(key):
@@ -309,6 +333,33 @@ def test_borderline():
     assert result["pass"] is True
 
 
+def test_verdict_colon():
+    result = result_for("verdict")
+    assert has_flag(result, "verdict_colon")
+
+
+def test_quote_colon_clean():
+    result = result_for("quote_colon")
+    assert not has_flag(result, "verdict_colon")
+
+
+def test_prose_triad():
+    result = result_for("prose_triad")
+    assert has_flag(result, "prose_triad")
+
+
+def test_smooth_bridge():
+    result = result_for("smooth_bridge")
+    assert has_flag(result, "smooth_bridge")
+
+
+def test_advisory_metrics():
+    result = result_for("clean")
+    adv = result.get("advisory", {})
+    assert "lexical_mtld" in adv
+    assert "structure_density" in adv
+
+
 def test_long_single_hard_flag_passes():
     lines = []
     for index in range(30):
@@ -359,8 +410,9 @@ def test_report_shape():
     assert lines[1].startswith("- Worst offender:")
     assert lines[2].startswith("- Tells detected:")
     assert lines[3].startswith(
-        '- Fix prompt: "Rewrite to increase sentence burstiness '
-        "(target CV > 0.45) and eliminate "
+        '- Fix prompt: "Fix the flagged tells only. Do not pad, split or '
+        'merge sentences to move the rhythm. The CV is measured after the '
+        'edit, never targeted. Eliminate: '
     )
     assert lines[4].startswith("- Pro Cockpit:")
     joined = "\n".join(lines)
@@ -504,7 +556,13 @@ def test_cli_help():
         proc = run([flag])
         assert proc.returncode == 0
         assert "Usage:" in proc.stdout
+        assert "advisory style linter" in proc.stdout
+        assert "anti-slop" not in proc.stdout
+        assert "slop found" in proc.stdout
         assert DOUBLE not in proc.stdout.replace("--help", "")
+    action = (PLUGIN / "action.yml").read_text(encoding="utf-8")
+    assert "anti-slop" not in action
+    assert "Deterministic style check" in action
 
 
 def test_hook_clean_silent():
@@ -774,6 +832,11 @@ def main():
             ("flat cadence", test_flat),
             ("low burstiness band", test_low_burst),
             ("borderline band", test_borderline),
+            ("verdict colon", test_verdict_colon),
+            ("quote colon clean", test_quote_colon_clean),
+            ("prose triad", test_prose_triad),
+            ("smooth bridge", test_smooth_bridge),
+            ("advisory metrics", test_advisory_metrics),
             ("long single hard flag", test_long_single_hard_flag_passes),
             ("long dense hard flags", test_long_dense_hard_flags_fail),
             ("fenced code ignored", test_fenced_ignored),

@@ -1,6 +1,6 @@
 # grai-gate submission pack
 
-Antigravity Marketplace answers for version 0.1.7. Copy each block without changes.
+Antigravity Marketplace answers for version 0.2.0. Copy each block without changes.
 
 Publisher: grai, https://grai.page?utm_source=antigravity&utm_medium=gate&utm_campaign=gate_v0.1#developer
 
@@ -25,7 +25,7 @@ Advisory style gate for agent-written markdown and docs.
 ```
 grai-gate is an advisory style linter for the markdown your coding agent writes. READMEs, changelogs, docs pages, PR notes: every file that reaches disk through an agent carries the same structural patterns. Flat sentence rhythm. Hype vocabulary. Bullet lists that grow arrows.
 
-The plugin adds a PostToolUse hook for .md and .txt writes. After each write, the local Python engine computes sentence-length burstiness, then checks the six structural patterns that survive spellcheck. A clean file stays completely silent. A flagged file prints a fixed report card to stderr with a score, the worst offender, the full flag list, and a repair prompt the agent can reuse.
+The plugin adds a PostToolUse hook for .md and .txt writes. After each write, the local Python engine computes sentence-length burstiness, then checks the structural patterns that survive spellcheck. A clean file stays completely silent. A flagged file prints a fixed report card to stderr with a score, the worst offender, the full flag list, and a repair prompt the agent can reuse.
 
 What it catches:
 - Flat cadence. The coefficient of variation of words per sentence falls under 0.32. The warning band starts at 0.35 and the human baseline is 0.40.

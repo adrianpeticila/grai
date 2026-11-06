@@ -109,14 +109,14 @@ The user pastes the post and the comments.
 
 Use when the user pastes a draft from any source, including another AI.
 
-Rewrite it so it reads like a person wrote it, not a model. Reorganize as you see fit. Vary sentence length on purpose. Cut hedging, throat-clearing, and any sentence that only announces what comes next. Prefer the concrete word over the abstract one. It is fine to sound uneven.
+Fix only what triggers a tell. Nothing unflagged is touched. Do not split or merge sentences to manufacture rhythm; sentence length is the outcome of a clear thought, never a direct target. Information conservation: every content word in the rewrite traces back to the original; an invented content word is a bug, not an improvement. Keep the original structure (paragraph order and sections) intact, except where a flagged tell sits. Cut hedging, throat-clearing, and any sentence that only announces what comes next. Prefer the concrete word over the abstract one.
 
 Hard limits, in this order of importance:
 1. Every fact, number, unit, date, name and quotation survives unchanged. If one cannot survive, keep the original and mark the line.
-2. Keep the voice profile. A rewrite that sounds like a generic human is a failure, not a success. This is the one rule that separates this from any other rewriter.
+2. Keep the voice profile or Style Lock. It wins over any general preference. A rewrite that sounds like a generic human is a failure, not a success.
 3. Change nothing the user marked as final.
 4. Keep the platform format and the character limit.
 
 Then run the structural tells from voice.md section 4 on your own rewrite, before you return it.
 
-Output: the rewrite, then at most 3 bullets on what you changed and why.
+Output: the rewrite, then a concise before -> after table showing the resolved tell for each edit, plus at most 3 changes unrelated to a tell, each with a brief reason.

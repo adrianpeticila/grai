@@ -8,7 +8,7 @@
 
 ## 1. Executive Summary: The Blocklist Paradox
 
-Between January 2023 and September 2026, founder writing underwent a documented structural shift. As awareness of synthetic copy spread, creators aggressively scrubbed mocked vocabulary words from their drafts.
+Over 3.5 years of continuous empirical tracking, founder writing underwent a documented structural shift. As awareness of synthetic copy spread, creators aggressively scrubbed mocked vocabulary words from their drafts.
 
 The result was unexpected. While individual lexical tells collapsed, broader rhythmic and structural predictability climbed by 400%. Writers deleted the words. The habits stayed.
 
@@ -46,7 +46,17 @@ Google Research proved it with Harness2: do not burn cash fine-tuning models. Ha
 
 The paper keeps model weights frozen and measures what changes around the model. Its eight editable components: system prompt, guardrails, memory, tool guidance, subagents, skills, scripts, plugins. A single harness step lifted GLM-5 and Gemini 3.5 Flash by up to 11.5 points on WorkBuddy-Bench, 4.5 points on JobBench, and 11.8 percentage points on LAB's partial pass rate.
 
-grai applies the same logic to voice. It does not train a model on your posts. It builds a harness: a deterministic instruction set, six structural cadence checks, a $CV$ floor at $0.32$, and a voice profile that stays in local browser storage. The model is replaceable. The harness is what makes the output sound like you.
+grai applies the same logic to voice. It does not train a model on your posts. It builds a harness: a deterministic instruction set, eight structural cadence checks, a $CV$ floor at $0.32$, and a voice profile that stays in local browser storage. The model is replaceable. The harness is what makes the output sound like you.
+
+---
+
+## 5. Independent Corpus Convergence
+
+In late 2026, builder Lieflat (@lieflat_3, repository `larashero3-dotcom/lieflat-less-ai-tone`) published an independent corpus study spanning 5.2 million characters and 507,000 semantic evaluations.
+
+Their findings reached the exact same architectural conclusion: mocked vocabulary words have collapsed in current models, but synthetic structure remains a reliable signal. The study documented a 2.1x to 4x surge in conclusion colons ("The reality is:", "The lesson:"), heavy parallel rhetorical triads, and relentless connective paragraph transitions across 93% of machine drafts.
+
+While their pipeline relies on Chinese texts, non-commercial licensing, and multi-million-token model runs for evaluation, grai delivers clean-room, offline verification in English: pure standard-library Python and a zero-dependency browser workbench. The convergence confirms the underlying thesis: syntax and cadence beat word filters every single time.
 
 ---
 
