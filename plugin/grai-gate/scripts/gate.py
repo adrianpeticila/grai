@@ -701,14 +701,20 @@ def analyze(text):
 
     flags.sort(key=lambda item: (-item["penalty"], FLAG_ORDER.get(item["key"], 99)))
     penalty = sum(item["penalty"] for item in flags)
-    score = max(0, min(100, 100 - penalty))
+    insufficient = sentence_count < CV_MIN_SENTENCES
+    score = None if insufficient else max(0, min(100, 100 - penalty))
     hard_flags = sum(1 for item in flags if item["hard"])
     hard_occurrences = sum(item["count"] for item in flags if item["hard"])
     hard_density = (
         hard_occurrences * 100.0 / sentence_count if sentence_count else 0.0
     )
     fail_reason = None
-    if sentence_count < 20:
+    if insufficient:
+        if hard_occurrences >= 1:
+            fail_reason = "hard_flag"
+        elif flags:
+            fail_reason = "flag"
+    elif sentence_count < 20:
         if score < PASS_SCORE:
             fail_reason = "score"
         elif hard_occurrences >= 1:
@@ -723,6 +729,7 @@ def analyze(text):
     mtld = _compute_mtld(all_tokens)
     structure_density = _compute_structure_density(blocks, total_words)
     advisory = {
+        "insufficient_sentences": insufficient,
         "lexical_mtld": mtld,
         "structure_density": structure_density,
         "ref_band": "external reference, Chinese corpus, not calibrated on English",
@@ -777,9 +784,10 @@ def report_lines(result, source=None):
         return []
     flags = result["flags"]
     cv_text = "n/a" if result["cv"] is None else "%.2f" % result["cv"]
+    score_text = "n/a" if result["score"] is None else "%d" % result["score"]
     lines = [
-        "[grai-gate] Slop Score: %d/100 (CV: %s | Flags: %d)"
-        % (result["score"], cv_text, len(flags))
+        "[grai-gate] Slop Score: %s/100 (CV: %s | Flags: %d)"
+        % (score_text, cv_text, len(flags))
     ]
 
     worst = result["worst"]
@@ -857,6 +865,11 @@ def _json_result(label, result, source=None):
 
 
 def _clean_summary(label, result):
+    if result["score"] is None:
+        return (
+            "[grai-gate] clean: %s (score n/a, CV n/a, "
+            "insufficient sentences to measure rhythm)" % label
+        )
     cv_text = "n/a" if result["cv"] is None else "%.2f" % result["cv"]
     names = ", ".join(item["name"] for item in result["flags"])
     mtld = result.get("advisory", {}).get("lexical_mtld")

@@ -8,6 +8,8 @@ grai-gate reads the file after the write. It scores sentence-length burstiness a
 
 Built for Antigravity. No account, no key, no network, no telemetry.
 
+> **Scope.** Calibrated on non-fiction prose, from 134,522 posts. Dialogue-heavy fiction inflates sentence-length variation, so a pass on fiction is not evidence of anything.
+
 ## What it catches
 
 - Flat cadence: sentence-length CV under 0.32 across at least four sentences. The warning band starts at 0.35. The human baseline is 0.40.
