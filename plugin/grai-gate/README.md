@@ -167,7 +167,7 @@ The Pro link in the card is a static string. The hook never requests it.
 
 The plugin is the free gate. The paid cockpit is the repair bench. It builds a Voice DNA profile and runs rewrite passes for client-ready reports.
 
-Founder Edition is $69. Agency Edition is $149. Both are one-time purchases on grai.page, with checkout on Payhip and card processing by Stripe.
+Solo Offline Edition is $79/yr. Agency Verification Protocol is $99/mo or $790/yr. Checkout for the editions runs on Stripe: Solo https://buy.stripe.com/3cIaERgwM9hLbuF33Vds400, Agency Monthly https://buy.stripe.com/3cI28lbcs51v2Y9bArds401, Agency Annual https://buy.stripe.com/dRmfZb2FWalP42d5c3ds402. The $39 presets pack and the partner registration remain on Payhip.
 
 [Open the cockpit](https://grai.page?utm_source=antigravity&utm_medium=gate&utm_campaign=gate_v0.1#developer)
 

@@ -120,11 +120,11 @@ The standalone **grai** desktop application (`grai.html`, 618 KB single-file HTM
 - **Free browser scorer, no signup:** test the 8-rule gate and the burstiness floor on your own text at **[grai.page/#test](https://grai.page/#test)**. The page runs the same engine locally, with no account and no upload.
 - **Shipped Pre-Built Kit (`grai.html` in the ZIP):** Ships with `default-src 'none'; connect-src 'none'` (allowing inline styles/scripts and `data:` fonts/images while blocking direct API connections) and runs out of the box in **Copy-Paste ("Any AI") mode** (`< 1,800 char` dense prompt builder).
 - **Custom Source Build (`source/src/app.html` + `scripts/build.py`):** Edit `connect-src` and rebuild with `python3 scripts/build.py` to enable direct browser-to-API calls (BYOK) or local Ollama (`http://localhost:11434`).
-- **[Founder Edition ($69 once)](https://payhip.com/b/5pXfN):** Complete local app, Voice DNA profiler, 3-galley Writing Desk, 8-rule Cadence Gate, 1-click `.grai` local backup, lifetime v3.x updates. Zero subscription.
-- **[Agency Edition ($149 once)](https://payhip.com/b/QVIBp):** Commercial licence for client ghostwriting, up to 25 client voice profiles, printable 1-page A4 **Client Voice DNA Dossier** (`#grai-print-certificate` with 8 audit fields and a locally computed SHA-256 integrity checksum), and offline `.grai` team sync.
-- **[White-Label Studio Edition ($299/mo or $2,490/yr)](https://payhip.com/b/Q90Vu):** Complete white-label agency kit, custom logo and brand styling on client dossiers, private cadence embed for agency domain, and priority quota.
+- **[Solo Offline Edition ($79/yr)](https://buy.stripe.com/3cIaERgwM9hLbuF33Vds400):** Watermarked local HTML5 workbench, Voice DNA profiler with 1 voice profile, 8-rule Cadence Gate, and 1-click `.grai` local backup. Billed annually.
+- **[Agency Verification Protocol ($99/mo or $790/yr)](https://buy.stripe.com/3cI28lbcs51v2Y9bArds401):** Commercial licence for client work, up to 10 executive client voice profiles, white-label A4 Client Voice DNA Dossiers, live ECDSA P-256 seals at grai.page/verify/:hash, and offline `.grai` team sync. Annual link: https://buy.stripe.com/dRmfZb2FWalP42d5c3ds402
+- **[Executive Voice DNA Architecture ($950 one-time)](https://buy.stripe.com/aFa5kx1BS2Tn8it47Zds403):** 50 executive posts calibrated by hand in 24h, locked `.grai.json` profile, A4 reference dossier, and 1 year of Solo Workbench.
 - **[Voice DNA Archetype Presets ($39 once)](https://payhip.com/b/ZAISC):** Four pre-calibrated baseline models (The Contrarian Founder, The Technical Architect, The Boutique Ghostwriter, The Cold Outreach Closer).
-- **[Affiliate program (40% commission, $59.60 per Agency sale)](https://payhip.com/auth/register/af63e51e20042ed):** For newsletters, communities and consultants who recommend tools to writers.
+- **[Affiliate program (40% commission)](https://payhip.com/auth/register/af63e51e20042ed):** For newsletters, communities and consultants who recommend tools to writers.
 
 ### Arcade Mastery & Ghost Sweep
 Version 3.2.0 introduces the **Cadence Mastery Arcade** directly inside the desk:
@@ -133,18 +133,18 @@ Version 3.2.0 introduces the **Cadence Mastery Arcade** directly inside the desk
 - **Season 0 A4 Recap:** deterministic single-page printable progress dossier with local SHA-256 integrity verification.
 
 ### Embeddable Audit Widget
-Agencies embed the calibrator with one iframe: `<iframe src="https://grai.page/embed?ref=PARTNER_ID" width="100%" height="520" frameborder="0"></iframe>`. The `ref` parameter appends the partner code to every Payhip checkout, so the agency earns 40% on each sale it drives.
+Agencies embed the calibrator with one iframe: `<iframe src="https://grai.page/embed?ref=PARTNER_ID" width="100%" height="520" frameborder="0"></iframe>`. The `ref` parameter appends the partner code to eligible checkout links, so the agency earns 40% on eligible referrals.
 
 ### Free Scoring API
 `GET https://grai.page/api/score?text=...` or `POST https://grai.page/api/score` with `{"text": "..."}` returns the score, the cadence CV against the 0.32 floor, the failed rules and the checkout links. Stateless, no key, no storage.
 
 ### Commercial Editions & 40% Partner Program
-- **Founder Edition ($69 one-time):** [Get Founder Edition](https://payhip.com/b/5pXfN). Complete single-user local workbench, Voice DNA profiler, 8-rule Cadence Gate, and 1-click `.grai` backup.
-- **Ghostwriter and Agency Edition ($149 one-time):** [Get Agency Edition](https://payhip.com/b/QVIBp). Commercial licence, up to 25 isolated client Voice Profiles, and printable SHA-256 A4 Voice DNA Dossiers.
-- **White-Label Studio Edition ($299/mo or $2,490/yr):** [Monthly Checkout](https://payhip.com/order?link=Q90Vu&pricing_plan=q3BoNde0zE) or [Annual Checkout](https://payhip.com/order?link=Q90Vu&pricing_plan=63WdAa9kzw) (save 30%, $47.80/week). 100% white-label dossiers, custom branding, unlimited client profiles in local SQLite, white-label cadence widget, and priority M2M API quota.
+- **Solo Offline Edition ($79/yr):** [Get Solo Offline](https://buy.stripe.com/3cIaERgwM9hLbuF33Vds400). Watermarked local workbench, Voice DNA profiler with 1 voice profile, 8-rule Cadence Gate, and 1-click `.grai` backup.
+- **Agency Verification Protocol ($99/mo or $790/yr):** [Monthly](https://buy.stripe.com/3cI28lbcs51v2Y9bArds401) or [Annual](https://buy.stripe.com/dRmfZb2FWalP42d5c3ds402). Commercial licence, up to 10 executive client voice profiles, white-label A4 Dossiers, and live ECDSA P-256 seals at grai.page/verify/:hash.
+- **Executive Voice DNA Architecture ($950 one-time):** [Book the calibration](https://buy.stripe.com/aFa5kx1BS2Tn8it47Zds403). 50 executive posts calibrated by hand in 24h, locked `.grai.json` profile, A4 reference dossier, and 1 year of Solo Workbench.
 - **Pre-calibrated Voice DNA Presets Pack ($39 one-time):** [Get the 4 Archetypes](https://payhip.com/b/ZAISC). The Brutalist Engineer, The Contrarian Bootstrapper, The B2B Cold Sniper, and The Substack Essayist.
-- **Already bought Founder Edition ($69)?** Upgrade to the Ghostwriter and Agency Edition for the **$80 difference**. The $149 licence adds 25 isolated Client Voice Profiles and printable SHA-256 A4 Dossiers. Email your Payhip order number to adrian@grai.page with the subject "Agency Upgrade", or buy the full licence directly at [Agency Edition](https://payhip.com/b/QVIBp).
-- **Earn 40% per sale** ($27.60 on Founder, $59.60 on Agency). Two referrals cover your entire licence: 2 x $59.60 = $119.20. [Open the partner program](https://payhip.com/auth/register/af63e51e20042ed).
+- **Legacy lifetime licences:** Existing Agency lifetime licences are grandfathered with their promised client profiles and permanent verification links. No migration payment is required.
+- **Earn 40% per eligible referral.** [Open the partner program](https://payhip.com/auth/register/af63e51e20042ed).
 
 ### Side-by-Side Comparisons
 - **[All Comparisons Hub (`grai.page/vs/`)](https://grai.page/vs/)**

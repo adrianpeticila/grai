@@ -38,6 +38,8 @@ A natural human conversation maintains a $CV$ above $0.38$ with natural shifts b
 
 grai enforces a hard floor at $CV = 0.32$. Monotone sentence structures get flagged before you publish.
 
+> **Scope.** Calibrated on non-fiction prose, from 134,522 posts. Dialogue-heavy fiction inflates sentence-length variation, so a pass on fiction is not evidence of anything.
+
 ---
 
 ## 4. The Harness Argument
