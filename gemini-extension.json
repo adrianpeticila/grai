@@ -1,6 +1,6 @@
 {
   "name": "grai-gate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Deterministic cadence gate for AI-written drafts. Scores sentence-length variance, flags structural slop and verifies signed seal records.",
   "mcpServers": {
     "grai-gate": {
