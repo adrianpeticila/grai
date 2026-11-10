@@ -216,6 +216,24 @@ Windsurf: save the same block to `~/.codeium/windsurf/mcp_config.json`.
 }
 ```
 
+### Smithery CLI and registry
+
+Run the published server locally:
+
+```bash
+npx -y @smithery/cli run @adrianpeticila/grai --config "{}"
+```
+
+Index it on Smithery.ai:
+
+1. Push the public repository with `plugin/grai-gate/smithery.yaml`.
+2. Sign in at https://smithery.ai with GitHub.
+3. Open the publisher dashboard and choose Add server.
+4. Select the `adrianpeticila/grai` repository and the `plugin/grai-gate` directory.
+5. Confirm Smithery reads `smithery.yaml`, the Python runtime and `mcp_server.py`.
+6. Submit the listing. The registry exposes `grai_score_draft`, `grai_issue_agency_seal` and `grai_verify_seal`.
+7. After review, the listing is available under the `@adrianpeticila/grai` handle.
+
 The server exposes `grai_score_draft`, `grai_issue_agency_seal` and `grai_verify_seal`. Every call returns the score, the failed rules and the four canonical Stripe upgrade links:
 
 - Solo Offline Edition ($79/yr): https://buy.stripe.com/3cIaERgwM9hLbuF33Vds400
