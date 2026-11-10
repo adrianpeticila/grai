@@ -170,6 +170,8 @@ Windsurf: save it to `~/.codeium/windsurf/mcp_config.json`.
 
 Without uv, install once with `pip install grai-mcp` and use `"command": "grai-gate-mcp"` with an empty `args`.
 
+Every surface the server lives on, including Docker, the registry name and the LobeHub listing: [MCP.md](MCP.md).
+
 ### Directory listings
 
 Smithery's proxy, accounts and publisher dashboard shut down on 31 October 2026. The listing instructions it used to need no longer apply. The server is distributed through PyPI (`grai-mcp`) and the official MCP Registry (`io.github.adrianpeticila/grai-mcp`).

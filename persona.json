@@ -2,6 +2,11 @@
   "brand": "grai",
   "tagline": "The gatekeeper and proof engine for human voice.",
   "url": "https://grai.page/",
+  "sameAs": [
+    "https://pypi.org/project/grai-mcp/",
+    "https://github.com/adrianpeticila/grai",
+    "https://lobehub.com/mcp/adrianpeticila-grai"
+  ],
   "version": "3.3.0",
   "dateModified": "2026-11-10",
   "category": "Binary Style Gate & ECDSA Proof Engine",
@@ -94,6 +99,11 @@
   "endpoints": {
     "homepage": "https://grai.page/",
     "agent_homepage_md": "https://grai.page/index.md",
+    "mcp": "https://grai.page/mcp",
+    "mcp_md": "https://grai.page/mcp.md",
+    "mcp_package": "https://pypi.org/project/grai-mcp/",
+    "mcp_registry_name": "io.github.adrianpeticila/grai-mcp",
+    "mcp_install": "uvx --from grai-mcp grai-gate-mcp",
     "methodology": "https://grai.page/methodology",
     "agent_methodology_md": "https://grai.page/methodology.md",
     "comparisons_hub": "https://grai.page/vs/",
