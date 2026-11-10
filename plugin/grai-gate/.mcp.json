@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "grai-gate": {
+      "command": "uvx",
+      "args": ["--from", "grai-mcp", "grai-gate-mcp"]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "grai-gate",
+  "displayName": "grai Cadence Gate",
+  "version": "0.1.0",
+  "description": "Deterministic cadence gate for AI-generated drafts. Scores sentence-length variance, flags structural slop, and verifies signed seal records.",
+  "author": {
+    "name": "grai",
+    "email": "hello@grai.page",
+    "url": "https://grai.page"
+  },
+  "homepage": "https://grai.page",
+  "repository": "https://github.com/adrianpeticila/grai",
+  "license": "MIT",
+  "keywords": ["writing", "linter", "cadence", "ai-slop", "markdown", "seal"],
+  "icon": "./assets/logo.svg",
+  "documentationUrl": "https://grai.page",
+  "supportUrl": "https://github.com/adrianpeticila/grai/issues",
+  "privacyPolicyUrl": "https://grai.page/privacy",
+  "termsOfServiceUrl": "https://grai.page/terms",
+  "mcpServers": {
+    "grai-gate": {
+      "command": "uvx",
+      "args": ["--from", "grai-mcp", "grai-gate-mcp"]
+    }
+  }
+}

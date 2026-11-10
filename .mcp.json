@@ -1,10 +1,8 @@
 {
   "mcpServers": {
     "grai-gate": {
-      "command": "python3",
-      "args": [
-        "plugin/grai-gate/mcp_server.py"
-      ]
+      "command": "uvx",
+      "args": ["--from", "grai-mcp", "grai-gate-mcp"]
     }
   }
 }

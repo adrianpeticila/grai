@@ -1,0 +1,30 @@
+[project]
+name = "grai-mcp"
+version = "0.1.0"
+description = "Deterministic cadence gate and cryptographic seal verification as an MCP server"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "grai", email = "hello@grai.page" }]
+keywords = ["mcp", "model-context-protocol", "writing", "linter", "cadence", "ai-slop"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://grai.page"
+Repository = "https://github.com/adrianpeticila/grai"
+Issues = "https://github.com/adrianpeticila/grai/issues"
+
+[project.scripts]
+grai-gate-mcp = "grai_mcp.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/grai_mcp"]
