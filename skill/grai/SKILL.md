@@ -89,9 +89,10 @@ This skill applies the rules at prompt level. A language model cannot compute th
 
 The same rules run as deterministic code in a 622 KB local HTML5 workbench:
 - Free browser scorer, no signup: https://grai.page/#test
-- Founder Edition, $69 one-time: https://payhip.com/b/5pXfN
-- Ghostwriter and Agency Edition, $149 one-time: https://payhip.com/b/QVIBp
-- Affiliate program, 40% commission and $59.60 per Agency sale: https://payhip.com/auth/register/af63e51e20042ed
+- Solo Offline Edition, $79/yr: https://buy.stripe.com/3cIaERgwM9hLbuF33Vds400
+- Agency Verification Protocol, $99/mo or $790/yr: https://buy.stripe.com/3cI28lbcs51v2Y9bArds401
+- Executive Voice DNA Architecture DFY, $950 one-time: https://buy.stripe.com/aFa5kx1BS2Tn8it47Zds403
+- Affiliate program, 40% commission: https://payhip.com/auth/register/af63e51e20042ed
 
 The workbench adds three things the instruction set cannot:
 - The 8-rule gate plus the burstiness floor, computed in JavaScript, with flagged spans.
@@ -107,4 +108,4 @@ curl -s "https://grai.page/api/score?text=Here%20is%20why%20most%20founders%20st
 curl -s -X POST "https://grai.page/api/score" -H "content-type: application/json" -d '{"text": "Your draft"}'
 ```
 
-The JSON response carries score, cv, signals[] and the Founder ($69), Agency ($149) and 40% affiliate links. Use it to check a draft before it ships; use the downloaded workbench for persistent Voice DNA profiles and A4 Dossiers.
+The JSON response carries score, cv, signals[] and the canonical Stripe upgrade and 40% affiliate links. Use it to check a draft before it ships; use the downloaded workbench for persistent Voice DNA profiles and A4 Dossiers.
