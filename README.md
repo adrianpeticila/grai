@@ -138,6 +138,23 @@ Agencies embed the calibrator with one iframe: `<iframe src="https://grai.page/e
 ### Free Scoring API
 `GET https://grai.page/api/score?text=...` or `POST https://grai.page/api/score` with `{"text": "..."}` returns the score, the cadence CV against the 0.32 floor, the failed rules and the checkout links. Stateless, no key, no storage.
 
+### MCP Server (Claude Desktop / Cursor)
+
+The plugin ships `plugin/grai-gate/mcp_server.py`, a dependency-free JSON-RPC 2.0 server over stdio. Add it to any MCP client:
+
+```json
+{
+  "mcpServers": {
+    "grai-gate": {
+      "command": "python3",
+      "args": ["/absolute/path/to/plugin/grai-gate/mcp_server.py"]
+    }
+  }
+}
+```
+
+The server exposes `grai_score_draft`, `grai_issue_agency_seal` and `grai_verify_seal`. Scoring runs locally through the shipped gate engine. Seal and verify calls use the live grai.page API.
+
 ### Commercial Editions & 40% Partner Program
 - **Solo Offline Edition ($79/yr):** [Get Solo Offline](https://buy.stripe.com/3cIaERgwM9hLbuF33Vds400). Watermarked local workbench, Voice DNA profiler with 1 voice profile, 8-rule Cadence Gate, and 1-click `.grai` backup.
 - **Agency Verification Protocol ($99/mo or $790/yr):** [Monthly](https://buy.stripe.com/3cI28lbcs51v2Y9bArds401) or [Annual](https://buy.stripe.com/dRmfZb2FWalP42d5c3ds402). Commercial licence, up to 10 executive client voice profiles, white-label A4 Dossiers, and live ECDSA P-256 seals at grai.page/verify/:hash.

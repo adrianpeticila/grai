@@ -173,6 +173,23 @@ Solo Offline Edition is $79/yr. Agency Verification Protocol is $99/mo or $790/y
 
 The plugin prints that link. It does not call the cockpit or load a script. It does not check a license.
 
+## MCP Server (Claude Desktop / Cursor)
+
+The plugin ships `mcp_server.py`, a dependency-free JSON-RPC 2.0 server over stdio. Add it to any MCP client:
+
+```json
+{
+  "mcpServers": {
+    "grai-gate": {
+      "command": "python3",
+      "args": ["/absolute/path/to/plugin/grai-gate/mcp_server.py"]
+    }
+  }
+}
+```
+
+The server exposes `grai_score_draft`, `grai_issue_agency_seal` and `grai_verify_seal`. Scoring runs locally through the shipped gate engine. Seal and verify calls use the live grai.page API.
+
 ## Development
 
 The engine is one file with four imports: `json`, `math`, `re`, `sys`. There is no package manager and no build step.
