@@ -6,7 +6,9 @@
 
 # grai
 
-**The personal voice engine. Write like you. Prove it.**
+**The gatekeeper and proof engine for human voice.**
+
+*Input raw text. Get a binary PASS or FAIL against eight mechanical rules and a sentence rhythm floor. Output clean text plus a signed audit a client can verify.*
 
 *Deterministic cadence harness, Voice DNA profiler, and local-first HTML5 writing workbench.*
 
@@ -27,6 +29,14 @@
 ---
 
 > **Scope.** Calibrated on non-fiction prose, from 134,522 posts. Dialogue-heavy fiction inflates sentence-length variation, so a pass on fiction is not evidence of anything.
+
+## The Gate Contract
+
+grai is not an editor and it is not a passive assistant. It is a gate with a fixed decision.
+
+1. **Input:** a raw draft, yours or a model's.
+2. **Action:** a binary PASS or FAIL against eight mechanical rules plus the sentence rhythm floor (`CV = sigma / mu >= 0.32`).
+3. **Output:** the clean text plus an ECDSA P-256 signed audit card with the score, the CV and the defect count. Share the card as `https://grai.page/seal#<record>`.
 
 ## Why the Name and Mark (`grai`)
 
@@ -117,7 +127,7 @@ grai/
 
 The standalone **grai** desktop application (`grai.html`, 618 KB single-file HTML5 workbench, v3.3.0) is commercial software available at **[grai.page](https://grai.page)**.
 - **Signed seal and Style Lock (v3.3.0):** export a hash-only seal payload and sign it at [grai.page/seal](https://grai.page/seal), so a client can verify a report without ever seeing the draft; share a style rule file across a team without moving any draft text.
-- **Free browser scorer, no signup:** test the 8-rule gate and the burstiness floor on your own text at **[grai.page/#test](https://grai.page/#test)**. The page runs the same engine locally, with no account and no upload.
+- **Free browser scorer, no signup:** test the 8-rule gate and the burstiness floor on your own text at **[grai.page/#test](https://grai.page/#test)**. The page runs the same engine locally, with no account and no upload. When a draft passes, issue a signed audit card at **[grai.page/seal](https://grai.page/seal)** and send the link to a client.
 - **Shipped Pre-Built Kit (`grai.html` in the ZIP):** Ships with `default-src 'none'; connect-src 'none'` (allowing inline styles/scripts and `data:` fonts/images while blocking direct API connections) and runs out of the box in **Copy-Paste ("Any AI") mode** (`< 1,800 char` dense prompt builder).
 - **Custom Source Build (`source/src/app.html` + `scripts/build.py`):** Edit `connect-src` and rebuild with `python3 scripts/build.py` to enable direct browser-to-API calls (BYOK) or local Ollama (`http://localhost:11434`).
 - **[Solo Offline Edition ($79/yr)](https://buy.stripe.com/3cIaERgwM9hLbuF33Vds400):** Watermarked local HTML5 workbench, Voice DNA profiler with 1 voice profile, 8-rule Cadence Gate, and 1-click `.grai` local backup. Billed annually.
@@ -211,7 +221,7 @@ The server exposes `grai_score_draft`, `grai_issue_agency_seal` and `grai_verify
 - **Agency Verification Protocol ($99/mo or $790/yr):** [Monthly](https://buy.stripe.com/3cI28lbcs51v2Y9bArds401) or [Annual](https://buy.stripe.com/dRmfZb2FWalP42d5c3ds402). Commercial licence, up to 10 executive client voice profiles, white-label A4 Dossiers, and live ECDSA P-256 seals at grai.page/verify/:hash.
 - **Executive Voice DNA Architecture ($950 one-time):** [Book the calibration](https://buy.stripe.com/aFa5kx1BS2Tn8it47Zds403). 50 executive posts calibrated by hand in 24h, locked `.grai.json` profile, A4 reference dossier, and 1 year of Solo Workbench.
 - **Pre-calibrated Voice DNA Presets Pack ($39 one-time):** [Get the 4 Archetypes](https://payhip.com/b/ZAISC). The Brutalist Engineer, The Contrarian Bootstrapper, The B2B Cold Sniper, and The Substack Essayist.
-- **Legacy lifetime licences:** Existing Agency lifetime licences are grandfathered with their promised client profiles and permanent verification links. No migration payment is required.
+- **Legacy lifetime licences:** Existing $149 Agency lifetime licences are grandfathered with their promised client profiles and permanent verification links. No migration payment is required.
 - **Earn 40% per eligible referral.** [Open the partner program](https://payhip.com/auth/register/af63e51e20042ed).
 
 ### Side-by-Side Comparisons

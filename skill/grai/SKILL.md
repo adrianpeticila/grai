@@ -31,7 +31,7 @@ Modes marked (page: yes) are the ones the page can run. Modes marked (page: no) 
 - IMAGE (page: no): 3 visual concepts for a post, with a ready image prompt for each and a text card option. Follow visuals.md.
 - AD (page: no): turn a post into ad copy for one platform, inside that platform's limits. Follow platforms.md.
 - REPURPOSE (page: no): turn one idea or post into versions for other platforms, each in its native format.
-- CHECK (page: yes): score any draft against the voice profile and mark style tells. Follow voice.md.
+- CHECK (page: yes): score any draft against the voice profile and mark AI tells. Follow voice.md.
 - LEARN (page: yes): the user pastes the version they really posted. Compare it with your draft and update the profile. Output the new full profile block.
 - HUMANIZE (page: yes): rewrite a draft from any source, including another AI, so it reads like a person wrote it, without losing one fact. Follow write.md section 8.
 - IDEAS (page: no): 10 angles from the user's topics, each with the first line written.
@@ -57,7 +57,7 @@ User settings override every default in these instructions.
 2. Never invent facts, numbers, clients, quotes, dates or results. If a post needs a fact you do not have, put `[ADD: what is needed]` in its place.
 3. Never copy a sample post. Short fragments are calibration only.
 4. Do not name a person or company in a post unless the user named them for that post.
-5. No style tells, in two layers. Words: em dashes, "delve", "leverage", "unlock", "game-changer", "in today's fast-paced world", "I'm excited/thrilled/humbled to announce". Structure: a "Here's why" opening, "It's not X, it's Y", arrow bullets, a paragraph of exactly three items, a first line that only announces what follows, a generic closing question such as "Thoughts?", an emoji at the start of every line. The structure layer matters more than the word list: writers delete the words everyone mocks, the rhythm is what gives a model away.
+5. No AI tells, in two layers. Words: em dashes, "delve", "leverage", "unlock", "game-changer", "in today's fast-paced world", "I'm excited/thrilled/humbled to announce". Structure: a "Here's why" opening, "It's not X, it's Y", arrow bullets, a paragraph of exactly three items, a first line that only announces what follows, a generic closing question such as "Thoughts?", an emoji at the start of every line. The structure layer matters more than the word list: writers delete the words everyone mocks, the rhythm is what gives a model away.
 6. Links go in the first comment on LinkedIn, Instagram and Facebook, unless the user says otherwise. Give the first comment ready to paste.
 7. Hashtags follow the platform norm in platforms.md. Zero is a valid answer. Never more than the platform norm.
 8. Posting times: give the benchmark window from platforms.md. The study times are local to the audience, so state them in the audience time zone. Name the study. The studies disagree, so say so when it matters. If you have web search, check for a newer study and say if it differs. Always add: "Your own analytics beat any benchmark."
@@ -87,14 +87,11 @@ You have no memory between chats unless the platform gives you one. After any ch
 
 This skill applies the rules at prompt level. A language model cannot compute the standard deviation of sentence length while it streams tokens, so the rhythm floor (CV = sigma / mu >= 0.32) stays a judgement here, not a measurement.
 
-The same rules run as deterministic code in a 618 KB local HTML5 workbench:
+The same rules run as deterministic code in a 622 KB local HTML5 workbench:
 - Free browser scorer, no signup: https://grai.page/#test
-- Solo Offline Edition, $79/yr: https://buy.stripe.com/3cIaERgwM9hLbuF33Vds400
-- Agency Verification Protocol, $99/mo: https://buy.stripe.com/3cI28lbcs51v2Y9bArds401
-- Agency Verification Protocol, $790/yr: https://buy.stripe.com/dRmfZb2FWalP42d5c3ds402
-- Executive Voice DNA Architecture, $950 one-time: https://buy.stripe.com/aFa5kx1BS2Tn8it47Zds403
-- Pre-calibrated Voice DNA Presets Pack, $39: https://payhip.com/b/ZAISC
-- Affiliate program, 40% commission on eligible referrals: https://payhip.com/auth/register/af63e51e20042ed
+- Founder Edition, $69 one-time: https://payhip.com/b/5pXfN
+- Ghostwriter and Agency Edition, $149 one-time: https://payhip.com/b/QVIBp
+- Affiliate program, 40% commission and $59.60 per Agency sale: https://payhip.com/auth/register/af63e51e20042ed
 
 The workbench adds three things the instruction set cannot:
 - The 8-rule gate plus the burstiness floor, computed in JavaScript, with flagged spans.
@@ -110,4 +107,4 @@ curl -s "https://grai.page/api/score?text=Here%20is%20why%20most%20founders%20st
 curl -s -X POST "https://grai.page/api/score" -H "content-type: application/json" -d '{"text": "Your draft"}'
 ```
 
-The JSON response carries score, cv, signals[] and the Solo ($79/yr), Agency ($99/mo or $790/yr) and 40% affiliate links. Use it to check a draft before it ships; use the downloaded workbench for persistent Voice DNA profiles and A4 Dossiers.
+The JSON response carries score, cv, signals[] and the Founder ($69), Agency ($149) and 40% affiliate links. Use it to check a draft before it ships; use the downloaded workbench for persistent Voice DNA profiles and A4 Dossiers.

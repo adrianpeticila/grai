@@ -45,7 +45,7 @@ The thresholds come from a study of 134,522 posts across 1,499 founder profiles,
 
 Install from the Antigravity Marketplace, or run `agy plugin install ./grai-gate` from the bundle. The plugin works with the documented Antigravity write tools and with the `write_file` and `edit_file` aliases.
 
-The free plugin is the gate. The paid cockpit at grai.page is the repair bench, with a Voice DNA profile and rewrite passes for client-ready reports. Solo Offline Edition is $79/yr. Agency Verification Protocol is $99/mo or $790/yr. Checkout runs on Stripe.
+The free plugin is the gate. The paid cockpit at grai.page is the repair bench, with a Voice DNA profile and rewrite passes for client-ready reports. Founder Edition is $69. Agency Edition is $149. Checkout runs on Payhip and Stripe processes every card.
 
 [Open grai.page](https://grai.page?utm_source=antigravity&utm_medium=gate&utm_campaign=gate_v0.1#developer)
 ```
@@ -74,7 +74,7 @@ Rewrite the worst file to pass grai-gate, then score it again.
 
 ## Commercial notes
 
-The plugin is free and MIT licensed. The paid cockpit is a separate product on grai.page. Solo Offline Edition is $79/yr. Agency Verification Protocol is $99/mo or $790/yr. Checkout is live on Stripe.
+The plugin is free and MIT licensed. The paid cockpit is a separate product on grai.page. Founder Edition is $69. Agency Edition is $149. Checkout is live on Payhip with Stripe card processing.
 
 All grai.page links in the bundle use:
 
@@ -92,7 +92,7 @@ https://grai.page?utm_source=antigravity&utm_medium=gate&utm_campaign=gate_v0.1#
 - Stdout is exactly `{}` on every hook run. Malformed payloads included.
 - The logo is bundled at `assets/logo.svg`.
 - Every grai.page link carries the campaign string above.
-- The Stripe checkout for each edition returns a live payment page.
+- The Payhip checkout for both editions returns a live payment page.
 
 ## Reviewer posture
 

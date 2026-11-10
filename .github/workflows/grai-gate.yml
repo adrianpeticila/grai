@@ -1,5 +1,4 @@
-name: grai-gate
-
+name: grai cadence gate
 on:
   pull_request:
     paths:
@@ -12,6 +11,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: adrianpeticila/grai-gate-action@v0.2.0
         with:
-          fail-on-slop: "false"
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Gate changed markdown
+        run: |
+          set -u
+          base="${{ github.base_ref }}"
+          git fetch --no-tags origin "$base" >/dev/null 2>&1 || true
+          changed=$(git diff --name-only "origin/$base...HEAD" -- '*.md' '*.mdx' '*.txt' || true)
+          if [ -z "$changed" ]; then
+            echo "No markdown changed."
+            exit 0
+          fi
+          files=$(printf '%s\n' "$changed" | while IFS= read -r f; do [ -f "$f" ] && printf '%s\n' "$f"; done)
+          if [ -z "$files" ]; then
+            echo "No markdown file survives the diff."
+            exit 0
+          fi
+          printf '%s\n' "$files" | tr '\n' '\0' | xargs -0 python3 plugin/grai-gate/scripts/gate.py -v

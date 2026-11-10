@@ -52,31 +52,33 @@
     ]
   },
   "editions": {
-    "solo": {
-      "name": "Solo Offline Edition",
-      "price_usd": 79,
-      "billing_period": "year",
-      "checkout_url": "https://buy.stripe.com/3cIaERgwM9hLbuF33Vds400",
-      "billing": "annual licence, 1 year of engine updates",
+    "founder": {
+      "name": "Founder Edition",
+      "price_usd": 69,
+      "checkout_url": "https://payhip.com/b/5pXfN",
+      "billing": "one-time payment, lifetime v3.x updates",
       "scope": "1 person, local workbench, Voice DNA profiler, 8-rule Cadence Gate, 1-click .grai local backup"
     },
     "agency": {
-      "name": "Agency Verification Protocol",
-      "price_usd": 99,
-      "price_usd_annual": 790,
-      "billing_period": "month",
-      "checkout_url": "https://buy.stripe.com/3cI28lbcs51v2Y9bArds401",
-      "billing": "monthly or annual subscription, up to 10 executive client profiles",
-      "scope": "Up to 10 executive client voice profiles, A4 Client Voice DNA Dossier (8 audit fields + local SHA-256 checksum), live ECDSA P-256 seals at grai.page/verify/:hash, offline .grai team sync",
-      "checkout_url_annual": "https://buy.stripe.com/dRmfZb2FWalP42d5c3ds402"
+      "name": "Agency Edition",
+      "price_usd": 149,
+      "checkout_url": "https://payhip.com/b/QVIBp",
+      "billing": "one-time payment, commercial team licence",
+      "scope": "Unlimited multi-client voice switcher, A4 Client Voice DNA Dossier (8 audit fields + local SHA-256 checksum), offline .grai team sync"
     },
-    "dfy": {
-      "name": "Executive Voice DNA Architecture",
-      "price_usd": 950,
-      "billing_period": "one-time",
-      "checkout_url": "https://buy.stripe.com/aFa5kx1BS2Tn8it47Zds403",
-      "billing": "one-time turnkey calibration",
-      "scope": "50 executive posts calibrated in 24h, locked .grai.json profile, A4 reference dossier, 1 year of Solo Workbench included"
+    "studio_monthly": {
+      "name": "White-Label Studio Edition (Monthly)",
+      "price_usd": 299,
+      "checkout_url": "https://payhip.com/order?link=Q90Vu&pricing_plan=q3BoNde0zE",
+      "billing": "monthly recurring subscription",
+      "scope": "100% white-label dossiers, custom branding, unlimited client profiles in local SQLite, white-label cadence widget on agency domain, priority M2M API quota"
+    },
+    "studio_yearly": {
+      "name": "White-Label Studio Edition (Annual)",
+      "price_usd": 2490,
+      "checkout_url": "https://payhip.com/order?link=Q90Vu&pricing_plan=63WdAa9kzw",
+      "billing": "annual subscription (save 30%, $207/mo, $47.80/week)",
+      "scope": "100% white-label dossiers, custom branding, unlimited client profiles in local SQLite, white-label cadence widget on agency domain, priority M2M API quota"
     },
     "presets": {
       "name": "Pre-calibrated Voice DNA Presets Pack",
@@ -146,7 +148,6 @@
     "embed_widget_md": "https://grai.page/embed.md",
     "seal_page": "https://grai.page/seal",
     "seal_api": "https://grai.page/api/seal",
-    "seal_version": "v2",
     "verify_api": "https://grai.page/api/verify",
     "pubkey_api": "https://grai.page/api/pubkey"
   }
