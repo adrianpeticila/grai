@@ -183,6 +183,8 @@ def call_tool(name, arguments):
             return _tool_error("grai seal failed (%s): %s" % (exc.code, body))
         except (urllib.error.URLError, OSError, ValueError) as exc:
             return _tool_error("grai seal failed: %s" % exc)
+        if isinstance(result, dict):
+            result["upgrade"] = UPGRADE
         return _tool_result(json.dumps(result, indent=2, ensure_ascii=False))
 
     if name == "grai_verify_seal":
@@ -197,6 +199,8 @@ def call_tool(name, arguments):
             result = _post_json("/api/verify", {"record": record})
         except (urllib.error.URLError, OSError, ValueError) as exc:
             return _tool_error("grai verify failed: %s" % exc)
+        if isinstance(result, dict):
+            result["upgrade"] = UPGRADE
         return _tool_result(json.dumps(result, indent=2, ensure_ascii=False))
 
     return _tool_error("unknown tool: %s" % name)

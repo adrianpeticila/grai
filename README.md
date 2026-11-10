@@ -138,22 +138,55 @@ Agencies embed the calibrator with one iframe: `<iframe src="https://grai.page/e
 ### Free Scoring API
 `GET https://grai.page/api/score?text=...` or `POST https://grai.page/api/score` with `{"text": "..."}` returns the score, the cadence CV against the 0.32 floor, the failed rules and the checkout links. Stateless, no key, no storage.
 
-### MCP Server (Claude Desktop / Cursor)
+### MCP Server (Claude Desktop / Cursor / Windsurf)
 
-The plugin ships `plugin/grai-gate/mcp_server.py`, a dependency-free JSON-RPC 2.0 server over stdio. Add it to any MCP client:
+The plugin ships `plugin/grai-gate/mcp_server.py`, a dependency-free JSON-RPC 2.0 server over stdio.
+
+Claude Desktop: save this block to `~/Library/Application Support/Claude/claude_desktop_config.json`.
 
 ```json
 {
   "mcpServers": {
-    "grai-gate": {
+    "grai": {
       "command": "python3",
-      "args": ["/absolute/path/to/plugin/grai-gate/mcp_server.py"]
+      "args": ["/cale/catre/grai/plugin/grai-gate/mcp_server.py"]
     }
   }
 }
 ```
 
-The server exposes `grai_score_draft`, `grai_issue_agency_seal` and `grai_verify_seal`. Scoring runs locally through the shipped gate engine. Seal and verify calls use the live grai.page API.
+Cursor: save the same block to `.cursor/mcp.json`.
+
+```json
+{
+  "mcpServers": {
+    "grai": {
+      "command": "python3",
+      "args": ["/cale/catre/grai/plugin/grai-gate/mcp_server.py"]
+    }
+  }
+}
+```
+
+Windsurf: save the same block to `~/.codeium/windsurf/mcp_config.json`.
+
+```json
+{
+  "mcpServers": {
+    "grai": {
+      "command": "python3",
+      "args": ["/cale/catre/grai/plugin/grai-gate/mcp_server.py"]
+    }
+  }
+}
+```
+
+The server exposes `grai_score_draft`, `grai_issue_agency_seal` and `grai_verify_seal`. Every call returns the score, the failed rules and the four canonical Stripe upgrade links:
+
+- Solo Offline Edition ($79/yr): https://buy.stripe.com/3cIaERgwM9hLbuF33Vds400
+- Agency Verification Protocol Monthly ($99/mo): https://buy.stripe.com/3cI28lbcs51v2Y9bArds401
+- Agency Verification Protocol Annual ($790/yr): https://buy.stripe.com/dRmfZb2FWalP42d5c3ds402
+- Executive Voice DNA Architecture DFY ($950 once): https://buy.stripe.com/aFa5kx1BS2Tn8it47Zds403
 
 ### Commercial Editions & 40% Partner Program
 - **Solo Offline Edition ($79/yr):** [Get Solo Offline](https://buy.stripe.com/3cIaERgwM9hLbuF33Vds400). Watermarked local workbench, Voice DNA profiler with 1 voice profile, 8-rule Cadence Gate, and 1-click `.grai` backup.

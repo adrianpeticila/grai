@@ -1,0 +1,14 @@
+name: grai-gate
+description: Deterministic cadence gate and cryptographic verification seals for LLM-generated drafts.
+version: 3.3.0
+runtime: python
+entrypoint: mcp_server.py
+tools:
+  - grai_score_draft
+  - grai_issue_agency_seal
+  - grai_verify_seal
+startCommand:
+  type: stdio
+  command: python3
+  args:
+    - mcp_server.py
