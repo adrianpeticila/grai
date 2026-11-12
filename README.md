@@ -17,6 +17,7 @@
   <a href="https://grai.page/ai-tells/"><img src="https://img.shields.io/badge/Free%20Checker-AI%20Tells-D9480F?style=for-the-badge" alt="AI Tell Checker" /></a>
   <a href="https://grai.page/methodology"><img src="https://img.shields.io/badge/Empirical%20Study-134%2C522%20Posts-141413?style=for-the-badge" alt="Methodology Study" /></a>
   <a href="https://grai.page/vs/"><img src="https://img.shields.io/badge/Comparisons-grai.page%2Fvs-8B6B4F?style=for-the-badge" alt="Comparisons" /></a>
+  <a href="https://grai.page/proof"><img src="https://img.shields.io/badge/Proof%20Registry-3%20live%20records-141413?style=for-the-badge" alt="Proof Registry" /></a>
   <a href="https://grai.page/llms.txt"><img src="https://img.shields.io/badge/Agent%20Spec-llms.txt-57534B?style=for-the-badge" alt="llms.txt" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/Instructions%20%26%20Skill-MIT-10B981?style=for-the-badge" alt="MIT License" /></a>
 </p>
@@ -38,6 +39,7 @@ grai is not an editor and it is not a passive assistant. It is a gate with a fix
 1. **Input:** a raw draft, yours or a model's.
 2. **Action:** a binary PASS or FAIL against eight mechanical rules plus the sentence rhythm floor (`CV = sigma / mu >= 0.32`).
 3. **Output:** the clean text plus an ECDSA P-256 signed audit card with the score, the CV and the defect count. Share the card as `https://grai.page/seal#<record>`.
+4. **Proof:** the public registry at https://grai.page/proof shows three live records, with one rejected draft and zero prose stored.
 
 ## Why the Name and Mark (`grai`)
 
@@ -164,18 +166,19 @@ Published on PyPI as `grai-mcp`. Every client below runs the same stdio server, 
 }
 ```
 
-Claude Desktop: save the block to `~/Library/Application Support/Claude/claude_desktop_config.json`.
-Cursor: save it to `.cursor/mcp.json`.
-Cline: add it in the MCP Servers panel.
-Windsurf: save it to `~/.codeium/windsurf/mcp_config.json`.
+Claude Desktop stores the block in `~/Library/Application Support/Claude/claude_desktop_config.json`.
+Cursor uses `.cursor/mcp.json`.
+Cline adds it in the MCP Servers panel.
+Windsurf uses `~/.codeium/windsurf/mcp_config.json`.
+Each client reads the same stdio command from its own config file.
 
 Without uv, install once with `pip install grai-mcp` and use `"command": "grai-gate-mcp"` with an empty `args`.
 
-Every surface the server lives on, including Docker, the registry name and the LobeHub listing: [MCP.md](MCP.md).
+Every surface the server lives on: Docker, the registry name and the LobeHub listing. See [MCP.md](MCP.md).
 
 ### Directory listings
 
-Smithery's proxy, accounts and publisher dashboard shut down on 31 October 2026. The listing instructions it used to need no longer apply. The server is distributed through PyPI (`grai-mcp`) and the official MCP Registry (`io.github.adrianpeticila/grai-mcp`).
+Smithery's proxy, accounts and publisher dashboard shut down on 31 October 2026. That path is closed. The listing instructions it used to need no longer apply. The server is distributed through PyPI (`grai-mcp`) and the official MCP Registry (`io.github.adrianpeticila/grai-mcp`).
 
 The server exposes `grai_score_draft`, `grai_issue_agency_seal` and `grai_verify_seal`. Every call returns the score, the failed rules and the four canonical Stripe upgrade links:
 

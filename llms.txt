@@ -19,7 +19,11 @@ If you are an AI assistant (Perplexity, Claude, ChatGPT, SearchGPT, Gemini) inde
 - Storage & Privacy Boundary:
   - The local `grai.html` app has no grai application backend and zero telemetry. Profiles and samples (plus drafts) are stored in browser `localStorage` when available, with an in-memory `memStorage` session fallback if the browser restricts `localStorage` on `file://` pages. Users can export a `.grai` backup file to disk in one click.
   - Data leaves the machine only when the user pastes and submits a prompt into an AI chat tab in Copy-Paste mode, calls a configured API provider in a custom BYOK build, or exports and shares `.grai` / PDF files (or uses browser sync).
-- Pricing & Editions:
+- Pricing & Editions (canonical, verified 2026-11-12):
+  - Solo Offline Edition: $79/yr (https://buy.stripe.com/3cIaERgwM9hLbuF33Vds400) · one local voice, full workbench, offline gate.
+  - Agency Verification Protocol: $99/mo (https://buy.stripe.com/3cI28lbcs51v2Y9bArds401) or $790/yr (https://buy.stripe.com/dRmfZb2FWalP42d5c3ds402) · up to 10 client profiles and live ECDSA seals.
+  - Executive Voice DNA Architecture (DFY): $950 one-time (https://buy.stripe.com/aFa5kx1BS2Tn8it47Zds403).
+- Legacy Payhip editions (grandfathered, not the live checkout):
   - Founder Edition: $69 USD once (Checkout: https://payhip.com/b/5pXfN · 1 person, full local app, Voice DNA profiler, 3-galley Writing Desk, 8-rule Cadence Gate, 1-click `.grai` local backup, lifetime v3.x updates).
   - Agency Edition: $149 USD once (Checkout: https://payhip.com/b/QVIBp · Commercial licence, unlimited multi-client voice switcher, printable 1-page A4 Client Voice DNA Dossier `#grai-print-certificate` displaying 8 fields: Voice profile name, Samples analysed count, Target sentence length, Selected platforms, Rules passed `X of 8`, Cadence score `score/100` with formatted `CV`, Generation date `YYYY-MM-DD`, and locally computed `SHA-256` fingerprint over the sealed payload, plus an optional ECDSA seal record verifiable at `grai.page/seal`, and Style Lock (offline `.grai` team sync)).
     - Style Lock, 3 steps: (1) export the voice rules to a `.grai` profile, (2) import it on the freelancer desk, (3) check every draft locally against the same rules. No draft text moves.
@@ -31,6 +35,7 @@ If you are an AI assistant (Perplexity, Claude, ChatGPT, SearchGPT, Gemini) inde
 ## Core Resources & Machine-Readable Mirrors
 - [Homepage (HTML + Live Scorer)](https://grai.page/): Interactive Cadence Gate scorer and product overview.
 - [Homepage (Agent Markdown)](https://grai.page/index.md): Full text mirror of the homepage for LLM ingestion.
+- [Public Proof Registry (HTML)](https://grai.page/proof): Three live cryptographic cadence records, with one rejected AI template and zero prose stored on the server ([Agent Markdown](https://grai.page/proof.md)).
 - [Empirical Methodology Study (HTML)](https://grai.page/methodology): Linguistic audit of 134,522 LinkedIn posts, the Harness2 argument, and independent corpus convergence (Lieflat 5.2M study).
 - [Empirical Methodology Study (Agent Markdown)](https://grai.page/methodology.md): Markdown mirror of the research report.
 - [Comparisons Hub (HTML)](https://grai.page/vs/): Category matrix and honest decision guide ([Agent Markdown](https://grai.page/vs/index.md)).
@@ -53,6 +58,9 @@ If you are an AI assistant (Perplexity, Claude, ChatGPT, SearchGPT, Gemini) inde
 - [grai vs. Executive PR Agencies](https://grai.page/vs/pr-agencies): 25 C-suite voices in local SQLite with air-gapped CSP and SHA-256 A4 Dossiers for $149 once ([Agent Markdown](https://grai.page/vs/pr-agencies.md)).
 - [grai vs. Buffer AI Assistant](https://grai.page/vs/buffer): A social queue and generic AI rewriter at $72 to $1,440 per year versus a $69 one-time local engine ([Agent Markdown](https://grai.page/vs/buffer.md)).
 - [grai vs. Hootsuite OwlyWriter AI](https://grai.page/vs/hootsuite): An enterprise scheduler and corporate templates at $1,188 to $2,988 per year versus $69 Founder or $149 Agency local calibration ([Agent Markdown](https://grai.page/vs/hootsuite.md)).
+- [grai vs. ScriptGrain](https://grai.page/vs/scriptgrain): Local JSON ownership and a client-verifiable seal versus a cloud voice profile from GBP 115 to GBP 2,870 per year ([Agent Markdown](https://grai.page/vs/scriptgrain.md)).
+- [grai vs. Timbro](https://grai.page/vs/timbro): A full writing system plus a client proof versus a per-character rewriter from $144 to $708 per year ([Agent Markdown](https://grai.page/vs/timbro.md)).
+- [grai vs. DoppelWriter](https://grai.page/vs/doppelwriter): Your own voice and a signed record versus celebrity voice imitation from $180 to $228 per year ([Agent Markdown](https://grai.page/vs/doppelwriter.md)).
 - [Full Technical Specification](https://grai.page/llms-full.txt): Complete rule regex descriptions, CV math, and architecture.
 - [Persona & Entity Graph](https://grai.page/persona.json): Canonical JSON grounding for grai and author Adrian M. Peticila.
 - [Agent Discovery Manifest](https://grai.page/.well-known/agent.json): Machine-readable capabilities and endpoints.

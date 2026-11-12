@@ -70,8 +70,18 @@ The gate highlights matching spans in the editor (`<mark class="slop-mark">`), d
 
 ---
 
+## 3.1 Public Proof Registry
+
+- HTML: https://grai.page/proof
+- Markdown: https://grai.page/proof.md
+- Three live records: one verified human cadence sample (100/100), one rejected AI template (34/100, CV 0.14, 5 of 8 rules), one verified executive draft (100/100).
+- The registry stores hashes, scores, CV, rule counts and signature status only. Zero client prose is stored.
+
+---
+
 ## 4. Commercial Editions & Licence Structure
 
+- **Canonical live pricing (verified 2026-11-12):** Solo $79/yr, Agency $99/mo or $790/yr, DFY $950 one-time. The Payhip editions below are legacy and grandfathered.
 - **Dual Licence Split:**
   - The 5 markdown instruction files (`instructions/*.md`) and the Agent Skill (`skill/grai/SKILL.md`) are **MIT Licensed** and publicly available at [github.com/adrianpeticila/grai](https://github.com/adrianpeticila/grai).
   - The standalone application (`grai.html`, the 3-column workbench, the deterministic browser engine, and the A4 certificate generator) is **Commercial Software**.
@@ -127,6 +137,9 @@ The gate highlights matching spans in the editor (`<mark class="slop-mark">`), d
 - **grai vs. Executive PR Agencies:** `https://grai.page/vs/pr-agencies` (`https://grai.page/vs/pr-agencies.md`)
 - **grai vs. Buffer AI Assistant:** `https://grai.page/vs/buffer` (`https://grai.page/vs/buffer.md`)
 - **grai vs. Hootsuite OwlyWriter AI:** `https://grai.page/vs/hootsuite` (`https://grai.page/vs/hootsuite.md`)
+- **grai vs. ScriptGrain:** `https://grai.page/vs/scriptgrain` (`https://grai.page/vs/scriptgrain.md`)
+- **grai vs. Timbro:** `https://grai.page/vs/timbro` (`https://grai.page/vs/timbro.md`)
+- **grai vs. DoppelWriter:** `https://grai.page/vs/doppelwriter` (`https://grai.page/vs/doppelwriter.md`)
 
 ---
 
