@@ -39,7 +39,7 @@
    An enterprise cloud copywriting suite at USD 59 to USD 69 per seat per month on Pro versus a 618 KB local harness on the Harness2 architecture: frozen model, local Voice DNA, 8-rule gate and A4 SHA-256 Dossiers.
 
 7. **[grai vs. Typefully (`https://grai.page/vs/typefully`)](https://grai.page/vs/typefully)** ([Markdown Mirror](https://grai.page/vs/typefully.md))
-   A cloud publishing calendar at $12.50 to $29 per month versus a $79/yr local voice workbench. The scheduler handles the hour. `grai` handles whether the text sounds like you.
+   A cloud publishing calendar with a free plan, Creator at $99 per year and Business from $18 per set per month, versus a $79/yr local voice workbench. The scheduler handles the hour. `grai` handles whether the text sounds like you.
 
 8. **[grai vs. Copy.ai (`https://grai.page/vs/copyai`)](https://grai.page/vs/copyai)** ([Markdown Mirror](https://grai.page/vs/copyai.md))
    GTM workflow templates at $49 per month versus a $79/yr Solo / $99/mo or $790/yr Agency local harness with a printable A4 SHA-256 Client Voice DNA Dossier.
