@@ -94,6 +94,7 @@
   },
   "affiliate_program": {
     "commission_percent": 40,
+    "scope": "Payhip-tracked products only. Stripe subscriptions are paid manually by agreement.",
     "signup_url": "https://payhip.com/auth/register/af63e51e20042ed"
   },
   "endpoints": {
