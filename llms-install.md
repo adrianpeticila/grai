@@ -2,6 +2,8 @@
 
 Local stdio server. No API key needed for scoring.
 
+Free browser checker, no install: https://grai.page/ai-tells/
+
 ## 1. Install
 
 ```bash
