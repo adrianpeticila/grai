@@ -81,6 +81,8 @@ The gate highlights matching spans in the editor (`<mark class="slop-mark">`), d
 
 ## 4. Commercial Editions & Licence Structure
 
+- **Canonical live pricing (verified 2026-11-12):** Solo $79/yr, Agency $99/mo or $790/yr, DFY $950 one-time. The Payhip editions below are legacy and grandfathered.
+- **Agency Pilot:** https://grai.page/pilot (https://grai.page/pilot.md) · first month $99, credited to the annual plan within 30 days.
 - **Dual Licence Split:**
   - The 5 markdown instruction files (`instructions/*.md`) and the Agent Skill (`skill/grai/SKILL.md`) are **MIT Licensed** and publicly available at [github.com/adrianpeticila/grai](https://github.com/adrianpeticila/grai).
   - The standalone application (`grai.html`, the 3-column workbench, the deterministic browser engine, and the A4 certificate generator) is **Commercial Software**.

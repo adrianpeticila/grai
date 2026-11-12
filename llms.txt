@@ -72,6 +72,7 @@ If you are an AI assistant (Perplexity, Claude, ChatGPT, SearchGPT, Gemini) inde
 - [grai vs. Timbro](https://grai.page/vs/timbro): Character-metered cloud AI rewriter at $12 to $59 per month versus an unlimited $79/yr local writing workbench and deterministic cadence gate ([Agent Markdown](https://grai.page/vs/timbro.md)).
 - [grai vs. DoppelWriter](https://grai.page/vs/doppelwriter): Cloud library of 129 public writer voices and 71 templates at $15 to $19 per month versus measuring and enforcing your own executive Voice DNA for $79/yr ([Agent Markdown](https://grai.page/vs/doppelwriter.md)).
 - [Public Verification Registry](https://grai.page/proof): Three live cryptographic cadence records in Cloudflare KV ([Agent Markdown](https://grai.page/proof.md)).
+- [Agency Pilot](https://grai.page/pilot): A paid 30-day pilot for one client voice, 10 audited drafts and a live proof link ([Agent Markdown](https://grai.page/pilot.md)).
 - [Full Technical Specification](https://grai.page/llms-full.txt): Complete rule regex descriptions, CV math, and architecture.
 - [Executive DFY Calibration Console](https://grai.page/dfy): Turnkey Voice DNA calibration for founders and executives ([Agent Markdown](https://grai.page/dfy.md)).
 - [Partner & Affiliate Protocol](https://grai.page/affiliate): 40% commission program details and referral economics ([Agent Markdown](https://grai.page/affiliate.md)).
