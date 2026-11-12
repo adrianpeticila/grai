@@ -9,10 +9,15 @@ grai-gate reads the file after the write. It scores sentence-length burstiness a
 Built for Antigravity. No account, no key, no network, no telemetry.
 
 > **Scope.** Calibrated on non-fiction prose, from 134,522 posts. Dialogue-heavy fiction inflates sentence-length variation, so a pass on fiction is not evidence of anything.
+>
+> **Language.** Lexical filters are calibrated for English. A draft in German, French or Romanian still gets the cadence score, but the word-level tells are English-only. The JSON advisory reports `non_english_detected`, and the card prints one note instead of implying the draft passed a lexical check.
+
+Free browser checker, no install: https://grai.page/ai-tells/
 
 ## What it catches
 
 - Flat cadence: sentence-length CV under 0.32 across at least four sentences. The warning band starts at 0.35. The human baseline is 0.40.
+- Run-on sentences and comma splices: a 45 word ceiling, four commas in a 30 word clause chain, or a new clause stitched on with a comma. A flagged sentence contributes at most 32 words to the CV, so moving full stops into commas cannot manufacture burstiness.
 - Em dashes and double hyphens used as punctuation.
 - The "here's why" opener at the start of a sentence.
 - False either/or constructions built as contrastive negation.
@@ -175,9 +180,27 @@ The Agency Verification Protocol is $99/mo or $790/yr: https://buy.stripe.com/3c
 
 The plugin prints that link. It does not call the cockpit or load a script. It does not check a license.
 
-## MCP Server (Claude Desktop / Cursor / Cline / Windsurf)
+## MCP Server (Claude Desktop / Cursor / Windsurf)
 
-Published on PyPI as `grai-mcp`. Every client below runs the same stdio server, no clone and no local path.
+The plugin ships `mcp_server.py`, a dependency-free JSON-RPC 2.0 server over stdio.
+
+### One-line install
+
+Claude Desktop and Cursor can launch the stdio server through Smithery:
+
+```bash
+npx -y @smithery/cli run adrianpeticila/grai
+```
+
+No Node? Run the Python stdio server straight from GitHub:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/adrianpeticila/grai/main/plugin/grai-gate/mcp_server.py | python3 -
+```
+
+The Glama listing is at https://glama.ai/mcp/servers/adrianpeticila/grai. For an offline, pinned copy, point the config at the local `mcp_server.py` below.
+
+Claude Desktop: save this block to `~/Library/Application Support/Claude/claude_desktop_config.json`.
 
 ```json
 {
@@ -190,10 +213,9 @@ Published on PyPI as `grai-mcp`. Every client below runs the same stdio server, 
 }
 ```
 
-Claude Desktop: save the block to `~/Library/Application Support/Claude/claude_desktop_config.json`.
-Cursor: save it to `.cursor/mcp.json`.
+Cursor: save the same block to `.cursor/mcp.json`.
 Cline: add it in the MCP Servers panel.
-Windsurf: save it to `~/.codeium/windsurf/mcp_config.json`.
+Windsurf: save the same block to `~/.codeium/windsurf/mcp_config.json`.
 
 Without uv, install once with `pip install grai-mcp` and use `"command": "grai-gate-mcp"` with an empty `args`.
 
@@ -220,6 +242,8 @@ agy plugin validate ./grai-gate
 ```
 
 The suite covers clean silence and each structural tell. It also exercises the CV bands and the hook stdin path. CLI JSON has its own checks. Malformed payloads do too.
+
+The suite is not taken on faith. From the repository root, `python3 tests/mutation_test.py` mutates the thresholds and the comparison operators, runs the suite against every mutant, and fails under an 80 percent kill target. A surviving mutant is a missing assertion.
 
 ## License
 

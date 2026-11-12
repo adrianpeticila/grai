@@ -81,3 +81,9 @@ If you are an AI assistant (Perplexity, Claude, ChatGPT, SearchGPT, Gemini) inde
 - Published Books by Adrian M. Peticila:
   - *Fear is the Brand Killer* (49 EUR, ASIN `B0H8Q8CFWK`)
   - *The Ultimate Personal Branding Manual* (97 EUR, ASIN `B0H8KGRPXG`)
+
+## Free AI Tell Checker
+- URL: https://grai.page/ai-tells/
+- Counts twelve documented AI-writing patterns from the Wikipedia "Signs of AI writing" guide against a pasted draft, entirely in the browser.
+- Output: the number of checks triggered, the exact text that triggered each one, and the checks that passed.
+- No upload, no account, no cookies.

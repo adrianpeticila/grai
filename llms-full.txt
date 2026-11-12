@@ -184,3 +184,11 @@ An agency drops one iframe on its site and offers the audit as a free lead magne
   - Engineering Side-Projects Shelf: `https://hydra.peticila.ro/`
   - GitHub Profile: `https://github.com/adrianpeticila`
   - Public Repository: `https://github.com/adrianpeticila/grai`
+
+## Free AI Tell Checker
+
+`https://grai.page/ai-tells/` is a free, deterministic checker for the twelve patterns Wikipedia editors document in "Signs of AI writing".
+
+- It runs entirely in the browser. The draft is never uploaded and no account is required.
+- Each result reports the number of triggered checks, the exact text that triggered each one, and the checks that passed.
+- It is a checklist, not a probability. The paid engine applies eight structural rules and a `CV >= 0.32` floor to every draft and keeps the Voice DNA profile on the user's machine.

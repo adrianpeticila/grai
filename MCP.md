@@ -13,6 +13,7 @@ grai ships one Model Context Protocol server. This page lists every surface it l
 | Cline | `registry/mcps/grai-gate/entry.json` in `cline/marketplace` | one-line install inside Cline |
 | Claude plugin | [`plugin/grai-gate/.claude-plugin/plugin.json`](plugin/grai-gate/.claude-plugin/plugin.json) | bundle with `skills/grai/SKILL.md` |
 | Docs | [grai.page/mcp](https://grai.page/mcp) and [grai.page/mcp.md](https://grai.page/mcp.md) | install, config, tools |
+| Free checker | [grai.page/ai-tells](https://grai.page/ai-tells/) | twelve deterministic checks, no account, no upload |
 
 ## Install
 
@@ -37,11 +38,13 @@ Client configuration:
 
 | Tool | Input | Output | Network |
 | --- | --- | --- | --- |
-| `grai_score_draft` | `text` | score, CV, pass, failed rules, fail reason | none |
+| `grai_score_draft` | `text` | score, CV, pass, failed rules, fail reason, advisory | none |
 | `grai_issue_agency_seal` | `text`, `license_key`, `agency_name`, `client_ref` | signed record and verification link | `grai.page/api/seal` |
 | `grai_verify_seal` | `record_json` | signature validity and key id | `grai.page/api/verify` |
 
 The score needs at least four sentences. Below four it comes back `null` by design.
+
+Lexical filters are calibrated for English. A draft in another language still gets the cadence score, but word-level tells are skipped. The response marks it with `advisory.non_english_detected: true` and the report card prints one note. It never blocks.
 
 ## Repository map
 

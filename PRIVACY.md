@@ -1,6 +1,6 @@
 # Privacy
 
-grai stores what you give it and nothing else. There is no account, no telemetry, no analytics, and no tracking pixel.
+grai stores what you give it and nothing else. There is no account, no tracking pixel, and no per-visitor analytics. The site counts page views as daily totals per visitor category, described below.
 
 ## What stays on your device
 
@@ -20,6 +20,10 @@ Deleting a voice in the page removes it from this browser. Clearing site data re
 3. **Fonts.** The page loads two typefaces from Google Fonts. That request reveals your IP address and page referrer to Google, and it happens on every load. This is a privacy exposure, not a feature.
 4. **Agency Verification Protocol (`grai_issue_agency_seal`).** When an agency issues a live seal, the draft text, license key, and optional agency or client labels are sent over HTTPS to `grai.page/api/seal`. The server processes the text in volatile RAM to compute sentence cadence metrics and sign the certificate with ECDSA P-256. The draft text itself is discarded from memory immediately after signing and is never written to disk or database. Only the resulting signed record (SHA-256 draft hash, score metrics, client reference, and cryptographic signature) is saved to the Cloudflare KV verification registry.
 5. **Seal verification (`grai_verify_seal`).** Verifying a seal sends the signed record JSON to `grai.page/api/verify` to validate signatures against the public keyring. No draft text is sent.
+
+## Aggregate page counts
+
+The site counts page views per day and per visitor category: human, AI agent, AI crawler, crawler or bot. Only daily totals are stored. No IP address, request path, header, user agent string or cookie is stored. Counts are kept for 90 days.
 
 ## Data retention and deletion
 

@@ -14,6 +14,7 @@
 
 <p align="center">
   <a href="https://grai.page"><img src="https://img.shields.io/badge/Live%20Workbench%20%26%20Free%20Scorer-grai.page-D9480F?style=for-the-badge" alt="grai.page" /></a>
+  <a href="https://grai.page/ai-tells/"><img src="https://img.shields.io/badge/Free%20Checker-AI%20Tells-D9480F?style=for-the-badge" alt="AI Tell Checker" /></a>
   <a href="https://grai.page/methodology"><img src="https://img.shields.io/badge/Empirical%20Study-134%2C522%20Posts-141413?style=for-the-badge" alt="Methodology Study" /></a>
   <a href="https://grai.page/vs/"><img src="https://img.shields.io/badge/Comparisons-grai.page%2Fvs-8B6B4F?style=for-the-badge" alt="Comparisons" /></a>
   <a href="https://grai.page/llms.txt"><img src="https://img.shields.io/badge/Agent%20Spec-llms.txt-57534B?style=for-the-badge" alt="llms.txt" /></a>
@@ -28,7 +29,7 @@
 
 ---
 
-> **Scope.** Calibrated on non-fiction prose, from 134,522 posts. Dialogue-heavy fiction inflates sentence-length variation, so a pass on fiction is not evidence of anything.
+> **Scope.** Calibrated on non-fiction prose, from 134,522 posts. Dialogue-heavy fiction inflates sentence-length variation, so a pass on fiction is not evidence of anything. Lexical filters are English-only: other languages get the cadence score plus a non-blocking advisory note.
 
 ## The Gate Contract
 

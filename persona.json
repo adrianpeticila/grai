@@ -122,6 +122,7 @@
     "vs_jasper_md": "https://grai.page/vs/jasper.md",
     "llms": "https://grai.page/llms.txt",
     "llms_full": "https://grai.page/llms-full.txt",
+    "ai_tell_checker": "https://grai.page/ai-tells/",
     "agent_manifest": "https://grai.page/.well-known/agent.json",
     "blueprint_pdf": "https://grai.page/assets/Grai_Voice_Architecture_Blueprint.pdf",
     "repository": "https://github.com/adrianpeticila/grai",
