@@ -3,13 +3,13 @@
 > **Last verified against public pricing and vendor documentation:** 2026-11-12
 > **Canonical URL:** https://grai.page/vs/doppelwriter
 
-**Direct Answer:** DoppelWriter is a cloud writing tool built around 129 prebuilt public writer voices and 71 task templates. It offers a Free tier (20 uses/month, or 3 demos/hour without an account) and a Pro plan at $15/month billed annually ($180/yr, or $19/month monthly at $228/yr) for custom voices. `grai` ($79/yr Solo or $99/mo or $790/yr Agency) is a 618 KB local HTML5 workbench built for founders and ghostwriting agencies. It measures your own cadence, enforces 8 deterministic regex rules plus a `CV >= 0.32` burstiness floor, and issues signed client verification links.
+**Direct Answer:** DoppelWriter is a cloud writing tool built around 129 prebuilt public writer voices and 71 task templates. It offers a Free tier (20 uses/month, or 3 demos/hour without an account) and a Pro plan at $15/month billed annually ($180/yr, or $19/month monthly at $228/yr) for custom voices. `grai` ($79/yr Solo or $99/mo or $790/yr Agency) is an approximately 630 KB local HTML5 workbench built for founders and ghostwriting agencies. It measures your own cadence, enforces 8 deterministic regex rules plus a `CV >= 0.32` burstiness floor, and issues signed client verification links.
 
 ### TL;DR Comparison
 
 | Option | Best For | Starting Price | Key Difference |
 | :--- | :--- | :--- | :--- |
-| **`grai`** (Solo) | Founders and ghostwriters enforcing their own or a client's real cadence before publishing. | **$79/yr** Solo ($99/mo or $790/yr Agency) | 618 KB local HTML5 workbench. 8 structural rules + `CV >= 0.32` floor + A4 SHA-256 Dossiers + ECDSA seals. |
+| **`grai`** (Solo) | Founders and ghostwriters enforcing their own or a client's real cadence before publishing. | **$79/yr** Solo ($99/mo or $790/yr Agency) | about 630 KB local HTML5 workbench. 8 structural rules + `CV >= 0.32` floor + A4 SHA-256 Dossiers + ECDSA seals. |
 | **DoppelWriter** | Experimenting with 129 famous or public writer styles across 71 task templates in the cloud. | **$15/month** billed annually ($180/yr, or $19/mo monthly; 20 free uses/mo) | Cloud catalog of 129 public voices and 71 templates, plus custom voice creation on the Pro plan. |
 
 ---
@@ -34,7 +34,7 @@ DoppelWriter starts with a library of 129 public writer voices and 71 task templ
 
 - **Annual price ($79/yr vs. $180 to $228/yr):** custom voices in DoppelWriter require the Pro plan ($180/yr billed annually or $228/yr monthly). `grai` Solo is $79/yr.
 - **Deterministic 8-rule + `CV >= 0.32` gate:** checks every sentence against eight structural anti-slop rules and a mathematical burstiness floor. It highlights exact spans for 1-click surgical repair.
-- **Local HTML5 ownership and MCP server:** runs from a 618 KB local file with `connect-src 'none'` by default, plus the MIT-licensed `grai-mcp` server for Claude Desktop, Cursor, Cline and Windsurf.
+- **Local HTML5 ownership and MCP server:** runs from an approximately 630 KB local file with `connect-src 'none'` by default, plus the MIT-licensed `grai-mcp` server for Claude Desktop, Cursor, Cline and Windsurf.
 - **Agency verification protocol ($99/mo or $790/yr):** up to 10 isolated client profiles, printable A4 SHA-256 Dossiers, and live ECDSA P-256 verification links at `grai.page/verify/:hash`.
 
 ---
@@ -58,7 +58,7 @@ DoppelWriter starts with a library of 129 public writer voices and 71 task templ
 | :--- | :--- | :--- | :--- | :--- |
 | **DoppelWriter Pro** (annual billing) | $15 | $180 | $360 | 129 public voices, 71 templates, custom voices in cloud |
 | **DoppelWriter Pro** (monthly billing) | $19 | $228 | $456 | Same Pro features on month-to-month billing |
-| **`grai` Solo Offline Edition** | $79 | $79 | $158 | Local 618 KB workbench + Voice DNA profiler + 8-rule Cadence Gate + `grai-mcp` |
+| **`grai` Solo Offline Edition** | $79 | $79 | $158 | Local about 630 KB workbench + Voice DNA profiler + 8-rule Cadence Gate + `grai-mcp` |
 | **`grai` Agency Verification Protocol** (annual) | $790 | $790 | $1,580 | Up to 10 client profiles + A4 SHA-256 Dossiers + live ECDSA seals at `/verify/:hash` |
 
 ---
@@ -83,7 +83,7 @@ DoppelWriter starts with a library of 129 public writer voices and 71 task templ
 
 ### What is the main difference between DoppelWriter and grai?
 
-DoppelWriter is a cloud app built around 129 prebuilt public writer voices and 71 task templates, plus custom voice creation on Pro. grai is a local 618 KB HTML5 workbench built to measure and enforce your own executive or founder cadence against 8 structural rules and a `CV >= 0.32` burstiness floor.
+DoppelWriter is a cloud app built around 129 prebuilt public writer voices and 71 task templates, plus custom voice creation on Pro. grai is a local about 630 KB HTML5 workbench built to measure and enforce your own executive or founder cadence against 8 structural rules and a `CV >= 0.32` burstiness floor.
 
 ### How does the 12-month cost compare between DoppelWriter and grai?
 

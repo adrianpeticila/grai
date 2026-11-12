@@ -3,13 +3,13 @@
 > **Last verified against public pricing and vendor documentation:** 2026-11-12
 > **Canonical URL:** https://grai.page/vs/timbro
 
-**Direct Answer:** Timbro is a cloud AI rewriter. It learns from a 900-word sample and rewrites pasted drafts across 7 modes while aiming to preserve facts, numbers, quotes and links. After 3 free rewrites, plans cost $12/month ($144/yr, 110,000 characters), $23/month ($276/yr, 240,000 characters) or $59/month ($708/yr, 620,000 characters). `grai` ($79/yr Solo or $99/mo or $790/yr Agency) is a 618 KB local HTML5 workbench and MCP gate with zero character quotas, 8 deterministic regex rules, a `CV >= 0.32` burstiness floor, and signed client verification receipts.
+**Direct Answer:** Timbro is a cloud AI rewriter. It learns from a 900-word sample and rewrites pasted drafts across 7 modes while aiming to preserve facts, numbers, quotes and links. After 3 free rewrites, plans cost $12/month ($144/yr, 110,000 characters), $23/month ($276/yr, 240,000 characters) or $59/month ($708/yr, 620,000 characters). `grai` ($79/yr Solo or $99/mo or $790/yr Agency) is an approximately 630 KB local HTML5 workbench and MCP gate with zero character quotas, 8 deterministic regex rules, a `CV >= 0.32` burstiness floor, and signed client verification receipts.
 
 ### TL;DR Comparison
 
 | Option | Best For | Starting Price | Key Difference |
 | :--- | :--- | :--- | :--- |
-| **`grai`** (Solo) | Full drafting, surgical span repair, unlimited local cadence checks, and agency proof. | **$79/yr** Solo ($99/mo or $790/yr Agency) | 618 KB local HTML5 workbench + 3-galley Writing Desk + 8-rule deterministic gate + `grai-mcp`. |
+| **`grai`** (Solo) | Full drafting, surgical span repair, unlimited local cadence checks, and agency proof. | **$79/yr** Solo ($99/mo or $790/yr Agency) | about 630 KB local HTML5 workbench + 3-galley Writing Desk + 8-rule deterministic gate + `grai-mcp`. |
 | **Timbro** | Rewriting existing AI drafts in the cloud with character-metered quotas and fact preservation. | **$12/month** ($144/yr, 110,000 characters; 3 free rewrites) | Hosted cloud rewriter with 7 rewrite modes and explicit fact, number, quote and link preservation. |
 
 ---

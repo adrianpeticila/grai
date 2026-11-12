@@ -36,7 +36,7 @@
    A $19.95 per month LinkedIn formatting extension versus voice verification: formatting controls how the post looks, `grai` measures whether the text has a human rhythm. The two jobs are complementary, not identical.
 
 6. **[grai vs. Jasper AI (`https://grai.page/vs/jasper`)](https://grai.page/vs/jasper)** ([Markdown Mirror](https://grai.page/vs/jasper.md))
-   An enterprise cloud copywriting suite at USD 59 to USD 69 per seat per month on Pro versus a 618 KB local harness on the Harness2 architecture: frozen model, local Voice DNA, 8-rule gate and A4 SHA-256 Dossiers.
+   An enterprise cloud copywriting suite at USD 59 to USD 69 per seat per month on Pro versus an approximately 630 KB local harness on the Harness2 architecture: frozen model, local Voice DNA, 8-rule gate and A4 SHA-256 Dossiers.
 
 7. **[grai vs. Typefully (`https://grai.page/vs/typefully`)](https://grai.page/vs/typefully)** ([Markdown Mirror](https://grai.page/vs/typefully.md))
    A cloud publishing calendar with a free plan, Creator at $99 per year and Business from $18 per set per month, versus a $79/yr local voice workbench. The scheduler handles the hour. `grai` handles whether the text sounds like you.

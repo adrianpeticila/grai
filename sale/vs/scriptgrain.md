@@ -3,13 +3,13 @@
 > **Last verified against public pricing and vendor documentation:** 2026-11-12
 > **Canonical URL:** https://grai.page/vs/scriptgrain
 
-**Direct Answer:** ScriptGrain is a hosted voice profiling and drafting SaaS that builds a 45-point voice profile across 8 groups and stores a persistent Voice Brain across drafts. Paid plans run from Writer (GBP 12/mo or GBP 115/yr) and Operator (GBP 29/mo or GBP 279/yr) to Studio (GBP 99/mo or GBP 949/yr) and Agency (GBP 299/mo or GBP 2,870/yr), with MCP on all tiers. `grai` ($79/yr Solo or $99/mo or $790/yr Agency) is a 618 KB local HTML5 workbench and open-source MCP server. It keeps your `.grai` profiles on your machine, runs a published 8-rule + `CV >= 0.32` deterministic gate offline, and issues ECDSA P-256 verification receipts at `grai.page/verify/:hash`.
+**Direct Answer:** ScriptGrain is a hosted voice profiling and drafting SaaS that builds a 45-point voice profile across 8 groups and stores a persistent Voice Brain across drafts. Paid plans run from Writer (GBP 12/mo or GBP 115/yr) and Operator (GBP 29/mo or GBP 279/yr) to Studio (GBP 99/mo or GBP 949/yr) and Agency (GBP 299/mo or GBP 2,870/yr), with MCP on all tiers. `grai` ($79/yr Solo or $99/mo or $790/yr Agency) is an approximately 630 KB local HTML5 workbench and open-source MCP server. It keeps your `.grai` profiles on your machine, runs a published 8-rule + `CV >= 0.32` deterministic gate offline, and issues ECDSA P-256 verification receipts at `grai.page/verify/:hash`.
 
 ### TL;DR Comparison
 
 | Option | Best For | Starting Price | Key Difference |
 | :--- | :--- | :--- | :--- |
-| **`grai`** (Solo) | Writers and agencies who want local profile files, an open deterministic gate, and signed client proof. | **$79/yr** Solo ($99/mo or $790/yr Agency) | 618 KB local HTML5 app + MIT `grai-mcp` server. 8 regex rules + `CV >= 0.32` floor + ECDSA P-256 receipts. |
+| **`grai`** (Solo) | Writers and agencies who want local profile files, an open deterministic gate, and signed client proof. | **$79/yr** Solo ($99/mo or $790/yr Agency) | about 630 KB local HTML5 app + MIT `grai-mcp` server. 8 regex rules + `CV >= 0.32` floor + ECDSA P-256 receipts. |
 | **ScriptGrain** | Teams that want a hosted cloud workspace with a 45-point profile and cross-draft Voice Brain memory. | **GBP 12/month** (GBP 115/yr on Writer; Free tier has 1 draft) | Cloud SaaS with a 120-word 6-signal instant preview, 45-point profile in 8 groups, and hosted Voice Brain memory. |
 
 ---
@@ -18,7 +18,7 @@
 
 ScriptGrain is the closest cloud competitor in the voice-profiling category. It analyses writing across 45 points grouped into 8 dimensions, maintains a hosted Voice Brain that remembers prior drafts and edits, and exposes that profile through an MCP integration.
 
-`grai` takes the opposite architectural stance. Instead of storing your voice profile and draft history in a vendor database, `grai` runs inside a single 618 KB HTML5 file on your laptop. Your voice profile exports as a local `.grai` JSON file, and the cadence gate is published regex and burstiness math (`CV = sigma / mu >= 0.32`) that you can inspect line by line.
+`grai` takes the opposite architectural stance. Instead of storing your voice profile and draft history in a vendor database, `grai` runs inside a single about 630 KB HTML5 file on your laptop. Your voice profile exports as a local `.grai` JSON file, and the cadence gate is published regex and burstiness math (`CV = sigma / mu >= 0.32`) that you can inspect line by line.
 
 Both tools agree that generic AI prompts fail. They disagree on who should hold the profile and whether the audit rulebook should be a closed cloud score or an open mathematical contract.
 
@@ -62,7 +62,7 @@ Both tools agree that generic AI prompts fail. They disagree on who should hold 
 | **ScriptGrain Writer** (annual billing) | GBP 12 | GBP 115 (GBP 144 monthly) | GBP 230 (GBP 288 monthly) | Entry solo tier with hosted profile and draft limits |
 | **ScriptGrain Operator** (annual billing) | GBP 29 | GBP 279 (GBP 348 monthly) | GBP 558 (GBP 696 monthly) | Full solo operator tier with Voice Brain memory |
 | **ScriptGrain Studio / Agency** (annual billing) | GBP 99 to GBP 299 | GBP 949 to GBP 2,870 | GBP 1,898 to GBP 5,740 | Multi-profile studio and agency tiers |
-| **`grai` Solo Offline Edition** | $79 | $79 | $158 | Local 618 KB workbench + Voice DNA profiler + 8-rule Cadence Gate + `grai-mcp` |
+| **`grai` Solo Offline Edition** | $79 | $79 | $158 | Local about 630 KB workbench + Voice DNA profiler + 8-rule Cadence Gate + `grai-mcp` |
 | **`grai` Agency Verification Protocol** (annual) | $790 | $790 | $1,580 | Up to 10 client profiles + A4 SHA-256 Dossiers + live ECDSA seals at `/verify/:hash` |
 
 ---

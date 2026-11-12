@@ -59,7 +59,7 @@ The gate highlights matching spans in the editor (`<mark class="slop-mark">`), d
 ## 3. Execution Modes, CSP Policy & Local Storage Boundary
 
 - **1. Shipped Pre-Built Kit (`grai.html` in the ZIP): Local App with Direct API Connections Blocked by Default (Copy-Paste Mode)**
-  The pre-built `grai.html` (618 KB) ships with a strict Content Security Policy:
+  The pre-built `grai.html` (about 630 KB) ships with a strict Content Security Policy:
   `default-src 'none'; style-src 'unsafe-inline'; font-src data:; img-src data:; script-src 'unsafe-inline'; connect-src 'none'; object-src 'none'; base-uri 'none'`
   This policy allows inline styles and inline scripts (plus `data:` fonts and images) while blocking direct API connections (`connect-src 'none'`) from the page (`AIR_GAP = true`). Out of the box, it runs in **Copy-Paste ("Any AI") mode**: it builds a compact, self-contained prompt under 1,800 characters (`buildDensePrompt`) that the user copies into their existing ChatGPT Plus or Claude Pro web tab (or Gemini), then pastes back into `grai` for deterministic verification. Zero API cost.
 - **2. Custom Source Build (`source/src/app.html` + `scripts/build.py`): Direct BYOK API & Local Ollama Mode**
