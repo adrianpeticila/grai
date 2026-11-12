@@ -24,7 +24,7 @@ grai solves this using the **Harness over Fine-Tuning** architecture (aligned wi
 ## 2. The Deterministic Signal Chain (Three Rooms)
 
 ### 01 CADENCE GATE (Deterministic Browser Engine)
-Runs locally in JavaScript in your browser. Every draft is stripped of invisible zero-width watermarks (`U+200B` through `U+200D`, `U+FEFF`) and scored from 4 to 100 against eight structural rules plus a mathematical rhythm floor:
+Runs locally in JavaScript in your browser. Every draft is stripped of invisible zero-width watermarks (`U+200B` through `U+200D`, `U+FEFF`) and scored from 4 to 100 against eight structural rule families plus a mathematical rhythm floor. `SMOOTH_BRIDGE` is a secondary check inside the cadence family, and `FLAT_BURSTINESS` is the floor:
 
 1. `CONTRASTIVE_NEGATION` (First hit: -14 pts, Repeat: -8 pts): Catches synthetic antithesis formulas where a sentence negates a strawman before stating the point.
 2. `LESS_MORE_SYMMETRY` (First hit: -10 pts, Repeat: -6 pts): Catches corporate symmetry cliches (`"Less X, more Y"`, `"Stop doing X. Start doing Y."`).
