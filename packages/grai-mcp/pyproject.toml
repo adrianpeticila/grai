@@ -1,6 +1,6 @@
 [project]
 name = "grai-mcp"
-version = "0.1.1"
+version = "0.1.2"
 description = "Deterministic cadence gate and cryptographic seal verification as an MCP server"
 readme = "README.md"
 requires-python = ">=3.9"
