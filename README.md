@@ -181,7 +181,7 @@ Every surface the server lives on: Docker, the registry name and the LobeHub lis
 
 Smithery's proxy, accounts and publisher dashboard shut down on 31 October 2026. That path is closed. The listing instructions it used to need no longer apply. The server is distributed through PyPI (`grai-mcp`) and the official MCP Registry (`io.github.adrianpeticila/grai-mcp`).
 
-The server exposes `grai_score_draft`, `grai_issue_agency_seal` and `grai_verify_seal`. Every call returns the score, the failed rules and the four canonical Stripe upgrade links:
+The server exposes `grai_score_draft`, `grai_issue_agency_seal` and `grai_verify_seal`. Tool results carry only the audit payload or the seal record, with no sales links embedded. The paid editions, billed through Stripe, live on the [MCP page](https://grai.page/mcp):
 
 - Solo Offline Edition ($79/yr): https://buy.stripe.com/3cIaERgwM9hLbuF33Vds400
 - Agency Verification Protocol Monthly ($99/mo): https://buy.stripe.com/3cI28lbcs51v2Y9bArds401

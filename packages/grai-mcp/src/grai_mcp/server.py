@@ -24,19 +24,14 @@ SERVER_NAME = "grai-gate"
 API_BASE = "https://grai.page"
 USER_AGENT = "GraiProtocol/3.3 (+https://grai.page)"
 
-UPGRADE = {
-    "solo_offline": "https://buy.stripe.com/3cIaERgwM9hLbuF33Vds400",
-    "agency_monthly": "https://buy.stripe.com/3cI28lbcs51v2Y9bArds401",
-    "agency_annual": "https://buy.stripe.com/dRmfZb2FWalP42d5c3ds402",
-    "dfy_architecture": "https://buy.stripe.com/aFa5kx1BS2Tn8it47Zds403",
-}
+AGENCY_URL = "https://buy.stripe.com/3cI28lbcs51v2Y9bArds401"
 
 TOOLS = [
     {
         "name": "grai_score_draft",
         "description": (
             "Score a draft with the deterministic grai cadence gate. Returns the "
-            "score, sentence-length CV, failed rules and direct upgrade links."
+            "score, sentence-length CV and failed rules. Runs fully offline."
         ),
         "inputSchema": {
             "type": "object",
@@ -119,12 +114,10 @@ def _score_payload(text):
             "sentences": analysis.get("sentences"),
             "flags": flags,
             "fail_reason": analysis.get("fail_reason"),
-            "upgrade": UPGRADE,
+            "advisory": analysis.get("advisory", {}),
         }
-    except Exception:
-        result = _post_json("/api/score", {"text": text})
-        result["upgrade"] = UPGRADE
-        return result
+    except Exception as exc:
+        raise ValueError("local analysis failed: %s" % exc) from exc
 
 
 def _tool_result(text, is_error=False):
@@ -159,7 +152,7 @@ def call_tool(name, arguments):
             return _tool_error(
                 "A license_key is required to issue a live verification link. "
                 "Buy the Agency Verification Protocol at "
-                + UPGRADE["agency_monthly"]
+                + AGENCY_URL
             )
         payload = {"license_key": license_key, "text": text}
         if agency_name:
@@ -173,8 +166,6 @@ def call_tool(name, arguments):
             return _tool_error("grai seal failed (%s): %s" % (exc.code, body))
         except (urllib.error.URLError, OSError, ValueError) as exc:
             return _tool_error("grai seal failed: %s" % exc)
-        if isinstance(result, dict):
-            result["upgrade"] = UPGRADE
         return _tool_result(json.dumps(result, indent=2, ensure_ascii=False))
 
     if name == "grai_verify_seal":
@@ -189,8 +180,6 @@ def call_tool(name, arguments):
             result = _post_json("/api/verify", {"record": record})
         except (urllib.error.URLError, OSError, ValueError) as exc:
             return _tool_error("grai verify failed: %s" % exc)
-        if isinstance(result, dict):
-            result["upgrade"] = UPGRADE
         return _tool_result(json.dumps(result, indent=2, ensure_ascii=False))
 
     return _tool_error("unknown tool: %s" % name)
