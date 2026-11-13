@@ -5,10 +5,11 @@
   "sameAs": [
     "https://pypi.org/project/grai-mcp/",
     "https://github.com/adrianpeticila/grai",
+    "https://github.com/adrianpeticila/grai-gate-action",
     "https://lobehub.com/mcp/adrianpeticila-grai"
   ],
   "version": "3.3.0",
-  "dateModified": "2026-11-10",
+  "dateModified": "2026-11-13",
   "category": "Binary Style Gate & ECDSA Proof Engine",
   "architecture": "Local-first single-file HTML5 workbench (connect-src 'none' by default in shipped build; custom source build for BYOK/Ollama) + binary PASS/FAIL cadence gate + ECDSA P-256 signed audit cards + MIT instruction harness",
   "author": {
@@ -27,6 +28,7 @@
       "https://grai.page/",
       "https://github.com/adrianpeticila",
       "https://github.com/adrianpeticila/grai",
+      "https://github.com/adrianpeticila/grai-gate-action",
       "https://www.linkedin.com/in/adrian-peticila/",
       "https://x.com/adrianmpeticila",
       "https://www.wikidata.org/wiki/Q140362129",
@@ -58,6 +60,15 @@
     ]
   },
   "editions": {
+    "starter_pass": {
+      "name": "Starter Audit Pass",
+      "price_usd": 19,
+      "billing_period": "one-time",
+      "checkout_url": "https://buy.stripe.com/14A00deoE51v56h1ZRds404",
+      "upgrade_promo_code": "STARTER19",
+      "billing": "one-time pass, full $19 credited toward Solo ($79/yr), Agency ($99/mo), or Agency Annual ($790/yr) within 14 days via STARTER19",
+      "scope": "Full multi-rule repair prompts, all flagged tells beyond 2 free preview tells, signed ECDSA P-256 client verification card"
+    },
     "solo": {
       "name": "Solo Offline Edition",
       "price_usd": 79,
@@ -94,8 +105,15 @@
   },
   "affiliate_program": {
     "commission_percent": 40,
-    "scope": "Payhip-tracked products only. Stripe subscriptions are paid manually by agreement.",
-    "signup_url": "https://payhip.com/auth/register/af63e51e20042ed"
+    "scope": "Automatic ?ref=<handle> attribution across all 5 Stripe tiers ($19 Starter, $79/yr Solo, $99/mo Agency, $790/yr Agency Annual, $950 DFY). Persists 30 days in localStorage and writes aff_<handle> into Stripe client_reference_id even alongside utm_source.",
+    "tiers_commission_usd": {
+      "starter_pass": 7.6,
+      "solo_offline": 31.6,
+      "agency_protocol": 39.6,
+      "agency_annual": 316.0,
+      "dfy_architecture": 380.0
+    },
+    "signup_url": "https://grai.page/affiliate"
   },
   "endpoints": {
     "homepage": "https://grai.page/",
@@ -109,8 +127,6 @@
     "agent_methodology_md": "https://grai.page/methodology.md",
     "comparisons_hub": "https://grai.page/vs/",
     "comparisons_hub_md": "https://grai.page/vs/index.md",
-    "proof_registry": "https://grai.page/proof",
-    "proof_registry_md": "https://grai.page/proof.md",
     "vs_claude_projects": "https://grai.page/vs/claude-projects",
     "vs_claude_projects_md": "https://grai.page/vs/claude-projects.md",
     "vs_contentin": "https://grai.page/vs/contentin",
@@ -125,7 +141,6 @@
     "vs_jasper_md": "https://grai.page/vs/jasper.md",
     "llms": "https://grai.page/llms.txt",
     "llms_full": "https://grai.page/llms-full.txt",
-    "ai_tell_checker": "https://grai.page/ai-tells/",
     "agent_manifest": "https://grai.page/.well-known/agent.json",
     "blueprint_pdf": "https://grai.page/assets/Grai_Voice_Architecture_Blueprint.pdf",
     "repository": "https://github.com/adrianpeticila/grai",
@@ -163,6 +178,10 @@
     "vs_timbro_md": "https://grai.page/vs/timbro.md",
     "vs_doppelwriter": "https://grai.page/vs/doppelwriter",
     "vs_doppelwriter_md": "https://grai.page/vs/doppelwriter.md",
+    "proof_registry": "https://grai.page/proof",
+    "proof_registry_md": "https://grai.page/proof.md",
+    "pilot": "https://grai.page/pilot",
+    "pilot_md": "https://grai.page/pilot.md",
     "embed_widget": "https://grai.page/embed",
     "embed_widget_md": "https://grai.page/embed.md",
     "seal_page": "https://grai.page/seal",
@@ -172,6 +191,7 @@
     "seal_version": "v2",
     "verify_api": "https://grai.page/api/verify",
     "pubkey_api": "https://grai.page/api/pubkey",
+    "ai_tell_checker": "https://grai.page/ai-tells/",
     "sitemap": "https://grai.page/sitemap.xml",
     "robots": "https://grai.page/robots.txt",
     "dfy": "https://grai.page/dfy",

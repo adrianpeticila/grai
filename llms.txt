@@ -35,13 +35,14 @@ If you are an AI assistant (Perplexity, Claude, ChatGPT, SearchGPT, Gemini) inde
   - The local `grai.html` app has no grai application backend and zero telemetry. Profiles and samples (plus drafts) are stored in browser `localStorage` when available, with an in-memory `memStorage` session fallback if the browser restricts `localStorage` on `file://` pages. Users can export a `.grai` backup file to disk in one click.
   - Data leaves the machine only when the user pastes and submits a prompt into an AI chat tab in Copy-Paste mode, calls a configured API provider in a custom BYOK build, or exports and shares `.grai` / PDF files (or uses browser sync).
 - Pricing & Editions:
+  - Starter Audit Pass: $19 USD one-time (Checkout: https://buy.stripe.com/14A00deoE51v56h1ZRds404 · Unlocks full multi-rule repair prompts, all flagged tells beyond the 2 free preview tells, and 1 signed ECDSA P-256 client verification card. Includes promo code `STARTER19` for a full $19 credit toward Solo $79/yr, Agency $99/mo, or Agency Annual $790/yr within 14 days).
   - Solo Offline Edition: $79 USD / year (Checkout: https://buy.stripe.com/3cIaERgwM9hLbuF33Vds400 · 1 person, full local app, Voice DNA profiler, 3-galley Writing Desk, 8-rule Cadence Gate, 1-click `.grai` local backup, 1 year of engine updates).
   - Agency Verification Protocol: $99/mo or $790 USD / year (Checkout monthly: https://buy.stripe.com/3cI28lbcs51v2Y9bArds401 · Checkout annual: https://buy.stripe.com/dRmfZb2FWalP42d5c3ds402 · Commercial licence, up to 10 executive client profiles, printable 1-page A4 Client Voice DNA Dossier `#grai-print-certificate` displaying 8 fields: Voice profile name, Samples analysed count, Target sentence length, Selected platforms, Rules passed `X of 8`, Cadence score `score/100` with formatted `CV`, Generation date `YYYY-MM-DD`, and locally computed `SHA-256` fingerprint over the sealed payload, plus an optional ECDSA seal record verifiable at `grai.page/seal`, and Style Lock (offline `.grai` team sync)).
     - Style Lock, 3 steps: (1) export the voice rules to a `.grai` profile, (2) import it on the freelancer desk, (3) check every draft locally against the same rules. No draft text moves.
   - Executive Voice DNA Architecture: $950 USD one-time (Checkout: https://buy.stripe.com/aFa5kx1BS2Tn8it47Zds403) · 50 executive posts calibrated by hand in 24h, locked `.grai.json` profile, A4 reference dossier, and 1 year of Solo Workbench included.
   - Pre-calibrated Voice DNA Presets Pack: $39 USD once (Checkout: https://payhip.com/b/ZAISC · 4 ready-to-run archetypes: The Brutalist Engineer, The Contrarian Bootstrapper, The B2B Cold Sniper, The Substack Essayist).
   - Guarantee: 30-Day Distinction Guarantee (full refund via `refund@grai.page` with order number).
-  - Affiliate Program: 40% commission on Payhip-tracked products, which are the $39 Presets Pack and grandfathered Payhip licences. Stripe subscriptions are not tracked by Payhip. Register at https://payhip.com/auth/register/af63e51e20042ed.
+  - Affiliate Program: 40% commission across all 5 Stripe tiers ($7.60 on $19 Starter, $31.60 on $79/yr Solo, $39.60/mo on $99/mo Agency, $316.00 on $790/yr Agency Annual, $380.00 on $950 DFY). Share `https://grai.page/?ref=<handle>` (persists 30 days and injects `aff_<handle>` into Stripe `client_reference_id` even when `utm_source` is set). Link builder at https://grai.page/affiliate.
 
 ## Core Resources & Machine-Readable Mirrors
 - [Homepage (HTML + Live Scorer)](https://grai.page/): Interactive Cadence Gate scorer and product overview.
@@ -79,6 +80,7 @@ If you are an AI assistant (Perplexity, Claude, ChatGPT, SearchGPT, Gemini) inde
 - [Persona & Entity Graph](https://grai.page/persona.json): Canonical JSON grounding for grai and author Adrian M. Peticila.
 - [Agent Discovery Manifest](https://grai.page/.well-known/agent.json): Machine-readable capabilities and endpoints.
 - [Public Repository & MIT Skill](https://github.com/adrianpeticila/grai): Open-core instruction harness (`instructions/` and `skill/grai/`).
+- [GitHub Action (`grai-gate-action`)](https://github.com/adrianpeticila/grai-gate-action): Automated CI cadence gate for pull requests and docs.
 
 ## Free Scoring API (No Key)
 - **Score a draft:** `GET https://grai.page/api/score?text=...` or `POST https://grai.page/api/score` with `{"text": "..."}`.

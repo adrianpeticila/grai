@@ -133,12 +133,13 @@ The standalone **grai** desktop application (`grai.html`, about 630 KB single-fi
 - **Free browser scorer, no signup:** test the 8-rule gate and the burstiness floor on your own text at **[grai.page/#test](https://grai.page/#test)**. The page runs the same engine locally, with no account and no upload. When a draft passes, issue a signed audit card at **[grai.page/seal](https://grai.page/seal)** and send the link to a client.
 - **Shipped Pre-Built Kit (`grai.html` in the ZIP):** Ships with `default-src 'none'; connect-src 'none'` (allowing inline styles/scripts and `data:` fonts/images while blocking direct API connections) and runs out of the box in **Copy-Paste ("Any AI") mode** (`< 1,800 char` dense prompt builder).
 - **Custom Source Build (`source/src/app.html` + `scripts/build.py`):** Edit `connect-src` and rebuild with `python3 scripts/build.py` to enable direct browser-to-API calls (BYOK) or local Ollama (`http://localhost:11434`).
+- **[Starter Audit Pass ($19 once)](https://buy.stripe.com/14A00deoE51v56h1ZRds404):** Full multi-rule repair prompts, all flagged tells beyond the 2 free preview tells, and a signed ECDSA P-256 client verification card. Includes promo code `STARTER19` for a full $19 upgrade credit toward Solo or Agency within 14 days.
 - **[Solo Offline Edition ($79/yr)](https://buy.stripe.com/3cIaERgwM9hLbuF33Vds400):** Watermarked local HTML5 workbench, Voice DNA profiler with 1 voice profile, 8-rule Cadence Gate, and 1-click `.grai` local backup. Billed annually.
 - **[Agency Verification Protocol ($99/mo or $790/yr)](https://buy.stripe.com/3cI28lbcs51v2Y9bArds401):** Commercial licence for client work, up to 10 executive client voice profiles, white-label A4 Client Voice DNA Dossiers, live ECDSA P-256 seals at grai.page/verify/:hash, and offline `.grai` team sync. Annual link: https://buy.stripe.com/dRmfZb2FWalP42d5c3ds402
 - **[Agency Pilot ($99 first month)](https://grai.page/pilot):** One client voice, 10 audited drafts, one live proof link and one A4 dossier. The $99 is credited to the $790 annual plan within 30 days.
 - **[Executive Voice DNA Architecture ($950 one-time)](https://buy.stripe.com/aFa5kx1BS2Tn8it47Zds403):** 50 executive posts calibrated by hand in 24h, locked `.grai.json` profile, A4 reference dossier, and 1 year of Solo Workbench.
 - **[Voice DNA Archetype Presets ($39 once)](https://payhip.com/b/ZAISC):** Four pre-calibrated baseline models (The Contrarian Founder, The Technical Architect, The Boutique Ghostwriter, The Cold Outreach Closer).
-- **[Affiliate program (40% commission)](https://payhip.com/auth/register/af63e51e20042ed):** For newsletters, communities and consultants who recommend tools to writers.
+- **[Affiliate program (40% commission)](https://grai.page/affiliate):** Automated `?ref=<handle>` attribution across all 5 Stripe tiers ($19/$79/$99/$790/$950) for newsletters and advisors.
 
 ### Arcade Mastery & Ghost Sweep
 Version 3.2.0 introduces the **Cadence Mastery Arcade** directly inside the desk:
@@ -147,7 +148,7 @@ Version 3.2.0 introduces the **Cadence Mastery Arcade** directly inside the desk
 - **Season 0 A4 Recap:** deterministic single-page printable progress dossier with local SHA-256 integrity verification.
 
 ### Embeddable Audit Widget
-Agencies embed the calibrator with one iframe: `<iframe src="https://grai.page/embed?ref=PARTNER_ID" width="100%" height="520" frameborder="0"></iframe>`. The `ref` parameter appends the partner code to eligible checkout links, so the agency earns 40% on eligible referrals.
+Agencies embed the calibrator with one iframe: `<iframe src="https://grai.page/embed?ref=PARTNER_ID" width="100%" height="520" frameborder="0"></iframe>`. The `ref` parameter writes `aff_<PARTNER_ID>` into Stripe `client_reference_id` across all five Stripe tiers, and partners earn 40% commission automatically.
 
 ### Free Scoring API
 `GET https://grai.page/api/score?text=...` or `POST https://grai.page/api/score` with `{"text": "..."}` returns the score, the cadence CV against the 0.32 floor, the failed rules and the checkout links. Stateless, no key, no storage.
@@ -183,18 +184,20 @@ Smithery's proxy, accounts and publisher dashboard shut down on 31 October 2026.
 
 The server exposes `grai_score_draft`, `grai_issue_agency_seal` and `grai_verify_seal`. Tool results carry only the audit payload or the seal record, with no sales links embedded. The paid editions, billed through Stripe, live on the [MCP page](https://grai.page/mcp):
 
+- Starter Audit Pass ($19 once, `STARTER19` credit): https://buy.stripe.com/14A00deoE51v56h1ZRds404
 - Solo Offline Edition ($79/yr): https://buy.stripe.com/3cIaERgwM9hLbuF33Vds400
 - Agency Verification Protocol Monthly ($99/mo): https://buy.stripe.com/3cI28lbcs51v2Y9bArds401
 - Agency Verification Protocol Annual ($790/yr): https://buy.stripe.com/dRmfZb2FWalP42d5c3ds402
 - Executive Voice DNA Architecture DFY ($950 once): https://buy.stripe.com/aFa5kx1BS2Tn8it47Zds403
 
 ### Commercial Editions & 40% Partner Program
+- **Starter Audit Pass ($19 once):** [Get Starter Pass](https://buy.stripe.com/14A00deoE51v56h1ZRds404). Full multi-rule repair prompts, all flagged tells beyond 2, signed ES256 client card, and `STARTER19` 14-day upgrade credit.
 - **Solo Offline Edition ($79/yr):** [Get Solo Offline](https://buy.stripe.com/3cIaERgwM9hLbuF33Vds400). Watermarked local workbench, Voice DNA profiler with 1 voice profile, 8-rule Cadence Gate, and 1-click `.grai` backup.
 - **Agency Verification Protocol ($99/mo or $790/yr):** [Monthly](https://buy.stripe.com/3cI28lbcs51v2Y9bArds401) or [Annual](https://buy.stripe.com/dRmfZb2FWalP42d5c3ds402). Commercial licence, up to 10 executive client voice profiles, white-label A4 Dossiers, and live ECDSA P-256 seals at grai.page/verify/:hash.
 - **Executive Voice DNA Architecture ($950 one-time):** [Book the calibration](https://buy.stripe.com/aFa5kx1BS2Tn8it47Zds403). 50 executive posts calibrated by hand in 24h, locked `.grai.json` profile, A4 reference dossier, and 1 year of Solo Workbench.
 - **Pre-calibrated Voice DNA Presets Pack ($39 one-time):** [Get the 4 Archetypes](https://payhip.com/b/ZAISC). The Brutalist Engineer, The Contrarian Bootstrapper, The B2B Cold Sniper, and The Substack Essayist.
 - **Legacy lifetime licences:** Existing $149 Agency lifetime licences are grandfathered with their promised client profiles and permanent verification links. No migration payment is required.
-- **Earn 40% per eligible referral.** [Open the partner program](https://payhip.com/auth/register/af63e51e20042ed).
+- **Earn 40% across all 5 Stripe tiers via `?ref=<handle>`.** [Generate your partner link](https://grai.page/affiliate).
 
 ### Side-by-Side Comparisons
 - **[All Comparisons Hub (`grai.page/vs/`)](https://grai.page/vs/)**

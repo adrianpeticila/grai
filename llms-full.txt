@@ -81,7 +81,12 @@ The gate highlights matching spans in the editor (`<mark class="slop-mark">`), d
 
 ## 4. Commercial Editions & Licence Structure
 
-- **Canonical live pricing (verified 2026-11-12):** Solo $79/yr, Agency $99/mo or $790/yr, DFY $950 one-time. The Payhip editions below are legacy and grandfathered.
+- **Canonical live pricing (verified 2026-11-13):** Starter $19 one-time, Solo $79/yr, Agency $99/mo or $790/yr, DFY $950 one-time. The Payhip presets pack remains active alongside Stripe.
+- **Public `#test` Preview vs Full Workbench Gate:** The free browser scorer displays the score (`/100`), burstiness `CV`, passed/failed rule counts, SVG receipt, and the first 2 flagged tells. Full multi-rule repair prompts, tells beyond the first 2, and signed ECDSA P-256 client verification cards open with Starter Audit Pass ($19) or Agency ($99/mo). Returning checkout flows (`?checkout=success` or `?key=`) activate browser access and strip checkout parameters via `history.replaceState`.
+- **Starter Audit Pass ($19 USD one-time, https://buy.stripe.com/14A00deoE51v56h1ZRds404):**
+  - `$0.63/day over 30 days` one-time diagnostic pass on live drafts.
+  - Full multi-rule repair prompts, all flagged tells beyond 2, and a signed ECDSA P-256 client verification card.
+  - Includes promo code `STARTER19` for a full $19 upgrade credit toward Solo ($79/yr), Agency ($99/mo), or Agency Annual ($790/yr) within 14 days.
 - **Agency Pilot:** https://grai.page/pilot (https://grai.page/pilot.md) · first month $99, credited to the annual plan within 30 days.
 - **Dual Licence Split:**
   - The 5 markdown instruction files (`instructions/*.md`) and the Agent Skill (`skill/grai/SKILL.md`) are **MIT Licensed** and publicly available at [github.com/adrianpeticila/grai](https://github.com/adrianpeticila/grai).
@@ -107,9 +112,10 @@ The gate highlights matching spans in the editor (`<mark class="slop-mark">`), d
   - 1 year of Solo Workbench included.
 - **Pre-calibrated Voice DNA Presets Pack ($39 USD one-time, https://payhip.com/b/ZAISC):**
   - 4 measured archetypes: The Brutalist Engineer (CV 0.52), The Contrarian Bootstrapper (CV 0.44), The B2B Cold Sniper (CV 0.38), The Substack Essayist (CV 0.41).
-- **Affiliate Program (40% Commission):**
-  - 40% commission on Payhip-tracked products, which are the $39 Presets Pack and grandfathered Payhip licences: `https://payhip.com/auth/register/af63e51e20042ed`
-  - Stripe subscriptions are not tracked by Payhip.
+- **Affiliate Program (40% Commission across All 5 Stripe Tiers):**
+  - Automatic `?ref=<handle>` tracking persists 30 days in browser storage and injects `aff_<handle>` into Stripe `client_reference_id` (preserved alongside `utm_source`).
+  - Commission payouts: `$7.60` (Starter $19), `$31.60` (Solo $79/yr), `$39.60/mo` (Agency $99/mo), `$316.00` (Agency Annual $790/yr), and `$380.00` (DFY $950).
+  - Partner link generator: `https://grai.page/affiliate` (`https://grai.page/?ref=<handle>`).
 - **The 30-Day Distinction Guarantee:**
   - If grai does not make your writing visibly sharper and faster within 30 days, email `refund@grai.page` with your order number for a 100% refund. No forms, no questions.
 
@@ -157,6 +163,7 @@ The gate highlights matching spans in the editor (`<mark class="slop-mark">`), d
   - Engineering Side-Projects Shelf: `https://hydra.peticila.ro/`
   - GitHub Profile: `https://github.com/adrianpeticila`
   - Public Repository: `https://github.com/adrianpeticila/grai`
+  - GitHub Action: `https://github.com/adrianpeticila/grai-gate-action`
 ## 7. Free Scoring API (M2M)
 
 `grai.page` exposes a stateless scoring endpoint for agents and developers. It runs the same eight syntactic rules and the same burstiness floor as the browser workbench, with no API key and no storage.
@@ -164,7 +171,7 @@ The gate highlights matching spans in the editor (`<mark class="slop-mark">`), d
 - **GET:** `https://grai.page/api/score?text=Your%20draft`
 - **POST:** `https://grai.page/api/score` with `Content-Type: application/json` and `{"text": "Your draft"}`
 - **Response:** `score` (4 to 100), `cv`, `cv_floor` (0.32), `flat_rhythm`, `clean_rules` (of 8), `signals[]` with the rule and the matched quote, and `verdict`.
-- **Commercial bridge:** every response includes the Solo ($79/yr), Agency ($99/mo or $790/yr) and 40% affiliate links.
+- **Commercial bridge:** every response includes Starter ($19, `STARTER19`), Solo ($79/yr), Agency ($99/mo or $790/yr) and 40% affiliate links.
 
 The endpoint scores single drafts. Persistent 20-post Voice DNA profiles, local browser storage and portable .grai files and printable SHA-256 A4 Dossiers live in the downloaded workbench.
 
@@ -206,7 +213,7 @@ The app can export a "seal payload" that carries only hashes and metadata: a sal
 An agency drops one iframe on its site and offers the audit as a free lead magnet. The widget runs the same eight rules and the CV floor in the browser, and every upgrade link carries the partner code.
 
 - **Embed:** `<iframe src="https://grai.page/embed?ref=PARTNER_ID" width="100%" height="520" frameborder="0"></iframe>`
-- **Partner code:** `?ref=PARTNER_ID` appends the partner code to Payhip checkout links, so the partner earns 40% on Payhip-tracked products only.
+- **Partner code:** `?ref=PARTNER_ID` injects `client_reference_id=<tier>__aff_<PARTNER_ID>__<timestamp>` on all five Stripe checkout links and `?aff=PARTNER_ID` on Payhip, and partners earn 40% commission across all tiers.
 - **Markdown mirror:** `https://grai.page/embed.md`
 
 ## 9. Free AI Tell Checker
