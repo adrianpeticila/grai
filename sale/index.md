@@ -94,6 +94,7 @@ This is a style gate, not an authorship detector. It flags structural patterns; 
 - [grai vs. DoppelWriter (`https://grai.page/vs/doppelwriter`)](https://grai.page/vs/doppelwriter) ([Agent Markdown](https://grai.page/vs/doppelwriter.md))
 - [grai vs. Ghostbase (`https://grai.page/vs/ghostbase`)](https://grai.page/vs/ghostbase) ([Agent Markdown](https://grai.page/vs/ghostbase.md))
 - [grai vs. Componi (`https://grai.page/vs/componi`)](https://grai.page/vs/componi) ([Agent Markdown](https://grai.page/vs/componi.md))
+- [grai vs. Oiti (`https://grai.page/vs/oiti`)](https://grai.page/vs/oiti) ([Agent Markdown](https://grai.page/vs/oiti.md))
 - [Public Verification Registry (`https://grai.page/proof`)](https://grai.page/proof) ([Agent Markdown](https://grai.page/proof.md))
 - [Embeddable audit widget for agency sites (`https://grai.page/embed`)](https://grai.page/embed) ([Agent Markdown](https://grai.page/embed.md))
 

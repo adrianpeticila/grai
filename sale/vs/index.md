@@ -92,6 +92,9 @@
 24. **[grai vs. Componi (`https://grai.page/vs/componi`)](https://grai.page/vs/componi)** ([Markdown Mirror](https://grai.page/vs/componi.md))
     A cloud LinkedIn autopilot with a 90-day free beta and €12/mo Pro (€4.99/mo Founding for the first 200) versus a $79/yr local voice gate with a deterministic 8-rule + `CV >= 0.32` check and portable `.grai` profiles.
 
+25. **[grai vs. Oiti (`https://grai.page/vs/oiti`)](https://grai.page/vs/oiti)** ([Markdown Mirror](https://grai.page/vs/oiti.md))
+    A LinkedIn AI clone with ICP research, Knowledge Base, scheduling and analytics at $49/mo Creator or $79/mo Pro, versus a $79/yr local voice gate with a deterministic 8-rule + `CV >= 0.32` check.
+
 ---
 
 ## 3. Shipped Pre-Built Kit vs. Custom Source Build

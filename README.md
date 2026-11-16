@@ -225,6 +225,7 @@ The server exposes `grai_score_draft`, `grai_issue_agency_seal` and `grai_verify
 - **[grai vs. DoppelWriter](https://grai.page/vs/doppelwriter)**
 - **[grai vs. Ghostbase](https://grai.page/vs/ghostbase)**
 - **[grai vs. Componi](https://grai.page/vs/componi)**
+- **[grai vs. Oiti](https://grai.page/vs/oiti)**
 
 ---
 
