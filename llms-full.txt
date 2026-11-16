@@ -31,7 +31,7 @@ Runs locally in JavaScript in your browser. Every draft is stripped of invisible
 3. `EPIPHANY_OPENER` (First hit: -10 pts, Repeat: -7 pts): Catches throat-clearing hooks (`"Here is why"`, `"Here's why"`, `"The harsh truth is"`, `"Let that sink in"`, `"Read that again"`, `"Unpopular opinion:"`, `"Most people think X. They're wrong"`).
 4. `ARROW_BULLET_SLOP` (First hit: -12 pts, Repeat: -4 pts): Catches template arrow cascades (`->`, `=>`, `1/`, arrow and emoji bullets) with full UTF-16 astral plane awareness (`/u`).
 5. `TRIADIC_PADDING` (First hit: -12 pts, Repeat: -8 pts): Catches empty slogan triads (`"No fluff. No theory. Just results."`).
-6. `LEXICAL_SLOP` (First hit: -6 pts, Repeat: -5 pts): Catches remaining synthetic vocabulary tells (`fast-paced world`, `ever-evolving`, `unlocking your potential`, `symphony of`, `navigating the complexities`, `paradigm shift`), with negative lookahead protecting legitimate domain nouns.
+6. `LEXICAL_SLOP` (First hit: -6 pts, Repeat: -5 pts): Catches remaining synthetic vocabulary tells (`fast-paced world`, `ever-evolving`, `symphony of`, `navigating the complexities`, `paradigm shift`), with negative lookahead protecting legitimate domain nouns.
 7. `VERDICT_COLON` (First hit: -8 pts, Repeat: -4 pts): Catches pompous summary colons (`"The reality is:"`, `"The takeaway:"`, `"The truth is:"`).
 8. `PROSE_TRIAD` (First hit: -10 pts, Repeat: -5 pts): Catches rhetorical triplets in prose (three consecutive questions or triadic parallel noun/verb chains).
 9. `SMOOTH_BRIDGE` (Trigger: >=3 consecutive or >=4 total; -12 pts base + -6 pts per excess): Catches chained explanatory transitions (`"that's why"`, `"in other words"`, `"this means that"`).
@@ -145,6 +145,8 @@ The gate highlights matching spans in the editor (`<mark class="slop-mark">`), d
 - **grai vs. ScriptGrain:** `https://grai.page/vs/scriptgrain` (`https://grai.page/vs/scriptgrain.md`)
 - **grai vs. Timbro:** `https://grai.page/vs/timbro` (`https://grai.page/vs/timbro.md`)
 - **grai vs. DoppelWriter:** `https://grai.page/vs/doppelwriter` (`https://grai.page/vs/doppelwriter.md`)
+- **grai vs. Ghostbase:** `https://grai.page/vs/ghostbase` (`https://grai.page/vs/ghostbase.md`)
+- **grai vs. Componi:** `https://grai.page/vs/componi` (`https://grai.page/vs/componi.md`)
 - **Public Verification Registry:** `https://grai.page/proof` (`https://grai.page/proof.md`)
 - **Executive DFY Calibration Console:** `https://grai.page/dfy` (`https://grai.page/dfy.md`)
 - **Partner & Affiliate Protocol:** `https://grai.page/affiliate` (`https://grai.page/affiliate.md`)

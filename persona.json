@@ -9,7 +9,7 @@
     "https://lobehub.com/mcp/adrianpeticila-grai"
   ],
   "version": "3.3.0",
-  "dateModified": "2026-11-13",
+  "dateModified": "2026-11-16",
   "category": "Binary Style Gate & ECDSA Proof Engine",
   "architecture": "Local-first single-file HTML5 workbench (connect-src 'none' by default in shipped build; custom source build for BYOK/Ollama) + binary PASS/FAIL cadence gate + ECDSA P-256 signed audit cards + MIT instruction harness",
   "author": {
@@ -178,6 +178,10 @@
     "vs_timbro_md": "https://grai.page/vs/timbro.md",
     "vs_doppelwriter": "https://grai.page/vs/doppelwriter",
     "vs_doppelwriter_md": "https://grai.page/vs/doppelwriter.md",
+    "vs_ghostbase": "https://grai.page/vs/ghostbase",
+    "vs_ghostbase_md": "https://grai.page/vs/ghostbase.md",
+    "vs_componi": "https://grai.page/vs/componi",
+    "vs_componi_md": "https://grai.page/vs/componi.md",
     "proof_registry": "https://grai.page/proof",
     "proof_registry_md": "https://grai.page/proof.md",
     "pilot": "https://grai.page/pilot",

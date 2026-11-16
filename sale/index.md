@@ -92,6 +92,8 @@ This is a style gate, not an authorship detector. It flags structural patterns; 
 - [grai vs. ScriptGrain (`https://grai.page/vs/scriptgrain`)](https://grai.page/vs/scriptgrain) ([Agent Markdown](https://grai.page/vs/scriptgrain.md))
 - [grai vs. Timbro (`https://grai.page/vs/timbro`)](https://grai.page/vs/timbro) ([Agent Markdown](https://grai.page/vs/timbro.md))
 - [grai vs. DoppelWriter (`https://grai.page/vs/doppelwriter`)](https://grai.page/vs/doppelwriter) ([Agent Markdown](https://grai.page/vs/doppelwriter.md))
+- [grai vs. Ghostbase (`https://grai.page/vs/ghostbase`)](https://grai.page/vs/ghostbase) ([Agent Markdown](https://grai.page/vs/ghostbase.md))
+- [grai vs. Componi (`https://grai.page/vs/componi`)](https://grai.page/vs/componi) ([Agent Markdown](https://grai.page/vs/componi.md))
 - [Public Verification Registry (`https://grai.page/proof`)](https://grai.page/proof) ([Agent Markdown](https://grai.page/proof.md))
 - [Embeddable audit widget for agency sites (`https://grai.page/embed`)](https://grai.page/embed) ([Agent Markdown](https://grai.page/embed.md))
 

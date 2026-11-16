@@ -220,6 +220,11 @@ The server exposes `grai_score_draft`, `grai_issue_agency_seal` and `grai_verify
 - **[grai for Executive PR Agencies](https://grai.page/vs/pr-agencies)**
 - **[grai vs. Buffer AI Assistant](https://grai.page/vs/buffer)**
 - **[grai vs. Hootsuite OwlyWriter AI](https://grai.page/vs/hootsuite)**
+- **[grai vs. ScriptGrain](https://grai.page/vs/scriptgrain)**
+- **[grai vs. Timbro](https://grai.page/vs/timbro)**
+- **[grai vs. DoppelWriter](https://grai.page/vs/doppelwriter)**
+- **[grai vs. Ghostbase](https://grai.page/vs/ghostbase)**
+- **[grai vs. Componi](https://grai.page/vs/componi)**
 
 ---
 

@@ -1,6 +1,6 @@
 # grai vs. Alternatives: Honest Category & Architecture Comparisons (2026)
 
-> **Last verified against public pricing and source architecture:** 2026-11-12
+> **Last verified against public pricing and source architecture:** 2026-11-16
 > **Canonical URL:** https://grai.page/vs/
 
 **Direct Answer:** `grai` is a local-first HTML5 voice workbench ($79/yr Solo or $99/mo or $790/yr Agency) that extracts a quantitative Voice DNA profile from 5 to 20 real posts. It audits every draft in your browser against 8 structural rules and a burstiness floor (`CV >= 0.32`). It does not schedule posts or connect to your LinkedIn account.
@@ -85,6 +85,12 @@
 
 22. **[grai vs. DoppelWriter (`https://grai.page/vs/doppelwriter`)](https://grai.page/vs/doppelwriter)** ([Markdown Mirror](https://grai.page/vs/doppelwriter.md))
     A cloud library of 129 public writer styles and 71 templates at $15 to $19 per month versus measuring and enforcing your own executive Voice DNA locally for $79/yr.
+
+23. **[grai vs. Ghostbase (`https://grai.page/vs/ghostbase`)](https://grai.page/vs/ghostbase)** ([Markdown Mirror](https://grai.page/vs/ghostbase.md))
+    A per-space cloud workspace at $99/mo or $79/mo annual ($948/yr per space) versus $790/yr Agency for up to 10 client profiles with a deterministic 8-rule + `CV >= 0.32` gate and A4 SHA-256 Dossiers.
+
+24. **[grai vs. Componi (`https://grai.page/vs/componi`)](https://grai.page/vs/componi)** ([Markdown Mirror](https://grai.page/vs/componi.md))
+    A cloud LinkedIn autopilot with a 90-day free beta and €12/mo Pro (€4.99/mo Founding for the first 200) versus a $79/yr local voice gate with a deterministic 8-rule + `CV >= 0.32` check and portable `.grai` profiles.
 
 ---
 
