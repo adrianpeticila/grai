@@ -11,7 +11,7 @@
 
 | Record | Client Reference | Verdict & Score | Metrics | Signature Status | Live Receipt URL |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **01. Plain Human Cadence** | Paul Graham, Write Simply (reference sample) | **VERIFIED** (`100/100`) | `8 of 8` rules passed, `CV >= 0.32` | Signed ECDSA P-256 (`grai-seal-1`) | https://grai.page/verify/4a4cb85cd0cb46b46959e69e6ab39c99da4da5f3afae4e6258e320d1dbe378be |
+| **01. Plain Human Cadence** | Paul Graham, Write Simply (synthetic demo record, no endorsement) | **VERIFIED** (`100/100`) | `8 of 8` rules passed, `CV >= 0.32` | Signed ECDSA P-256 (`grai-seal-1`) | https://grai.page/verify/4a4cb85cd0cb46b46959e69e6ab39c99da4da5f3afae4e6258e320d1dbe378be |
 | **02. Rejected AI Template** | Generic AI LinkedIn Template | **FAILED_CADENCE** (`34/100`) | `5 of 8` rules passed, `CV 0.14` (below `0.32` floor) | `not_issued_failed_gate` (unsigned by rule) | https://grai.page/verify/bae6d7849c6cef2f8a3846f078147620fd3e01eb6edbf602ffe3d4913af49c30 |
 | **03. Executive Calibrated Draft** | Executive Calibrated Draft, Agency Protocol | **VERIFIED** (`100/100`) | `8 of 8` rules passed, `CV >= 0.32` | Signed ECDSA P-256 (`grai-seal-1`) | https://grai.page/verify/398ec41412a09deaa39c766e48e4176355d95fc9f6a5f0b5b26b3b51e6fc01f2 |
 

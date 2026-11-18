@@ -81,13 +81,15 @@ The gate highlights matching spans in the editor (`<mark class="slop-mark">`), d
 
 ## 4. Commercial Editions & Licence Structure
 
-- **Canonical live pricing (verified 2026-11-13):** Starter $19 one-time, Solo $79/yr, Agency $99/mo or $790/yr, DFY $950 one-time. The Payhip presets pack remains active alongside Stripe.
+- **Canonical live pricing (verified 2026-11-17):** Presets Pack $39 one-time, Starter $19 one-time, Solo $79/yr, Agency $99/mo or $790/yr, DFY $950 one-time. All checkout runs on Stripe.
+- **Pricing page:** https://grai.page/pricing/ (https://grai.page/pricing.md). One gate, five ways to run it. Every paid edition carries the 30-day distinction guarantee.
+- **Migration hub:** https://grai.page/migrate/ (https://grai.page/migrate.md). Keep the publishing tool and add the gate. Paths for Typefully, Taplio, AuthoredUp, ChatGPT Custom Instructions and Jasper.
 - **Public `#test` Preview vs Full Workbench Gate:** The free browser scorer displays the score (`/100`), burstiness `CV`, passed/failed rule counts, SVG receipt, and the first 2 flagged tells. Full multi-rule repair prompts, tells beyond the first 2, and signed ECDSA P-256 client verification cards open with Starter Audit Pass ($19) or Agency ($99/mo). Returning checkout flows (`?checkout=success` or `?key=`) activate browser access and strip checkout parameters via `history.replaceState`.
 - **Starter Audit Pass ($19 USD one-time, https://buy.stripe.com/14A00deoE51v56h1ZRds404):**
   - `$0.63/day over 30 days` one-time diagnostic pass on live drafts.
   - Full multi-rule repair prompts, all flagged tells beyond 2, and a signed ECDSA P-256 client verification card.
   - Includes promo code `STARTER19` for a full $19 upgrade credit toward Solo ($79/yr), Agency ($99/mo), or Agency Annual ($790/yr) within 14 days.
-- **Agency Pilot:** https://grai.page/pilot (https://grai.page/pilot.md) · first month $99, credited to the annual plan within 30 days.
+- **Agency Pilot:** https://grai.page/pilot (https://grai.page/pilot.md) · $99 today; Stripe bills $99 per month until cancelled. Paid first month, not a free trial. Credited toward the $790 annual plan within 30 days, or full 30-day refund at `refund@grai.page`.
 - **Dual Licence Split:**
   - The 5 markdown instruction files (`instructions/*.md`) and the Agent Skill (`skill/grai/SKILL.md`) are **MIT Licensed** and publicly available at [github.com/adrianpeticila/grai](https://github.com/adrianpeticila/grai).
   - The standalone application (`grai.html`, the 3-column workbench, the deterministic browser engine, and the A4 certificate generator) is **Commercial Software**.
@@ -106,15 +108,15 @@ The gate highlights matching spans in the editor (`<mark class="slop-mark">`), d
     2. Import: the freelancer loads the file once. The rules bind to the active voice and persist locally.
     3. Check: every draft runs the same rules before it leaves the desk. Drafts stay local. No seat fees.
 - **Executive Voice DNA Architecture ($950 USD one-time, https://buy.stripe.com/aFa5kx1BS2Tn8it47Zds403):**
-  - 50 executive posts calibrated by hand within 24 hours.
-  - Locked `.grai.json` profile delivered.
-  - A4 reference dossier for the executive.
-  - 1 year of Solo Workbench included.
-- **Pre-calibrated Voice DNA Presets Pack ($39 USD one-time, https://payhip.com/b/ZAISC):**
+  - 5 to 50 past posts (up to 50 executive posts; minimum 5 usable posts).
+  - Turnaround SLA: self-service console is instant; for URL extraction, the 24-hour clock starts when payment and public URL are submitted (7 days a week).
+  - Locked `.grai.json` profile, Claude/Cursor/Windsurf `SKILL.md`, pre-loaded HTML5 workbench with 1 year of Solo Workbench updates, and SHA-256 A4 reference dossier.
+  - Covered by one free recalibration pass and the 30-Day Distinction Guarantee (`refund@grai.page`).
+- **Pre-calibrated Voice DNA Presets Pack ($39 USD one-time, https://buy.stripe.com/fZu6oB1BS79D6algULds405):**
   - 4 measured archetypes: The Brutalist Engineer (CV 0.52), The Contrarian Bootstrapper (CV 0.44), The B2B Cold Sniper (CV 0.38), The Substack Essayist (CV 0.41).
-- **Affiliate Program (40% Commission across All 5 Stripe Tiers):**
+- **Affiliate Program (40% Commission across All 6 Stripe Tiers):**
   - Automatic `?ref=<handle>` tracking persists 30 days in browser storage and injects `aff_<handle>` into Stripe `client_reference_id` (preserved alongside `utm_source`).
-  - Commission payouts: `$7.60` (Starter $19), `$31.60` (Solo $79/yr), `$39.60/mo` (Agency $99/mo), `$316.00` (Agency Annual $790/yr), and `$380.00` (DFY $950).
+  - Commission payouts: `$7.60` (Starter $19), `$31.60` (Solo $79/yr), `$39.60/mo` (Agency $99/mo), `$316.00` (Agency Annual $790/yr), `$380.00` (DFY $950), and `$15.60` (Presets $39).
   - Partner link generator: `https://grai.page/affiliate` (`https://grai.page/?ref=<handle>`).
 - **The 30-Day Distinction Guarantee:**
   - If grai does not make your writing visibly sharper and faster within 30 days, email `refund@grai.page` with your order number for a 100% refund. No forms, no questions.
@@ -216,7 +218,7 @@ The app can export a "seal payload" that carries only hashes and metadata: a sal
 An agency drops one iframe on its site and offers the audit as a free lead magnet. The widget runs the same eight rules and the CV floor in the browser, and every upgrade link carries the partner code.
 
 - **Embed:** `<iframe src="https://grai.page/embed?ref=PARTNER_ID" width="100%" height="520" frameborder="0"></iframe>`
-- **Partner code:** `?ref=PARTNER_ID` injects `client_reference_id=<tier>__aff_<PARTNER_ID>__<timestamp>` on all five Stripe checkout links and `?aff=PARTNER_ID` on Payhip, and partners earn 40% commission across all tiers.
+- **Partner code:** `?ref=PARTNER_ID` injects `client_reference_id=<tier>__aff_<PARTNER_ID>__<timestamp>` on all six Stripe checkout links, and partners earn 40% commission across all tiers.
 - **Markdown mirror:** `https://grai.page/embed.md`
 
 ## 9. Free AI Tell Checker
@@ -224,7 +226,7 @@ An agency drops one iframe on its site and offers the audit as a free lead magne
 `https://grai.page/ai-tells/` is a free, deterministic checker for the twelve patterns Wikipedia editors document in "Signs of AI writing".
 
 - It runs entirely in the browser. The draft is never uploaded and no account is required.
-- Each result reports the number of triggered checks, the exact text that triggered each one, and the checks that passed.
-- The twelve checks cover dash punctuation, the false dichotomy formula, the rule of three, jargon, note formulas, conclusion markers, flat sentence rhythm, dense hedging, landscape metaphors, repeated sentence openings, uniform paragraph blocks and connector openers.
-- It is a checklist, not a probability. The paid engine applies eight structural rules and a `CV >= 0.32` floor to every draft and keeps the Voice DNA profile on the user's machine.
+- Each result reports the number of triggered checks, the exact text that triggered each one, and which checks were evaluated or skipped (checks 7, 10 and 11 require 4+ sentences and 3+ paragraphs).
+- The twelve checks cover dash punctuation, the false dichotomy formula, the rule of three, jargon, formulaic openers and notes, conclusion markers, flat sentence rhythm, dense hedging, landscape metaphors, repeated sentence openings, uniform paragraph blocks and connector openers.
+- It is a pattern count, not an authorship or quality score. Next steps route to the 30-day Agency Pilot ($99/mo at https://grai.page/pilot) and Solo ($79/yr).
 

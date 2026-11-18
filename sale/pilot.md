@@ -1,6 +1,6 @@
 # Agency Pilot: one client voice, one live proof, 30 days
 
-> **For ghostwriting agencies with 1 to 5 people.** First month $99, then $99/mo unless you upgrade or cancel.
+> **For ghostwriting agencies with 1 to 5 people.** $99 today; Stripe bills $99 per month until you cancel. This is a paid first month, not a free trial.
 > **Canonical URL:** https://grai.page/pilot
 
 **The pilot is one real client, not a demo.** We calibrate that client's voice from their published posts and load it into your local workbench. You run up to 10 drafts through the gate. The client receives a live verification link and an A4 dossier. If the proof does not survive the client conversation, the 30-day refund applies, with one email and no questions.
@@ -20,7 +20,7 @@
 
 ## 3. The money
 
-The first month is $99. That is the pilot. If you move to the annual Agency Verification Protocol at $790 within 30 days, the $99 is credited. If the pilot is not useful, email `refund@grai.page` within 30 days for a full refund.
+$99 today. Stripe bills $99 per month until you cancel, because this is a paid first month and never a free trial. Upgrade to Agency Annual at $790 within 30 days and your first $99 is credited in full, or email `refund@grai.page` within 30 days for a 100% refund.
 
 One $2,000 retainer covers 20 months of the monthly price. The pilot exists to prove one client relationship, not to add another subscription you forget.
 
@@ -48,6 +48,6 @@ You need one client, 5 to 20 published posts, a browser and half an hour. No Lin
 
 ### What happens after 30 days?
 
-You keep the A4 dossier and the live proof link. Upgrade to the annual plan, stay monthly, or stop. Nothing auto-renews. There is no retention call.
+You keep the A4 dossier and the live proof link. Stripe bills $99 per month until you cancel, or you can upgrade to the $790 annual plan within 30 days with your first $99 credited. Cancel any time by email with one click and no retention call.
 
-**Checkout:** [Start the first month ($99)](https://buy.stripe.com/3cI28lbcs51v2Y9bArds401) | [See the annual plan ($790)](https://buy.stripe.com/dRmfZb2FWalP42d5c3ds402)
+**Checkout:** [Start Agency Pilot ($99/mo)](https://buy.stripe.com/3cI28lbcs51v2Y9bArds401) | [See the annual plan ($790)](https://buy.stripe.com/dRmfZb2FWalP42d5c3ds402)

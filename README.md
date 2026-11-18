@@ -138,8 +138,8 @@ The standalone **grai** desktop application (`grai.html`, about 630 KB single-fi
 - **[Agency Verification Protocol ($99/mo or $790/yr)](https://buy.stripe.com/3cI28lbcs51v2Y9bArds401):** Commercial licence for client work, up to 10 executive client voice profiles, white-label A4 Client Voice DNA Dossiers, live ECDSA P-256 seals at grai.page/verify/:hash, and offline `.grai` team sync. Annual link: https://buy.stripe.com/dRmfZb2FWalP42d5c3ds402
 - **[Agency Pilot ($99 first month)](https://grai.page/pilot):** One client voice, 10 audited drafts, one live proof link and one A4 dossier. The $99 is credited to the $790 annual plan within 30 days.
 - **[Executive Voice DNA Architecture ($950 one-time)](https://buy.stripe.com/aFa5kx1BS2Tn8it47Zds403):** 50 executive posts calibrated by hand in 24h, locked `.grai.json` profile, A4 reference dossier, and 1 year of Solo Workbench.
-- **[Voice DNA Archetype Presets ($39 once)](https://payhip.com/b/ZAISC):** Four pre-calibrated baseline models (The Contrarian Founder, The Technical Architect, The Boutique Ghostwriter, The Cold Outreach Closer).
-- **[Affiliate program (40% commission)](https://grai.page/affiliate):** Automated `?ref=<handle>` attribution across all 5 Stripe tiers ($19/$79/$99/$790/$950) for newsletters and advisors.
+- **[Voice DNA Archetype Presets ($39 once)](https://buy.stripe.com/fZu6oB1BS79D6algULds405):** Four pre-calibrated baseline models (The Contrarian Founder, The Technical Architect, The Boutique Ghostwriter, The Cold Outreach Closer).
+- **[Affiliate program (40% commission)](https://grai.page/affiliate):** Automated `?ref=<handle>` attribution across all 6 Stripe tiers ($19/$39/$79/$99/$790/$950) for newsletters and advisors.
 
 ### Arcade Mastery & Ghost Sweep
 Version 3.2.0 introduces the **Cadence Mastery Arcade** directly inside the desk:
@@ -195,9 +195,9 @@ The server exposes `grai_score_draft`, `grai_issue_agency_seal` and `grai_verify
 - **Solo Offline Edition ($79/yr):** [Get Solo Offline](https://buy.stripe.com/3cIaERgwM9hLbuF33Vds400). Watermarked local workbench, Voice DNA profiler with 1 voice profile, 8-rule Cadence Gate, and 1-click `.grai` backup.
 - **Agency Verification Protocol ($99/mo or $790/yr):** [Monthly](https://buy.stripe.com/3cI28lbcs51v2Y9bArds401) or [Annual](https://buy.stripe.com/dRmfZb2FWalP42d5c3ds402). Commercial licence, up to 10 executive client voice profiles, white-label A4 Dossiers, and live ECDSA P-256 seals at grai.page/verify/:hash.
 - **Executive Voice DNA Architecture ($950 one-time):** [Book the calibration](https://buy.stripe.com/aFa5kx1BS2Tn8it47Zds403). 50 executive posts calibrated by hand in 24h, locked `.grai.json` profile, A4 reference dossier, and 1 year of Solo Workbench.
-- **Pre-calibrated Voice DNA Presets Pack ($39 one-time):** [Get the 4 Archetypes](https://payhip.com/b/ZAISC). The Brutalist Engineer, The Contrarian Bootstrapper, The B2B Cold Sniper, and The Substack Essayist.
+- **Pre-calibrated Voice DNA Presets Pack ($39 one-time):** [Get the 4 Archetypes](https://buy.stripe.com/fZu6oB1BS79D6algULds405). The Brutalist Engineer, The Contrarian Bootstrapper, The B2B Cold Sniper, and The Substack Essayist.
 - **Legacy lifetime licences:** Existing $149 Agency lifetime licences are grandfathered with their promised client profiles and permanent verification links. No migration payment is required.
-- **Earn 40% across all 5 Stripe tiers via `?ref=<handle>`.** [Generate your partner link](https://grai.page/affiliate).
+- **Earn 40% across all 6 Stripe tiers via `?ref=<handle>`.** [Generate your partner link](https://grai.page/affiliate).
 
 ### Side-by-Side Comparisons
 - **[All Comparisons Hub (`grai.page/vs/`)](https://grai.page/vs/)**

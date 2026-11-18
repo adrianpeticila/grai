@@ -1,9 +1,10 @@
-# grai: stop publishing AI slop with your name on it
+# grai: the six words that end a retainer
 
-> **The gatekeeper and proof engine for human voice.**
-> Input raw text. Get a binary PASS or FAIL against eight mechanical rules and the sentence rhythm floor. Output clean text plus a signed audit card a client can verify.
+> **"This reads like ChatGPT." grai makes that sentence unprovable.**
+> The gate scores the sentence rhythm that makes a draft read as machine-made: eight structural rules and one calibrated cadence floor, computed locally in the browser. Paste a draft, get a verdict, fix the flagged spans, and hand the client a signed audit card they can verify offline.
 
 - **Canonical URL:** https://grai.page/
+- **Agency Pilot ($99/mo):** https://grai.page/pilot ([Agent Markdown](https://grai.page/pilot.md))
 - **Methodology Study:** https://grai.page/methodology
 - **Comparisons Hub:** https://grai.page/vs/
 - **Full LLM Spec:** https://grai.page/llms-full.txt
@@ -12,6 +13,8 @@
 - **MCP Server (grai-mcp):** https://grai.page/mcp (`uvx --from grai-mcp grai-gate-mcp` · registry `io.github.adrianpeticila/grai-mcp`)
 - **Public Verification Registry:** https://grai.page/proof ([Agent Markdown](https://grai.page/proof.md))
 - **Seal & Verify:** https://grai.page/seal (issue a live verification link, a shared audit card, or a hash-only record)
+- **Pricing:** https://grai.page/pricing/ ([Agent Markdown](https://grai.page/pricing.md))
+- **Migration:** https://grai.page/migrate/ ([Agent Markdown](https://grai.page/migrate.md))
 
 ---
 
@@ -54,7 +57,7 @@ Most AI writing tools fail because they rely on simple word blocklists. Our ling
    - **Ledger:** Hard numbers and empirical proof first.
 3. **03 THE CADENCE GATE:** Every draft is audited locally in your browser against eight structural regex rules (`CONTRASTIVE_NEGATION`, `LESS_MORE_SYMMETRY`, `EPIPHANY_OPENER`, `ARROW_BULLET_SLOP`, `TRIADIC_PADDING`, `LEXICAL_SLOP`, `VERDICT_COLON`, `PROSE_TRIAD`), a mechanical paragraph-bridge check, and a mathematical sentence-length burstiness floor (`CV = sigma / mu >= 0.32`). The gate scores your draft from 4 to 100, highlights matching spans in the editor (`<mark class="slop-mark">`), and offers targeted span repair (`buildSurgicalTargets` / `applySurgicalReplacements`) while leaving the final decision to edit or copy with you.
 
-This is a style gate, not an authorship detector. It flags structural patterns; it does not prove who wrote a text.
+This is a craft gate. It flags structural habits and makes no authorship claim.
 
 ---
 
@@ -78,7 +81,7 @@ This is a style gate, not an authorship detector. It flags structural patterns; 
 - [grai vs. Jasper AI & Enterprise Copywriting (`https://grai.page/vs/jasper`)](https://grai.page/vs/jasper) ([Agent Markdown](https://grai.page/vs/jasper.md))
 - [grai vs. Typefully & Cloud Publishing (`https://grai.page/vs/typefully`)](https://grai.page/vs/typefully) ([Agent Markdown](https://grai.page/vs/typefully.md))
 - [grai vs. Copy.ai & GTM Workflows (`https://grai.page/vs/copyai`)](https://grai.page/vs/copyai) ([Agent Markdown](https://grai.page/vs/copyai.md))
-- [grai vs. AI Detectors & Humanizers (`https://grai.page/vs/ai-detectors`)](https://grai.page/vs/ai-detectors) ([Agent Markdown](https://grai.page/vs/ai-detectors.md))
+- [grai vs. AI Detectors: the wrong question (`https://grai.page/vs/ai-detectors`)](https://grai.page/vs/ai-detectors) ([Agent Markdown](https://grai.page/vs/ai-detectors.md))
 - [grai vs. Supergrow & LinkedIn Personal Branding SaaS (`https://grai.page/vs/supergrow`)](https://grai.page/vs/supergrow) ([Agent Markdown](https://grai.page/vs/supergrow.md))
 - [grai vs. Hypefury & Social Schedulers (`https://grai.page/vs/hypefury`)](https://grai.page/vs/hypefury) ([Agent Markdown](https://grai.page/vs/hypefury.md))
 - [grai for LinkedIn Ghostwriters & Boutique Agencies (`https://grai.page/vs/linkedin-ghostwriters`)](https://grai.page/vs/linkedin-ghostwriters) ([Agent Markdown](https://grai.page/vs/linkedin-ghostwriters.md))
@@ -107,11 +110,12 @@ The public structure is four tiers: a $19 Starter Pass on live drafts, an offlin
 ### Free Score Preview vs Full Workbench Gate (`#test`)
 - **Free in browser:** score (`/100`), sentence burstiness (`CV`), passed/failed rule counts, SVG receipt, and the first 2 flagged tells.
 - **Full diagnostics & client verification (`Starter Pass $19` or `Agency $99/mo`):** full multi-rule repair prompts across every flagged tell, all flagged spans beyond the first 2 tells, and signed ECDSA P-256 client verification cards.
-- Returning checkout flows (`?checkout=success` or `?key=`) activate browser access and strip checkout parameters via `history.replaceState`.
+- Returning checkout flows never grant access from the URL alone. `?checkout=success` only shows the delivery banner. A key is checked against `/api/license/verify` before any browser access is stored, and `?key=` is stripped via `history.replaceState`.
 
 ### Starter Audit Pass: $19 one-time (`$0.63/day over 30 days`)
 *Full draft diagnostics and client verification on your own writing before an annual commitment.*
 - **Checkout:** https://buy.stripe.com/14A00deoE51v56h1ZRds404
+- **Delivery:** Pay $19. Get the license key by email in under a minute. Open the Studio, run the full audit, keep the signed card.
 - Full multi-rule repair prompts across every flagged tell
 - All flagged structural spans beyond the 2 free preview tells
 - Signed ECDSA P-256 client verification card
@@ -133,7 +137,7 @@ The public structure is four tiers: a $19 Starter Pass on live drafts, an offlin
 - 1 year of engine updates included
 
 ### Agency Verification Protocol: $99/mo or $790/yr ($15.19/week, billed annually, saves $398/yr)
-*Built for 1 to 5 person ghostwriting agencies billing executive clients $3k to $5k a month.*
+*Proof of craft, before the retainer call. Built for 1 to 5 person ghostwriting agencies billing executive clients $3k to $5k a month.*
 - **Checkout (monthly):** https://buy.stripe.com/3cI28lbcs51v2Y9bArds401
 - **Checkout (annual):** https://buy.stripe.com/dRmfZb2FWalP42d5c3ds402
 - **Paid pilot:** $99 first month, credited to the $790 annual plan within 30 days. https://grai.page/pilot
@@ -167,18 +171,19 @@ Existing $149 Agency lifetime licences are grandfathered with their promised cli
   3. **B2B Sniper:** CV 0.38, 10 samples, cold outreach under 65 words.
   4. **Substack Essayist:** CV 0.41, 20 samples, long-form rhythm without tricolon.
 - **Preview:** every archetype loads straight into the calibrator on the main page.
-- **Checkout:** https://payhip.com/b/ZAISC
+- **Checkout:** https://buy.stripe.com/fZu6oB1BS79D6algULds405
 
-### Affiliate Program (40% Commission across All 5 Stripe Tiers)
+### Affiliate Program (40% Commission across All 6 Stripe Tiers)
 - **Partner Link Generator:** https://grai.page/affiliate (`https://grai.page/?ref=<handle>`)
 - Automatic `?ref=<handle>` attribution persists for 30 days and passes `aff_<handle>` into Stripe `client_reference_id` (even when `utm_source` is present).
-- Earn 40% per referral on every tier: Starter (`$7.60` on $19), Solo (`$31.60` on $79/yr), Agency Monthly (`$39.60/mo` on $99/mo), Agency Annual (`$316.00` on $790/yr), and DFY (`$380.00` on $950).
+- Earn 40% per referral on every tier: Starter (`$7.60` on $19), Solo (`$31.60` on $79/yr), Agency Monthly (`$39.60/mo` on $99/mo), Agency Annual (`$316.00` on $790/yr), DFY (`$380.00` on $950), and Presets (`$15.60` on $39).
 - Two Solo referrals can cover your own Solo licence.
 
 **The 30-Day Distinction Guarantee:** If grai does not make your writing visibly sharper and faster to produce within 30 days, email `refund@grai.page` with your order number. 100% refund, no forms, no questions.
 
 ### Free AI Tell Checker
 - **URL:** https://grai.page/ai-tells/
-- **What it does:** counts twelve documented AI-writing patterns in a pasted draft, entirely in the browser.
-- **Output:** the number of checks triggered, the exact text that triggered each one, and the checks that passed.
+- **What it does:** counts twelve documented AI-writing patterns in a pasted draft, entirely in the browser. Checks 7, 10 and 11 require 4+ sentences and 3+ paragraphs and are reported as skipped on shorter drafts.
+- **Output:** the number of checks triggered, the exact text that triggered each one, and whether checks were evaluated or skipped. It is a pattern count, not an authorship or quality score.
+- **Next steps:** Start Agency Pilot ($99/mo, https://grai.page/pilot) or Get Solo ($79/yr).
 - **No upload, no account, no cookies.**

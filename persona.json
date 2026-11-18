@@ -9,7 +9,7 @@
     "https://lobehub.com/mcp/adrianpeticila-grai"
   ],
   "version": "3.3.0",
-  "dateModified": "2026-11-16",
+  "dateModified": "2026-11-18",
   "category": "Binary Style Gate & ECDSA Proof Engine",
   "architecture": "Local-first single-file HTML5 workbench (connect-src 'none' by default in shipped build; custom source build for BYOK/Ollama) + binary PASS/FAIL cadence gate + ECDSA P-256 signed audit cards + MIT instruction harness",
   "author": {
@@ -98,20 +98,21 @@
     "presets": {
       "name": "Pre-calibrated Voice DNA Presets Pack",
       "price_usd": 39,
-      "checkout_url": "https://payhip.com/b/ZAISC",
+      "checkout_url": "https://buy.stripe.com/fZu6oB1BS79D6algULds405",
       "billing": "one-time payment",
       "scope": "4 pre-calibrated Voice DNA archetypes: Brutalist Engineer, Contrarian Bootstrapper, B2B Sniper, Substack Essayist"
     }
   },
   "affiliate_program": {
     "commission_percent": 40,
-    "scope": "Automatic ?ref=<handle> attribution across all 5 Stripe tiers ($19 Starter, $79/yr Solo, $99/mo Agency, $790/yr Agency Annual, $950 DFY). Persists 30 days in localStorage and writes aff_<handle> into Stripe client_reference_id even alongside utm_source.",
+    "scope": "Automatic ?ref=<handle> attribution across all 6 Stripe tiers ($19 Starter, $79/yr Solo, $99/mo Agency, $790/yr Agency Annual, $950 DFY, $39 Presets). Persists 30 days in localStorage and writes aff_<handle> into Stripe client_reference_id even alongside utm_source.",
     "tiers_commission_usd": {
       "starter_pass": 7.6,
       "solo_offline": 31.6,
       "agency_protocol": 39.6,
       "agency_annual": 316.0,
-      "dfy_architecture": 380.0
+      "dfy_architecture": 380.0,
+      "presets_pack": 15.6
     },
     "signup_url": "https://grai.page/affiliate"
   },

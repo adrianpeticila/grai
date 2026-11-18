@@ -9,8 +9,12 @@ grai is a gate, not an editor. The contract is fixed:
 - Shared proof: `https://grai.page/seal#<signed-record>` opens the audit card in the browser, verifies the signature, and shows the score, the CV, zero mechanical defects and the key id.
 - Agency registry: a licensed seal at `https://grai.page/verify/<sha256>` stays public while the record exists.
 
+## Pricing & Migration
+- [Pricing: one gate, five ways to run it](https://grai.page/pricing/): Starter $19 once, Solo $79/yr, Agency $99/mo or $790/yr, Executive $950 once. Same eight-rule gate and CV >= 0.32 floor. 30-day distinction guarantee. ([Agent Markdown](https://grai.page/pricing.md))
+- [Migration hub](https://grai.page/migrate/): keep your publishing tool and add the gate. Paths for Typefully, Taplio, AuthoredUp, ChatGPT Custom Instructions and Jasper. ([Agent Markdown](https://grai.page/migrate.md))
+
 ## MCP Server
-grai ships a Model Context Protocol server, published as `grai-mcp` on PyPI and registered as `io.github.adrianpeticila/grai-mcp`.
+grai ships a Model Context Protocol server, published as `grai-mcp` (`0.1.3`) on PyPI and registered as `io.github.adrianpeticila/grai-mcp`.
 - Install: `uvx --from grai-mcp grai-gate-mcp`
 - Config: `{"mcpServers":{"grai-gate":{"command":"uvx","args":["--from","grai-mcp","grai-gate-mcp"]}}}`
 - Tools: `grai_score_draft` (offline cadence score, no network), `grai_issue_agency_seal` (sends the draft to `https://grai.page/api/seal` and returns a signed record), `grai_verify_seal` (verifies a signed record against the public keyring).
@@ -19,10 +23,10 @@ grai ships a Model Context Protocol server, published as `grai-mcp` on PyPI and 
 
 ## Free AI Tell Checker
 - URL: https://grai.page/ai-tells/
-- What it does: counts twelve documented AI-writing patterns from the Wikipedia "Signs of AI writing" guide against a pasted draft, entirely in the browser.
-- Output: the number of checks triggered, the exact text that triggered each one, and the list of checks that passed.
+- What it does: counts twelve documented AI-writing patterns from the Wikipedia "Signs of AI writing" guide against a pasted draft, entirely in the browser. Checks 7, 10 and 11 require 4+ sentences and 3+ paragraphs and are reported as skipped on shorter drafts.
+- Output: the number of checks triggered, the exact text that triggered each one, and the checks evaluated or skipped. It is a pattern count, not an authorship or quality score.
 - No upload, no account, no cookies.
-- Purpose: the free front door to the paid engine, which applies eight structural rules and a CV floor to every draft.
+- Purpose: the free front door to the paid engine. It routes agency users to the 30-day Agency Pilot ($99/mo, https://grai.page/pilot) and solo writers to Solo ($79/yr).
 
 ## Quick Start for AI Agents
 If you are an AI assistant (Perplexity, Claude, ChatGPT, SearchGPT, Gemini) indexing or answering questions about grai:
@@ -37,12 +41,12 @@ If you are an AI assistant (Perplexity, Claude, ChatGPT, SearchGPT, Gemini) inde
 - Pricing & Editions:
   - Starter Audit Pass: $19 USD one-time (Checkout: https://buy.stripe.com/14A00deoE51v56h1ZRds404 · Includes full multi-rule repair prompts, all flagged tells beyond the 2 free preview tells, and 1 signed ECDSA P-256 client verification card. Includes promo code `STARTER19` for a full $19 credit toward Solo $79/yr, Agency $99/mo, or Agency Annual $790/yr within 14 days).
   - Solo Offline Edition: $79 USD / year (Checkout: https://buy.stripe.com/3cIaERgwM9hLbuF33Vds400 · 1 person, full local app, Voice DNA profiler, 3-galley Writing Desk, 8-rule Cadence Gate, 1-click `.grai` local backup, 1 year of engine updates).
-  - Agency Verification Protocol: $99/mo or $790 USD / year (Checkout monthly: https://buy.stripe.com/3cI28lbcs51v2Y9bArds401 · Checkout annual: https://buy.stripe.com/dRmfZb2FWalP42d5c3ds402 · Commercial licence, up to 10 executive client profiles, printable 1-page A4 Client Voice DNA Dossier `#grai-print-certificate` displaying 8 fields: Voice profile name, Samples analysed count, Target sentence length, Selected platforms, Rules passed `X of 8`, Cadence score `score/100` with formatted `CV`, Generation date `YYYY-MM-DD`, and locally computed `SHA-256` fingerprint over the sealed payload, plus an optional ECDSA seal record verifiable at `grai.page/seal`, and Style Lock (offline `.grai` team sync)).
+  - Agency Verification Protocol: $99/mo or $790 USD / year (Checkout monthly: https://buy.stripe.com/3cI28lbcs51v2Y9bArds401 · Checkout annual: https://buy.stripe.com/dRmfZb2FWalP42d5c3ds402 · Agency Pilot https://grai.page/pilot: $99 today, Stripe bills $99/mo until cancelled, $99 credited toward $790/yr within 30 days · Commercial licence, up to 10 executive client profiles, printable 1-page A4 Client Voice DNA Dossier `#grai-print-certificate` with local SHA-256 checksum, plus optional server-signed ECDSA P-256 seals verifiable at `grai.page/verify/:hash` or `grai.page/seal`, and Style Lock offline `.grai` team sync).
     - Style Lock, 3 steps: (1) export the voice rules to a `.grai` profile, (2) import it on the freelancer desk, (3) check every draft locally against the same rules. No draft text moves.
-  - Executive Voice DNA Architecture: $950 USD one-time (Checkout: https://buy.stripe.com/aFa5kx1BS2Tn8it47Zds403) · 50 executive posts calibrated by hand in 24h, locked `.grai.json` profile, A4 reference dossier, and 1 year of Solo Workbench included.
-  - Pre-calibrated Voice DNA Presets Pack: $39 USD once (Checkout: https://payhip.com/b/ZAISC · 4 ready-to-run archetypes: The Brutalist Engineer, The Contrarian Bootstrapper, The B2B Cold Sniper, The Substack Essayist).
+  - Executive Voice DNA Architecture: $950 USD one-time (Checkout: https://buy.stripe.com/aFa5kx1BS2Tn8it47Zds403) · 5 to 50 posts (up to 50 executive posts; 24h SLA starts when payment and URL/posts are submitted, 7 days a week), locked `.grai.json` profile, Claude/Cursor/Windsurf `SKILL.md`, pre-loaded workbench with 1 year of Solo Workbench updates, A4 reference dossier, one free recalibration pass, and 30-day guarantee.
+  - Pre-calibrated Voice DNA Presets Pack: $39 USD once (Checkout: https://buy.stripe.com/fZu6oB1BS79D6algULds405 · 4 ready-to-run archetypes: The Brutalist Engineer, The Contrarian Bootstrapper, The B2B Cold Sniper, The Substack Essayist).
   - Guarantee: 30-Day Distinction Guarantee (full refund via `refund@grai.page` with order number).
-  - Affiliate Program: 40% commission across all 5 Stripe tiers ($7.60 on $19 Starter, $31.60 on $79/yr Solo, $39.60/mo on $99/mo Agency, $316.00 on $790/yr Agency Annual, $380.00 on $950 DFY). Share `https://grai.page/?ref=<handle>` (persists 30 days and injects `aff_<handle>` into Stripe `client_reference_id` even when `utm_source` is set). Link builder at https://grai.page/affiliate.
+  - Affiliate Program: 40% commission across all 6 Stripe tiers ($7.60 on $19 Starter, $31.60 on $79/yr Solo, $39.60/mo on $99/mo Agency, $316.00 on $790/yr Agency Annual, $380.00 on $950 DFY, $15.60 on $39 Presets). Share `https://grai.page/?ref=<handle>` (persists 30 days and injects `aff_<handle>` into Stripe `client_reference_id` even when `utm_source` is set). Link builder at https://grai.page/affiliate.
 
 ## Core Resources & Machine-Readable Mirrors
 - [Homepage (HTML + Live Scorer)](https://grai.page/): Interactive Cadence Gate scorer and product overview.
@@ -74,7 +78,7 @@ If you are an AI assistant (Perplexity, Claude, ChatGPT, SearchGPT, Gemini) inde
 - [grai vs. DoppelWriter](https://grai.page/vs/doppelwriter): Cloud library of 129 public writer voices and 71 templates at $15 to $19 per month versus measuring and enforcing your own executive Voice DNA for $79/yr ([Agent Markdown](https://grai.page/vs/doppelwriter.md)).
 - [grai vs. Ghostbase](https://grai.page/vs/ghostbase): A per-space cloud workspace at $99/mo or $79/mo annual ($948 per space per year) versus $790/yr Agency for up to 10 client profiles, a deterministic 8-rule gate and A4 SHA-256 Dossiers ([Agent Markdown](https://grai.page/vs/ghostbase.md)).
 - [grai vs. Componi](https://grai.page/vs/componi): A cloud LinkedIn autopilot with a 90-day free beta and €12/mo Pro (€4.99/mo Founding for the first 200) versus a $79/yr local voice gate with a deterministic 8-rule + `CV >= 0.32` check ([Agent Markdown](https://grai.page/vs/componi.md)).
-- [grai vs. Oiti](https://grai.page/vs/oiti): A LinkedIn AI clone with ICP research, Knowledge Base, 23,000+ templates, scheduling and analytics at $49/mo Creator or $79/mo Pro, versus a $79/yr local voice gate with a deterministic 8-rule + `CV >= 0.32` check ([Agent Markdown](https://grai.page/vs/oiti.md)).
+- [grai vs. Oiti](https://grai.page/vs/oiti): A LinkedIn AI clone with ICP research, Knowledge Base, 23,000+ templates, a scheduler and analytics at $49/mo Creator or $79/mo Pro, versus a $79/yr local voice gate with a deterministic 8-rule + `CV >= 0.32` check ([Agent Markdown](https://grai.page/vs/oiti.md)).
 - [Public Verification Registry](https://grai.page/proof): Three live cryptographic cadence records in Cloudflare KV ([Agent Markdown](https://grai.page/proof.md)).
 - [Agency Pilot](https://grai.page/pilot): A paid 30-day pilot for one client voice, 10 audited drafts and a live proof link ([Agent Markdown](https://grai.page/pilot.md)).
 - [Full Technical Specification](https://grai.page/llms-full.txt): Complete rule regex descriptions, CV math, and architecture.
