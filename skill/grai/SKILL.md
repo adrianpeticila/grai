@@ -92,7 +92,8 @@ The same rules run as deterministic code in a 622 KB local HTML5 workbench:
 - Solo Offline Edition, $79/yr: https://buy.stripe.com/3cIaERgwM9hLbuF33Vds400
 - Agency Verification Protocol, $99/mo or $790/yr: https://buy.stripe.com/3cI28lbcs51v2Y9bArds401
 - Executive Voice DNA Architecture DFY, $950 one-time: https://buy.stripe.com/aFa5kx1BS2Tn8it47Zds403
-- Affiliate program, 40% commission: https://payhip.com/auth/register/af63e51e20042ed
+- Voice DNA Presets Pack, $39 one-time: https://buy.stripe.com/fZu6oB1BS79D6algULds405
+- Affiliate program, 40% commission across all 6 Stripe tiers: https://grai.page/affiliate
 
 The workbench adds three things the instruction set cannot:
 - The 8-rule gate plus the burstiness floor, computed in JavaScript, with flagged spans.
