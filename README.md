@@ -226,6 +226,14 @@ The server exposes `grai_score_draft`, `grai_issue_agency_seal` and `grai_verify
 - **[grai vs. Ghostbase](https://grai.page/vs/ghostbase)**
 - **[grai vs. Componi](https://grai.page/vs/componi)**
 - **[grai vs. Oiti](https://grai.page/vs/oiti)**
+- **[grai vs. Planable](https://grai.page/vs/planable)**
+- **[grai vs. MagicPost](https://grai.page/vs/magicpost)**
+- **[Best AuthoredUp Alternatives for Ghostwriting Agencies](https://grai.page/vs/authoredup-alternatives)**
+- **[Best Taplio Alternatives Without AI Slop](https://grai.page/vs/taplio-alternatives)**
+- **[Best Grammarly Business Alternatives for Executive Voice](https://grai.page/vs/grammarly-business-alternatives)**
+
+### Related Repositories
+- **grai-gate (GitHub Action, pre-commit hook, MCP server, PyPI package):** [adrianpeticila/grai-gate-action](https://github.com/adrianpeticila/grai-gate-action). The same deterministic 8-rule and `CV >= 0.32` gate from the 134,522-post LinkedIn audit, packaged for CI.
 
 ---
 
